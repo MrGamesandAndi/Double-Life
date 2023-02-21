@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6166bdab320504b93d186ed450469c, type: 3}
+  m_Name: Trait_PickyEater
+  m_EditorClassIdentifier: 
+  id: 9
+  displayName:
+    key: Trait_PickyEater
+  description:
+    key: Trait_PickyEater_Desc
+  opossiteTrait: {fileID: 11400000, guid: 6a2258c59b0778547b36406612c3667a, type: 2}
+  impacts:
+  - _linkedStat: {fileID: 11400000, guid: 85ecd3ecbcb750f4dbe47771beecb52b, type: 2}
+    _scoringPositiveScale: 1.25
+    _scoringNegativeScale: 0.9
+    _impactPositiveScale: 1
+    _impactNegativeScale: 1
+    _decayRateScale: 1

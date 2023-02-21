@@ -1,0 +1,528 @@
+fileFormatVersion: 2
+guid: 44301422dbfbd9c4fa75b4114e7ac332
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3009734990816421959
+    second: Building Titles_Apartments_ES
+  - first:
+      213: -8783928133391765750
+    second: Building Titles_Apartments_EN
+  - first:
+      213: 6171134026798062510
+    second: Building Titles_Pawn_ES
+  - first:
+      213: -7464582969410438423
+    second: Building Titles_Pawn_EN
+  - first:
+      213: 2906682391456408753
+    second: Building Titles_Food_ES
+  - first:
+      213: 5612829623418925749
+    second: Building Titles_Food_EN
+  - first:
+      213: -3566294396843786497
+    second: Building Titles_TownHall_ES
+  - first:
+      213: 6436710093023624227
+    second: Building Titles_TownHall_EN
+  - first:
+      213: -7736626662076312785
+    second: Building Titles_Park_ES
+  - first:
+      213: 7545160082051319610
+    second: Building Titles_Park_EN
+  - first:
+      213: -219639875485426498
+    second: Building Titles_Beach_ES
+  - first:
+      213: -8229701778843798962
+    second: Building Titles_Beach_EN
+  - first:
+      213: -3708554781604217359
+    second: Building Titles_Furniture_ES
+  - first:
+      213: -4803226667749752431
+    second: Building Titles_Furniture_EN
+  - first:
+      213: 5727669220949128861
+    second: Building Titles_BG
+  - first:
+      213: -8742519059433229932
+    second: Building Titles_News_ES
+  - first:
+      213: -7113261484825112796
+    second: Building Titles_News_EN
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Building Titles_Apartments_ES
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 891
+        width: 352
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7d25cd8f54b36d0800000000000000
+      internalID: -3009734990816421959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_Apartments_EN
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 895
+        width: 352
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0faf94e6e7391680800000000000000
+      internalID: -8783928133391765750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_Pawn_ES
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 811
+        width: 348
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eabdf9883b544a550800000000000000
+      internalID: 6171134026798062510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_Pawn_EN
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 814
+        width: 352
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea3cdf9659786890800000000000000
+      internalID: -7464582969410438423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_Food_ES
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 721
+        width: 352
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b464a91c3c965820800000000000000
+      internalID: 2906682391456408753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_Food_EN
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 724
+        width: 351
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2bca0fdc6c4ed40800000000000000
+      internalID: 5612829623418925749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_TownHall_ES
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 625
+        width: 349
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffef8af142af18ec0800000000000000
+      internalID: -3566294396843786497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_TownHall_EN
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 625
+        width: 343
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c38d8f9b9c35950800000000000000
+      internalID: 6436710093023624227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_Park_ES
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 548
+        width: 176
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23102f8a0bf1a490800000000000000
+      internalID: -7736626662076312785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_Park_EN
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 542
+        width: 136
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3740206e1bc5b860800000000000000
+      internalID: 7545160082051319610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_Beach_ES
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 474
+        width: 176
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc1e2b62bea3fcf0800000000000000
+      internalID: -219639875485426498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_Beach_EN
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 471
+        width: 152
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e427d90c5d93acd80800000000000000
+      internalID: -8229701778843798962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_Furniture_ES
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 376
+        width: 352
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd776c2311988cc0800000000000000
+      internalID: -3708554781604217359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_Furniture_EN
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 372
+        width: 352
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191c7155bc2875db0800000000000000
+      internalID: -4803226667749752431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_BG
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 146
+        width: 140
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d967c995fc4cc7f40800000000000000
+      internalID: 5727669220949128861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_News_ES
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 299
+        width: 344
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491766c3c355ca680800000000000000
+      internalID: -8742519059433229932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building Titles_News_EN
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 302
+        width: 345
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f08820e5e984d90800000000000000
+      internalID: -7113261484825112796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a2f3ae73eda51794582419da7fa91b55
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

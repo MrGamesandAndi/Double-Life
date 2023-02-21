@@ -1,0 +1,13 @@
+﻿title: Tutorial1
+tags:
+---
+<<if $hasCreatedCharacter == false>>
+    <<declare $doubleName = "" as string>>
+    <<declare $cityName = "" as string>>
+    <<declare $hasCreatedCharacter = false as bool>>
+    Un pedazo de paraíso en medio de un hermoso océano. #line:02a0554 
+    <<jump Tutorial2>>
+<<endif>>
+
+<<jump Tutorial6>>
+===

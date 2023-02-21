@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3ec0067dd06ff4084728a7c3af7f3c, type: 3}
+  m_Name: FoodItem_Coconut
+  m_EditorClassIdentifier: 
+  category: 2
+  foodName:
+    key: Food_Coconut
+  description:
+    key: Food_Coconut_Description
+  icon: {fileID: 21300000, guid: a8d49f49ae68cd54ca976b024f3b10ac, type: 3}
+  cost: 350

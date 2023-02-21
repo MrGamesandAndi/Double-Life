@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 11b1b3a5d72d8f64fac5841d9babea06
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  LastImportHadImplicitStringIDs: 0
+  LastImportHadAnyStrings: 1
+  isSuccessfullyParsed: 1
+  parseErrorMessages: []

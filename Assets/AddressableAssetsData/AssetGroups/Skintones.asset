@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Skintones
+  m_EditorClassIdentifier: 
+  m_GroupName: Skintones
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e73790827268c304bb8f62f4e2340e64
+  m_SerializeEntries:
+  - m_GUID: d89556e40ea3a8742a9103d19a970e72
+    m_Address: Skintone1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Skintones
+  - m_GUID: 257ededcf889fe7458574b2dacc90f62
+    m_Address: Skintone2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Skintones
+  - m_GUID: 3d4cfc89a07534c41921d82a35f188ba
+    m_Address: Skintone3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Skintones
+  - m_GUID: ef04d921d2fcfb146903d62f6b02287a
+    m_Address: Skintone4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Skintones
+  - m_GUID: ccd67b959cd402644be7af173e91ef15
+    m_Address: Skintone5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Skintones
+  - m_GUID: 64343ac50afa9cb46b2ae10fe99a5eff
+    m_Address: Skintone6
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Skintones
+  - m_GUID: 6e2262162dda65548b665f371f35eb80
+    m_Address: Skintone7
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Skintones
+  - m_GUID: ba695317e7bfbc0449857e636b360ea9
+    m_Address: Skintone8
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Skintones
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: b76c42e7e14396e4394827537e04cd9a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d3f81ee6fecf7864fab822a6beda64c2, type: 2}
+    - {fileID: 11400000, guid: 9bd85e212336b424ab4feda347352138, type: 2}

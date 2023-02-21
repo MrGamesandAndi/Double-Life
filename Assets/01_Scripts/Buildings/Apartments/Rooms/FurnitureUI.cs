@@ -1,0 +1,128 @@
+using GridSystem;
+using SaveSystem;
+using ShopSystem;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Apartments
+{
+    public class FurnitureUI : MonoBehaviour
+    {
+        [SerializeField] Transform _itemUIRoot;
+        [SerializeField] GameObject _itemUIPrefab;
+        [SerializeField] List<FurnitureItem> _availableItems;
+        [SerializeField] Button _giveButton;
+
+        Dictionary<FurnitureItem, FurnitureUIItem> _furnitureItemToUIMap = new Dictionary<FurnitureItem, FurnitureUIItem>();
+        List<FurnitureItem> _orderedList = new List<FurnitureItem>();
+        FurnitureItem _selectedItem;
+
+        private void OnEnable()
+        {
+            RefreshUIProducts();
+        }
+
+        public void RefreshUICommon()
+        {
+            _giveButton.GetComponent<Button>().onClick.RemoveAllListeners();
+
+            if (_selectedItem != null)
+            {
+                _giveButton.interactable = true;
+                _giveButton.GetComponent<Button>().onClick.AddListener(OnClickedGive);
+            }
+            else
+            {
+                _giveButton.interactable = false;
+            }
+        }
+
+        public void RefreshUIProducts()
+        {
+            _furnitureItemToUIMap.Clear();
+            _orderedList.Clear();
+            _orderedList = _availableItems.OrderBy(o => o.furnitureName.Value).ToList();
+
+            foreach (var furniture in _orderedList)
+            {
+                for (int i = 0; i < SaveManager.Instance.FurnitureData.Count; i++)
+                {
+                    if (SaveManager.Instance.FurnitureData[i].amount > 0)
+                    {
+                        if (furniture.furnitureName.key == SaveManager.Instance.FurnitureData[i].furnitureName.key)
+                        {
+                            var itemGO = Instantiate(_itemUIPrefab, _itemUIRoot);
+                            var itemUI = itemGO.GetComponent<FurnitureUIItem>();
+                            itemUI.Bind(furniture, SaveManager.Instance.FurnitureData[i].amount, OnItemSelected);
+                            _furnitureItemToUIMap[furniture] = itemUI;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            RefreshUICommon();
+        }
+
+        public void OnClickedGive()
+        {
+            RoomManager.Instance.HideTabs();
+
+            for (int i = 0; i < SaveManager.Instance.FurnitureData.Count; i++)
+            {
+                if (SaveManager.Instance.FurnitureData[i].furnitureName.key == _selectedItem.furnitureName.key)
+                {
+                    SaveManager.Instance.FurnitureData[i].amount--;
+                    RoomManager.Instance.SelectedFurniture = _selectedItem;
+                    break;
+                }
+            }
+
+            RoomManager.Instance.EnableGrid();
+            ResetAllButtons();
+        }
+
+        private void ResetAllButtons()
+        {
+            foreach (var kvp in _furnitureItemToUIMap)
+            {
+                var itemUI = kvp.Value;
+                itemUI.SetIsSelected(false);
+            }
+
+            _selectedItem = null;
+
+            foreach (Transform child in _itemUIRoot)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        private void OnItemSelected(FurnitureItem newlySelectedItem)
+        {
+            _selectedItem = newlySelectedItem;
+
+            foreach (var kvp in _furnitureItemToUIMap)
+            {
+                var item = kvp.Key;
+                var itemUI = kvp.Value;
+
+                itemUI.SetIsSelected(item == _selectedItem);
+            }
+
+            RefreshUICommon();
+        }
+
+        public void AddGiveButtonListener()
+        {
+            _giveButton.GetComponent<Button>().onClick.AddListener(OnClickedGive);
+        }
+
+        public void RemoveGiveButtonListener()
+        {
+            _giveButton.GetComponent<Button>().onClick.RemoveListener(OnClickedGive);
+        }
+    }
+}

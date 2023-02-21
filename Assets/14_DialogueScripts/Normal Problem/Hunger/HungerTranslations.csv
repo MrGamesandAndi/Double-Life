@@ -1,0 +1,5 @@
+language,id,text,file,node,lineNumber,lock,comment
+en,line:00b6783,I'm hungry!,Assets/14_DialogueScripts/Normal Problem/Hunger/Hunger1.yarn,Hunger1,4,04b12a47,
+en,line:053d7bc,I'm starving!,Assets/14_DialogueScripts/Normal Problem/Hunger/Hunger2.yarn,Hunger2,4,0bf749f1,
+en,line:0775387,I'm thirsty!,Assets/14_DialogueScripts/Normal Problem/Hunger/Hunger3.yarn,Hunger3,4,e16af835,
+en,line:058e8de,I need to eat something. ANYTHING!,Assets/14_DialogueScripts/Normal Problem/Hunger/Hunger4.yarn,Hunger4,4,f8e59af0,

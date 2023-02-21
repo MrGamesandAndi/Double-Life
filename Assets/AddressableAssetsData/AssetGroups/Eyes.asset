@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Eyes
+  m_EditorClassIdentifier: 
+  m_GroupName: Eyes
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9e33efbd7151a7444a9bbd3b1dafaacd
+  m_SerializeEntries:
+  - m_GUID: a2bdf5ece3405b24b9ac27599aaa4863
+    m_Address: Eye1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Eyes
+  - m_GUID: 4e02c80109a03154c8bd5fbcafe02b31
+    m_Address: Eye2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Eyes
+  - m_GUID: c54d68de514ce9241bd2ab20e4d097ce
+    m_Address: Eye3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Eyes
+  - m_GUID: 7850e2e288b3d7846b2ff0eb2bbcab00
+    m_Address: Eye4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Eyes
+  - m_GUID: 0e01835154b3842498245479c8769686
+    m_Address: Eye5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Eyes
+  - m_GUID: d9adad3bca461ca46b3f811884290c7c
+    m_Address: Eye6
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Eyes
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: b76c42e7e14396e4394827537e04cd9a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 431439e88e9fb2b4aaf6ee220d9702f8, type: 2}
+    - {fileID: 11400000, guid: b60c05a598343954dac3d24b866bff59, type: 2}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7c9a80e06d59d41a7518c5067663cd, type: 3}
+  m_Name: FurnitureItem_Stool
+  m_EditorClassIdentifier: 
+  furnitureName:
+    key: Furniture_Stool
+  description:
+    key: Furniture_Stool_Description
+  icon: {fileID: 21300000, guid: c584194872ef7c248b26728ec0d70664, type: 3}
+  cost: 2500
+  model: {fileID: 3205710848153139817, guid: 04e0bb6425d4cb241846a127bea0f430, type: 3}
+  width: 1
+  height: 1

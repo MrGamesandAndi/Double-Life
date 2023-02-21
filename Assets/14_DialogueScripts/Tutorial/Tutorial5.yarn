@@ -1,0 +1,7 @@
+﻿title: Tutorial5
+tags:
+---
+Pero primero, ¡creemos un Doble que se parezca a ti! #line:05a2d0b 
+<<set $hasCreatedCharacter to true>>
+<<enter_double_creator TutorialManager>>
+===
