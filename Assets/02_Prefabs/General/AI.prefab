@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1742806457423448040}
-  - component: {fileID: 1742806457423448041}
+  - component: {fileID: 2124623605934282374}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1742806457423448041
+--- !u!114 &2124623605934282374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,47 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1742806457423448039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71881932bc4f55243a7ba711946bc689, type: 3}
+  m_Script: {fileID: 11500000, guid: 81d30a23755cc0d41a1c29be3665a993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _householdID: 1
-  _stats:
-  - <LinkedStat>k__BackingField: {fileID: 11400000, guid: bc78f4a3132b2b34aa0c230595f6d66a, type: 2}
-    <OverrideDefaults>k__BackingField: 0
-    <OverrideInitialValue>k__BackingField: 0
-    <OverrideDecayRate>k__BackingField: 0
-  - <LinkedStat>k__BackingField: {fileID: 11400000, guid: 498a00b1c3c53d946a0add7613a25221, type: 2}
-    <OverrideDefaults>k__BackingField: 0
-    <OverrideInitialValue>k__BackingField: 0
-    <OverrideDecayRate>k__BackingField: 0
-  - <LinkedStat>k__BackingField: {fileID: 11400000, guid: bf91f9bdadc56e54e84452e0f532f6d5, type: 2}
-    <OverrideDefaults>k__BackingField: 1
-    <OverrideInitialValue>k__BackingField: 1
-    <OverrideDecayRate>k__BackingField: 0
-  - <LinkedStat>k__BackingField: {fileID: 11400000, guid: f5421f70a6c948b4b9d606af40623e11, type: 2}
-    <OverrideDefaults>k__BackingField: 1
-    <OverrideInitialValue>k__BackingField: 1
-    <OverrideDecayRate>k__BackingField: 0
-  - <LinkedStat>k__BackingField: {fileID: 11400000, guid: 44751eac2ed6f684da89dc463d8c0347, type: 2}
-    <OverrideDefaults>k__BackingField: 1
-    <OverrideInitialValue>k__BackingField: 1
-    <OverrideDecayRate>k__BackingField: 0
-  - <LinkedStat>k__BackingField: {fileID: 11400000, guid: 85ecd3ecbcb750f4dbe47771beecb52b, type: 2}
-    <OverrideDefaults>k__BackingField: 0
-    <OverrideInitialValue>k__BackingField: 0
-    <OverrideDecayRate>k__BackingField: 0
-  - <LinkedStat>k__BackingField: {fileID: 11400000, guid: 8b6e7b9057869b94d9e827e22228bb42, type: 2}
-    <OverrideDefaults>k__BackingField: 0
-    <OverrideInitialValue>k__BackingField: 0
-    <OverrideDecayRate>k__BackingField: 0
-  - <LinkedStat>k__BackingField: {fileID: 11400000, guid: 9dfba059b13f11940932737df007d67f, type: 2}
-    <OverrideDefaults>k__BackingField: 0
-    <OverrideInitialValue>k__BackingField: 0
-    <OverrideDecayRate>k__BackingField: 0
-  _linkedUI: {fileID: 0}
-  _traits: []
-  _pickInteractionInterval: 2
-  _defaultInteractionScore: 0
-  _interactionPickSize: 5
-  _avoidInUseObjects: 0
-  problemDialogue: {fileID: 0}
+  _needUseAmount: 50

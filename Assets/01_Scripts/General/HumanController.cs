@@ -29,6 +29,11 @@ public class HumanController : MonoBehaviour
 
     public void LoadParts()
     {
+        if (characterData == null)
+        {
+            return;
+        }
+
         SetColor(BodyTypes.Shirt, characterData.Color);
         SetColor(BodyTypes.Skintone, characterData.Skintone);
 

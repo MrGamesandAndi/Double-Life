@@ -1,8 +1,7 @@
 using AudioSystem;
 using General;
 using LevelingSystem;
-using SmartInteractions;
-using TraitSystem;
+using SaveSystem;
 using UnityEngine;
 
 public class DragInteraction : MonoBehaviour

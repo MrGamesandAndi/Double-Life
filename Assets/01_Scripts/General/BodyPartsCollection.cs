@@ -1,5 +1,4 @@
 using CharacterCreator;
-using Stats;
 using System.Collections.Generic;
 using TraitSystem;
 using UnityEngine;
@@ -30,7 +29,6 @@ namespace General
 
         [Header("AI")]
         public List<Trait> traits;
-        public List<AIStat> stats;
 
         public Mesh ReturnHairMesh(string hairName)
         {

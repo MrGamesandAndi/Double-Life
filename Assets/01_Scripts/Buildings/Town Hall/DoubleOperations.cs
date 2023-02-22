@@ -72,7 +72,7 @@ namespace TownHall
         public void OnClickedEdit()
         {
             PlayerPrefs.SetInt("CC_State", 1);
-            GameManager.Instance.currentLoadedDouble = _selectedDouble;
+            _selectedDouble = GameManager.Instance.currentLoadedDouble;
             ScenesManager.Instance.LoadScene(Scenes.Character_Creator, Scenes.Town_Hall);
         }
 

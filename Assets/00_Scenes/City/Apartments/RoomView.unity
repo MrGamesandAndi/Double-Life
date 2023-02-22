@@ -13016,6 +13016,7 @@ MonoBehaviour:
     _mouthKey: Mouth5
     _traits: 
     _purchasedFurniture: []
+    _needsManager: {fileID: 0}
   _headReference: {fileID: 4523098270372582887}
   _hairReference: {fileID: 6642050947738334153}
   _rEyeReference: {fileID: 5831079550341654488}

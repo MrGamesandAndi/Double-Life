@@ -20,7 +20,7 @@ namespace DialogueSystem
                     GetComponent<WindowManager>().state = DoubleState.Happy;
                     break;
                 case DoubleState.Buy:
-                    _emoteWindow.sprite = _emotes[1];
+                    _emoteWindow.sprite = _emotes[4];
                     GetComponent<WindowManager>().state = DoubleState.Buy;
                     break;
                 case DoubleState.MakeFriend:
@@ -36,19 +36,19 @@ namespace DialogueSystem
                     GetComponent<WindowManager>().state = DoubleState.Angry;
                     break;
                 case DoubleState.Sick:
-                    _emoteWindow.sprite = _emotes[5];
+                    _emoteWindow.sprite = _emotes[4];
                     GetComponent<WindowManager>().state = DoubleState.Sick;
                     break;
                 case DoubleState.Date:
-                    _emoteWindow.sprite = _emotes[6];
+                    _emoteWindow.sprite = _emotes[3];
                     GetComponent<WindowManager>().state = DoubleState.Date;
                     break;
                 case DoubleState.Hungry:
-                    _emoteWindow.sprite = _emotes[7];
+                    _emoteWindow.sprite = _emotes[4];
                     GetComponent<WindowManager>().state = DoubleState.Hungry;
                     break;
                 case DoubleState.Sad:
-                    _emoteWindow.sprite = _emotes[8];
+                    _emoteWindow.sprite = _emotes[5];
                     GetComponent<WindowManager>().state = DoubleState.Sad;
                     break;
                 default:

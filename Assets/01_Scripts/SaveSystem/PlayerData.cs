@@ -12,6 +12,6 @@ namespace SaveSystem
         public float musicVolume = 1f;
         public int resolutionX = 1920;
         public int resolutionY = 1080;
-        public bool isOnTutorial = true;
+        public bool isOnTutorial = false;
     }
 }

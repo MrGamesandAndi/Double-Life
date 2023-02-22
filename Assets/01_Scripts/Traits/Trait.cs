@@ -1,5 +1,4 @@
 using Localisation;
-using Stats;
 using UnityEngine;
 
 namespace TraitSystem
@@ -12,15 +11,5 @@ namespace TraitSystem
         public LocalisedString description;
         public Trait opossiteTrait;
         public TraitElement[] impacts;
-
-        public float Apply(AIStat targetStat, TargetType targetType, float currentValue)
-        {
-            foreach (var impact in impacts)
-            {
-                currentValue = impact.Apply(targetStat, targetType, currentValue);
-            }
-
-            return currentValue;
-        }
     }
 }

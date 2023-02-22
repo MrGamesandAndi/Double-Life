@@ -1,7 +1,6 @@
 using DialogueSystem;
 using General;
 using SaveSystem;
-using SmartInteractions;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -10,27 +9,13 @@ namespace Apartments
 {
     public class ApartmentManager : MonoBehaviour
     {
-        public List<WindowManager> _apartmentWindowsList;
-
-        [SerializeField] List<Transform> _floors;
+        [SerializeField] Transform _apartmentWindowsList;
         [SerializeField] GameObject _portery;
 
         [Header("Portery Settings")]
         [SerializeField] TextMeshProUGUI _doubleNumberField;
         [SerializeField] TextMeshProUGUI _mfRatioField;
         [SerializeField] TextMeshProUGUI _cityName;
-
-        private void Awake()
-        {
-            for (int i = 0; i < _floors.Count; i++)
-            {
-                for (int j = 0; j < 7; j++)
-                {
-                    WindowManager window = _floors[i].GetChild(j).GetComponent<WindowManager>();
-                    _apartmentWindowsList.Add(window);
-                }
-            }
-        }
 
         private void Start()
         {
@@ -48,9 +33,9 @@ namespace Apartments
         {
             for (int i = 0; i < GenerateAI.Instance.transform.childCount; i++)
             {
-                _apartmentWindowsList[i].GetComponent<WindowManager>()._double = PopulationManager.Instance.DoublesList[i];
-                _apartmentWindowsList[i].GetComponent<WindowManager>().ManageEmoteWindow(true);
-                _apartmentWindowsList[i].GetComponent<BoxCollider>().enabled = true;
+                _apartmentWindowsList.GetChild(i).GetComponent<WindowManager>()._double = PopulationManager.Instance.DoublesList[i];
+                _apartmentWindowsList.GetChild(i).GetComponent<ProblemDialogue>().ChangeEmote(DoubleState.Happy);
+                _apartmentWindowsList.GetChild(i).GetComponent<BoxCollider>().enabled = true;
             }
         }
 

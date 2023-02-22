@@ -1,9 +1,7 @@
-using General;
 using GridSystem;
-using Stats;
+using Needs;
 using System;
 using System.Collections.Generic;
-using TraitSystem;
 using UnityEngine;
 
 namespace SaveSystem
@@ -31,6 +29,7 @@ namespace SaveSystem
 
         [SerializeField] List<int> _traits = new List<int>(4);
         [SerializeField] List<GridObject.SaveObject> _purchasedFurniture = new List<GridObject.SaveObject>();
+        [SerializeField] NeedsManager _needsManager;
 
         public string Name { get => _name; set => _name = value; }
         public string LastName { get => _lastName; set => _lastName = value; }
@@ -50,5 +49,6 @@ namespace SaveSystem
         public List<int> Traits { get => _traits; set => _traits = value; }
         public int Gender { get => _gender; set => _gender = value; }
         public List<GridObject.SaveObject> PurchasedFurniture { get => _purchasedFurniture; set => _purchasedFurniture = value; }
+        public NeedsManager NeedsManager { get => _needsManager; set => _needsManager = value; }
     }
 }

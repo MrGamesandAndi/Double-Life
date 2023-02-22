@@ -2,7 +2,6 @@ using General;
 using LevelingSystem;
 using SaveSystem;
 using ShopSystem;
-using SmartInteractions;
 using System;
 using System.Collections.Generic;
 using TraitSystem;
@@ -86,8 +85,6 @@ namespace GridSystem
 
                             if (ai.gameObject.name == name)
                             {
-                                ai.GetComponent<SimpleAI>().UpdateIndividualStat(BodyPartsCollection.Instance.stats[0], 1f, TargetType.Score);
-                                ai.GetComponent<SimpleAI>().PickBestInteraction();
                                 RoomManager.Instance.humanModel.GetComponent<XPTracker>().AddXP(50);
                             }
                         }

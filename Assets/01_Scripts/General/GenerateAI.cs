@@ -1,5 +1,5 @@
+using Needs;
 using SaveSystem;
-using SmartInteractions;
 using UnityEngine;
 
 namespace General
@@ -36,20 +36,22 @@ namespace General
 
         public void AddIndividualAI(CharacterData character)
         {
-            GameObject ai = Instantiate(_aiPrefab, transform);
+            GameObject ai = _aiPrefab;
             ai.name = $"{character.Name}{character.LastName}";
+            character.NeedsManager = ai.GetComponent<NeedsManager>();
 
-            for (int i = 0; i < character.Traits.Count; i++)
-            {
-                for (int j = 0; j < BodyPartsCollection.Instance.traits.Count; j++)
-                {
-                    if (character.Traits[i] == BodyPartsCollection.Instance.traits[j].id)
-                    {
-                        ai.GetComponent<SimpleAI>().Traits.Add(BodyPartsCollection.Instance.traits[j]);
-                        break;
-                    }
-                }
-            }
+            //for (int i = 0; i < character.Traits.Count; i++)
+            //{
+            //    for (int j = 0; j < BodyPartsCollection.Instance.traits.Count; j++)
+            //    {
+            //        if (character.Traits[i] == BodyPartsCollection.Instance.traits[j].id)
+            //        {
+            //            break;
+            //        }
+            //    }
+            //}
+
+            Instantiate(ai, transform);
         }
 
         public void RemoveIndividualAI(CharacterData character)
