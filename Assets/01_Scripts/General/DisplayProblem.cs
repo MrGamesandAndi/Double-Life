@@ -16,7 +16,7 @@ namespace General
         {
             int randomIndex = 0;
 
-            switch (GameManager.Instance.currentState)
+            switch (GameManager.Instance.currentLoadedDouble.CurrentState)
             {
                 case DoubleState.Happy:
                     randomIndex = Random.Range(1, 10);

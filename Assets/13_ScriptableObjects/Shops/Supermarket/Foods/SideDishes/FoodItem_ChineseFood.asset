@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Chinese_Description
   icon: {fileID: 21300000, guid: b77095d7e571ffe47bb8fb2b5fbf9887, type: 3}
   cost: 450
+  experienceReward: 25

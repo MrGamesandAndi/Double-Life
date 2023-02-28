@@ -34,7 +34,7 @@ namespace Apartments
             for (int i = 0; i < GenerateAI.Instance.transform.childCount; i++)
             {
                 _apartmentWindowsList.GetChild(i).GetComponent<WindowManager>()._double = PopulationManager.Instance.DoublesList[i];
-                _apartmentWindowsList.GetChild(i).GetComponent<ProblemDialogue>().ChangeEmote(DoubleState.Happy);
+                _apartmentWindowsList.GetChild(i).GetComponent<ProblemDialogue>().ChangeEmote(PopulationManager.Instance.DoublesList[i].CurrentState);
                 _apartmentWindowsList.GetChild(i).GetComponent<BoxCollider>().enabled = true;
             }
         }

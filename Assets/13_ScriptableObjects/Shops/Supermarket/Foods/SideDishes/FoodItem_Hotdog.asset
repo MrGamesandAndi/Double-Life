@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Hotdog_Description
   icon: {fileID: 21300000, guid: e91e0015b59cadc48ad686d898c171b5, type: 3}
   cost: 280
+  experienceReward: 25

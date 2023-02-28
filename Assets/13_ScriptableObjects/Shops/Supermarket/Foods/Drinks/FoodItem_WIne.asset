@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Wine_Description
   icon: {fileID: 21300000, guid: 13b806fc71826b644b3d557b8c071558, type: 3}
   cost: 250
+  experienceReward: 5

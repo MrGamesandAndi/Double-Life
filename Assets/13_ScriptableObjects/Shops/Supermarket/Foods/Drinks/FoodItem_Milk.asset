@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Milk_Description
   icon: {fileID: 21300000, guid: 0e84421b422bc294a9f538a4b4d18abc, type: 3}
   cost: 180
+  experienceReward: 5

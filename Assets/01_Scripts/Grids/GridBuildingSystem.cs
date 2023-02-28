@@ -1,10 +1,7 @@
 using General;
-using LevelingSystem;
-using SaveSystem;
 using ShopSystem;
 using System;
 using System.Collections.Generic;
-using TraitSystem;
 using UnityEngine;
 
 namespace GridSystem
@@ -75,7 +72,7 @@ namespace GridSystem
                     RoomManager.Instance.DisableGrid();
                     RoomManager.Instance.ShowTabs();
 
-                    if (GameManager.Instance.currentState == DoubleState.Buy)
+                    if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Buy)
                     {
                         var name = GameManager.Instance.currentLoadedDouble.Name + GameManager.Instance.currentLoadedDouble.LastName;
 
@@ -85,7 +82,7 @@ namespace GridSystem
 
                             if (ai.gameObject.name == name)
                             {
-                                RoomManager.Instance.humanModel.GetComponent<XPTracker>().AddXP(50);
+                                
                             }
                         }
                     }

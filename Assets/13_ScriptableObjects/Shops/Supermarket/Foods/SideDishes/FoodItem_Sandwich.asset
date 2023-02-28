@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Sandwich_Description
   icon: {fileID: 21300000, guid: e02a4804abeb6c846b4deedc6c446068, type: 3}
   cost: 550
+  experienceReward: 25

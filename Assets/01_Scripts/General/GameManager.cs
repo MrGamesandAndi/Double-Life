@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour, IPurchaser
 
     [Header("Apartments")]
     public CharacterData currentLoadedDouble;
-    public DoubleState currentState;
 
     private void Awake()
     {

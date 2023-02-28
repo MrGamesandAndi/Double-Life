@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Chocolate_Description
   icon: {fileID: 21300000, guid: 0952ee357693aa24cb1bdcb7231860cc, type: 3}
   cost: 150
+  experienceReward: 15

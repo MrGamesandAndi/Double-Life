@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Sausage_Description
   icon: {fileID: 21300000, guid: 0f2fa56fcc09e1745a253974cf4d14b3, type: 3}
   cost: 230
+  experienceReward: 25

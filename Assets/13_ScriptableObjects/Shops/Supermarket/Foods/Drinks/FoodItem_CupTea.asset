@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_CupTea_Description
   icon: {fileID: 21300000, guid: af69ac6e56ba40f47953bd5cd8c9a5be, type: 3}
   cost: 270
+  experienceReward: 5

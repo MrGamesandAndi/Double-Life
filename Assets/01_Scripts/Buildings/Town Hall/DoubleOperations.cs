@@ -94,6 +94,7 @@ namespace TownHall
         private void OnItemSelected(CharacterData newlySelectedItem)
         {
             _selectedDouble = newlySelectedItem;
+            GameManager.Instance.currentLoadedDouble = _selectedDouble;
 
             foreach (var kvp in _doubleToUIMap)
             {

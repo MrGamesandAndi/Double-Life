@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Eggplant_Description
   icon: {fileID: 21300000, guid: 9b9a2d711428489438f624f26f00bb63, type: 3}
   cost: 590
+  experienceReward: 25

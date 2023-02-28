@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Corn_Description
   icon: {fileID: 21300000, guid: 0ae1a3da5463b92409e1350d9ceed884, type: 3}
   cost: 200
+  experienceReward: 25

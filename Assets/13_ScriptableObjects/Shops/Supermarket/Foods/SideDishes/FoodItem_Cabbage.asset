@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Cabbage_Description
   icon: {fileID: 21300000, guid: 597af08f5f790d2458b426332b556eda, type: 3}
   cost: 120
+  experienceReward: 25

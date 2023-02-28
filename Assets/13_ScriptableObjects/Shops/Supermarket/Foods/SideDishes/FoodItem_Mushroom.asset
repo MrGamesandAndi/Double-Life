@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Mushroom_Description
   icon: {fileID: 21300000, guid: 8606aae612f10bf4bb996e85143912ef, type: 3}
   cost: 130
+  experienceReward: 25

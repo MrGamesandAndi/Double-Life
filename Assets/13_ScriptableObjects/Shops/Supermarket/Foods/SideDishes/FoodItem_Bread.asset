@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Bread_Description
   icon: {fileID: 21300000, guid: fe8b73dabd379714ba40c5620d3241b1, type: 3}
   cost: 30
+  experienceReward: 25

@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Pear_Description
   icon: {fileID: 21300000, guid: 0c8789a6cb216e64294dec855959455b, type: 3}
   cost: 110
+  experienceReward: 15

@@ -308,12 +308,21 @@ public class HumanController : MonoBehaviour
 
     public void SaveCharacterData()
     {
-        GenerateAI.Instance.AddIndividualAI(characterData);
+        if (!FileHandler.CheckIfCharacterFileExists(Name + LastName))
+        {
+            GenerateAI.Instance.AddIndividualAI(characterData);
+        }
+
         FileHandler.SaveToJSON(characterData, Name + LastName, SaveType.Character_Data);
         PopulationManager.Instance.DoublesList = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
         AchievementManager.instance.AddAchievementProgress("Unlock_TownHall", 1);
         AchievementManager.instance.AddAchievementProgress("Unlock_Park", 1);
         AchievementManager.instance.AddAchievementProgress("Unlock_TV", 1);
         SaveManager.Instance.LoadCharacterData();
+    }
+
+    public void PlayAnimation(string animationName)
+    {
+        GetComponent<Animator>().Play(animationName);
     }
 }

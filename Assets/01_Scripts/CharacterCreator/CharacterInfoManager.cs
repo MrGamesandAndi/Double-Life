@@ -17,6 +17,7 @@ namespace CharacterCreator
         [SerializeField] Button _sexPreferenceInputField;
         [SerializeField] Button _genderImage; 
         [SerializeField] HSVPicker.ColorPicker _picker;
+        [SerializeField] GameObject _traitsPanel;
 
         [SerializeField] List<Sprite> _genderImages;
 
@@ -45,6 +46,7 @@ namespace CharacterCreator
                     _relationshipInputField.interactable = false;
                     _zodiacInputField.interactable = false;
                     _genderImage.interactable = false;
+                    _traitsPanel.SetActive(false);
                     PlayerPrefs.SetInt("CC_State", 0);
                     break;
                 case 2:
@@ -52,6 +54,8 @@ namespace CharacterCreator
                     PlayerPrefs.SetInt("CC_State", 0);
                     break;
             }
+
+            gameObject.SetActive(false);
         }
 
         private void GetNameValue()

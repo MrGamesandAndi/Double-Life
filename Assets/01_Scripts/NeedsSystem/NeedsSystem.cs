@@ -22,13 +22,5 @@ namespace Needs
         {
             return _needDictionary[needType];
         }
-
-        public void Update()
-        {
-            foreach (NeedType needType in _needDictionary.Keys)
-            {
-                GetNeed(needType).Update();
-            }
-        }
     }
 }

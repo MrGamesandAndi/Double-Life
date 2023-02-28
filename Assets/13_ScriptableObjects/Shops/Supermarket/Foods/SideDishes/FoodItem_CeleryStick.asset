@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Celery_Description
   icon: {fileID: 21300000, guid: e829dc7592c039147b80606138bf8a67, type: 3}
   cost: 100
+  experienceReward: 25

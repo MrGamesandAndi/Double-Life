@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Soda_Description
   icon: {fileID: 21300000, guid: 731dc8fd5e6a62b4bb849970f61ac2c6, type: 3}
   cost: 250
+  experienceReward: 5

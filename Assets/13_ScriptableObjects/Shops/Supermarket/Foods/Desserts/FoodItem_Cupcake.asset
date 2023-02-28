@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Cupcake_Description
   icon: {fileID: 21300000, guid: 80138478c08c9914baf3b60790c0f395, type: 3}
   cost: 500
+  experienceReward: 15

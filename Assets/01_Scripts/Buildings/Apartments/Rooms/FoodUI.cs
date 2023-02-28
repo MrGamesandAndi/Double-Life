@@ -72,6 +72,7 @@ namespace Apartments
         {
             _foodPrefab.GetComponent<SpriteRenderer>().sprite = _selectedItem.icon;
             _foodPrefab.GetComponent<DragInteraction>()._snapPoint = _snapPoint;
+            _foodPrefab.GetComponent<DragInteraction>().expReward = _selectedItem.experienceReward;
             Instantiate(_foodPrefab, _foodSpawnArea);
 
             for (int i = 0; i < SaveManager.Instance.FoodData.Count; i++)

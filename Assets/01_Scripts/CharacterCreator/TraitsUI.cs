@@ -96,6 +96,13 @@ namespace CharacterCreator
                 if (_traitSlots[i].GetComponentInChildren<TextMeshProUGUI>().text != string.Empty)
                 {
                     _traitSlots[i].GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
+
+                    foreach (var kvp in _traitItemToUIMap)
+                    {
+                        UnlockOppositeTrait(kvp.Key);
+                    }
+
+                    
                     HumanController.Instance.characterData.Traits[i] = 0;
                     break;
                 }
@@ -105,6 +112,7 @@ namespace CharacterCreator
         private void OnItemSelected(Trait newlySelectedTrait)
         {
             _selectedTrait = newlySelectedTrait;
+            LockOppositeTrait(_selectedTrait);
 
             foreach (var kvp in _traitItemToUIMap)
             {
@@ -117,9 +125,36 @@ namespace CharacterCreator
             RefreshUICommon();
         }
 
-        public void SaveSelectedTraits()
+        private void LockOppositeTrait(Trait trait)
         {
+            foreach (var kvp in _traitItemToUIMap)
+            {
+                var item = kvp.Key;
+                var itemUI = kvp.Value;
 
+                if(item == trait.opossiteTrait)
+                {
+                    itemUI.SetCanEquip(false);
+                }
+
+                RefreshUICommon();
+            }
+        }
+
+        private void UnlockOppositeTrait(Trait trait)
+        {
+            foreach (var kvp in _traitItemToUIMap)
+            {
+                var item = kvp.Key;
+                var itemUI = kvp.Value;
+
+                if (item == trait.opossiteTrait)
+                {
+                    itemUI.SetCanEquip(true);
+                }
+
+                RefreshUICommon();
+            }
         }
     }
 }

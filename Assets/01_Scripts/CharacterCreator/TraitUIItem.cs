@@ -18,6 +18,8 @@ namespace CharacterCreator
         private Trait _traitItem;
         private UnityAction<Trait> OnSelectedFn;
 
+        public Trait TraitItem { get => _traitItem; set => _traitItem = value; }
+
         public void Bind(Trait item, UnityAction<Trait> onSelectedFn)
         {
             _traitItem = item;

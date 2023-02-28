@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Fries_Description
   icon: {fileID: 21300000, guid: 437085f43ba018f4f8ae8034b256cb35, type: 3}
   cost: 280
+  experienceReward: 25

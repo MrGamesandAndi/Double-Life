@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_PeanutButter_Description
   icon: {fileID: 21300000, guid: e12597b24c23a834ba0d6dd8d8fcbad4, type: 3}
   cost: 400
+  experienceReward: 15

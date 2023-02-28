@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Lollypop_Description
   icon: {fileID: 21300000, guid: 9ed48e078dff3da4cb00760a684fe82c, type: 3}
   cost: 250
+  experienceReward: 15

@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Cookie_Description
   icon: {fileID: 21300000, guid: ed265b8a4dfb6f040948c93e9998f81b, type: 3}
   cost: 100
+  experienceReward: 15

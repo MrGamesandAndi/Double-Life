@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Broccoli_Description
   icon: {fileID: 21300000, guid: cfbe7cbdced90724d8177d837a69e790, type: 3}
   cost: 100
+  experienceReward: 25

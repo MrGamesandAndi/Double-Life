@@ -40,16 +40,16 @@ namespace General
             ai.name = $"{character.Name}{character.LastName}";
             character.NeedsManager = ai.GetComponent<NeedsManager>();
 
-            //for (int i = 0; i < character.Traits.Count; i++)
-            //{
-            //    for (int j = 0; j < BodyPartsCollection.Instance.traits.Count; j++)
-            //    {
-            //        if (character.Traits[i] == BodyPartsCollection.Instance.traits[j].id)
-            //        {
-            //            break;
-            //        }
-            //    }
-            //}
+            for (int i = 0; i < character.Traits.Count; i++)
+            {
+                for (int j = 0; j < BodyPartsCollection.Instance.traits.Count; j++)
+                {
+                    if (character.Traits[i] == BodyPartsCollection.Instance.traits[j].id)
+                    {
+                        break;
+                    }
+                }
+            }
 
             Instantiate(ai, transform);
         }

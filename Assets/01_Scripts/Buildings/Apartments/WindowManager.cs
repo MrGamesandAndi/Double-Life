@@ -13,7 +13,6 @@ namespace Apartments
         private void OnMouseDown()
         {
             GameManager.Instance.currentLoadedDouble = _double;
-            GameManager.Instance.currentState = state;
             ScenesManager.Instance.LoadScene(Scenes.Apartment_Room, Scenes.Apartment_Interior);
         }
     }

@@ -32,5 +32,21 @@ namespace General
         {
             DoublesList = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
         }
+
+        public CharacterData ReturnDouble(string name)
+        {
+            foreach (var item in DoublesList)
+            {
+                var fullName = item.Name + item.LastName;
+
+                if (fullName == name)
+                {
+                    return item;
+                }
+            }
+
+            Debug.Log($"Could not find {name}");
+            return new CharacterData();
+        }
     }
 }

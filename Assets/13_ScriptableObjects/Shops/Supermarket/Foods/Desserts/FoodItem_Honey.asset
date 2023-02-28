@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Honey_Description
   icon: {fileID: 21300000, guid: c1db4b5ea4ba6bb4daac40af2f1d2063, type: 3}
   cost: 450
+  experienceReward: 15

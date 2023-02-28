@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Riceball_Description
   icon: {fileID: 21300000, guid: 20744dada40c379459fb62e4c882634b, type: 3}
   cost: 500
+  experienceReward: 25

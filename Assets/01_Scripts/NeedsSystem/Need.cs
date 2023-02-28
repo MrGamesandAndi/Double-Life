@@ -5,16 +5,16 @@ namespace Needs
 {
     public class Need
     {
+        public event EventHandler OnCoreUse;
+
         const float MAX = 100f;
         float _ringAmount;
         float _totalRingAmount;
         float _coreAmount;
-        float _regenSpeed = 20f;
-        float _lastUseTime;
 
         public Need()
         {
-            _totalRingAmount = 40f;
+            _totalRingAmount = 50f;
             _ringAmount = _totalRingAmount;
             _coreAmount = MAX;
         }
@@ -23,8 +23,7 @@ namespace Needs
         {
             if (_ringAmount >= useAmount)
             {
-                _ringAmount -= useAmount;
-                _lastUseTime = Time.time;
+                _ringAmount -= useAmount * Time.deltaTime;
                 Debug.Log("coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
                 return true;
             }
@@ -34,15 +33,16 @@ namespace Needs
 
                 if (_coreAmount >= useAmount)
                 {
+                    OnCoreUse?.Invoke(this, EventArgs.Empty);
                     _ringAmount = 0f;
-                    _coreAmount -= useAmount;
-                    _lastUseTime = Time.time;
+                    _coreAmount -= useAmount * Time.deltaTime;
                     Debug.Log("coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
                     return true;
                 }
                 else
                 {
                     Debug.Log("CANNOT USE! " + "coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
+                    ResetNeed();
                     return false;
                 }
             }
@@ -63,18 +63,10 @@ namespace Needs
             return _coreAmount / MAX;
         }
 
-        public void Update()
+        public void ResetNeed()
         {
-            if (CanRegen())
-            {
-                _ringAmount += _regenSpeed * Math.Max(GetCoreNormalizedValue(), 0.1f) * Time.deltaTime;
-                _ringAmount = Mathf.Clamp(_ringAmount, 0f, _totalRingAmount);
-            }
-        }
-
-        private bool CanRegen()
-        {
-            return Time.time >= _lastUseTime;
+            _ringAmount = _totalRingAmount;
+            _coreAmount = MAX;
         }
     }
 }

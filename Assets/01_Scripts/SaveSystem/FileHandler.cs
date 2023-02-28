@@ -112,6 +112,27 @@ namespace SaveSystem
             return files;
         }
 
+        public static bool CheckIfCharacterFileExists(string fileName)
+        {
+            string path = GetPath("", SaveType.Character_Data);
+
+            if (Directory.Exists(path))
+            {
+                DirectoryInfo d = new DirectoryInfo(path);
+
+                foreach (var file in d.GetFiles())
+                {
+                    if (file.Name == fileName)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+
         public static void DeleteFileFromFolder(string filename, SaveType saveType)
         {
            string path = GetPath(filename, saveType);

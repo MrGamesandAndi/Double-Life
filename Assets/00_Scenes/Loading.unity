@@ -488,8 +488,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetFrameRate: 60
-  currentLoadedDouble: {fileID: 0}
-  currentState: 0
+  currentLoadedDouble:
+    _name: 
+    _lastName: 
+    _nickname: 
+    _relationshipCode: cc_rel_6
+    _color: {r: 1, g: 0, b: 0, a: 1}
+    _zodiacCode: cc_zodiac_01
+    _sexPreferenceCode: cc_sex_03
+    _gender: 0
+    _skintone: {r: 1, g: 0.87843144, b: 0.69411767, a: 255}
+    _hairKey: Hair1
+    _hairColor: {r: 0, g: 0, b: 0, a: 1}
+    _eyebrowKey: Brow1
+    _eyebrowColor: {r: 0, g: 0, b: 0, a: 1}
+    _eyeKey: Eye1
+    _eyeColor: {r: 0, g: 0, b: 0, a: 255}
+    _mouthKey: Mouth4
+    _traits: 00000000000000000000000000000000
+    _purchasedFurniture: []
+    _needsManager: {fileID: 0}
+    _currentState: 0
 --- !u!1 &815342177
 GameObject:
   m_ObjectHideFlags: 0

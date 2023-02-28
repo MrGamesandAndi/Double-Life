@@ -1,12 +1,11 @@
 using AudioSystem;
-using General;
 using LevelingSystem;
-using SaveSystem;
 using UnityEngine;
 
 public class DragInteraction : MonoBehaviour
 {
     public GameObject _snapPoint;
+    public int expReward;
 
     Vector3 _snapPointPosition;
     Vector3 _screenPoint;
@@ -45,19 +44,7 @@ public class DragInteraction : MonoBehaviour
         {
             int randomAmount = 0;
             randomAmount = Random.Range(50, 101);
-            var name = GameManager.Instance.currentLoadedDouble.Name + GameManager.Instance.currentLoadedDouble.LastName;
-
-            for (int i = 0; i < GenerateAI.Instance.transform.childCount; i++)
-            {
-                var ai = GenerateAI.Instance.transform.GetChild(i);
-
-                if (ai.gameObject.name == name)
-                {
-                    //ai.GetComponent<>
-                    RoomManager.Instance.humanModel.GetComponent<XPTracker>().AddXP(50);
-                }
-            }
-
+            ExperienceManager.Instance.LevelSystem.AddExperience(expReward);
             GameManager.Instance.GainFunds(randomAmount);
             AudioManager.Instance.PlaySfx(_foodSound);
             gameObject.transform.position = _snapPointPosition;

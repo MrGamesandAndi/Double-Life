@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Cereal_Description
   icon: {fileID: 21300000, guid: fdeccc7a9d73556428aa5f483a0d29e3, type: 3}
   cost: 300
+  experienceReward: 25

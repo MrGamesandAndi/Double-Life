@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Sushi_Description
   icon: {fileID: 21300000, guid: 033915863d382e04ab58ce35f660a49e, type: 3}
   cost: 1990
+  experienceReward: 25

@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Cocktail_Description
   icon: {fileID: 21300000, guid: 23fc6cd6e2fbe0949a0801320af27b56, type: 3}
   cost: 200
+  experienceReward: 5

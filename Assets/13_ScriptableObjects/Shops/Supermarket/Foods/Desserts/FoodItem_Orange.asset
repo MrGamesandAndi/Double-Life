@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Orange_Description
   icon: {fileID: 21300000, guid: 9367db6c494d354488a0b0265b533630, type: 3}
   cost: 90
+  experienceReward: 15

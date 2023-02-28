@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Egg_Description
   icon: {fileID: 21300000, guid: 37fc9fc53b0ad804994b9edbda35d407, type: 3}
   cost: 170
+  experienceReward: 25

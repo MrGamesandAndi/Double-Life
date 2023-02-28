@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Strawberry_Description
   icon: {fileID: 21300000, guid: 7e66cfff68805924783381d709b6a1cd, type: 3}
   cost: 30
+  experienceReward: 15

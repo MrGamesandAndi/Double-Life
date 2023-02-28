@@ -48,7 +48,7 @@ public class RoomManager : MonoBehaviour
             _language.GetComponent<TextLineProvider>().textLanguageCode = "en";
         }
 
-        switch (GameManager.Instance.currentState)
+        switch (GameManager.Instance.currentLoadedDouble.CurrentState)
         {
             case DoubleState.Happy:
                 AudioManager.Instance.PlayMusic(_moodMusicList[0]);

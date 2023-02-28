@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Donut_Description
   icon: {fileID: 21300000, guid: 2403c793b44e13e4397322eae771cb57, type: 3}
   cost: 130
+  experienceReward: 15

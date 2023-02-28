@@ -19,3 +19,4 @@ MonoBehaviour:
     key: Food_Avocado_Description
   icon: {fileID: 21300000, guid: dbc1fa8091f8899499a3ea3550a802a2, type: 3}
   cost: 130
+  experienceReward: 25

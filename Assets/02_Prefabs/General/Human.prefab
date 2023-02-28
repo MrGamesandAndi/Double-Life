@@ -2238,7 +2238,6 @@ GameObject:
   - component: {fileID: 5365316768446372655}
   - component: {fileID: 2059627137556316501}
   - component: {fileID: 4701405617498161554}
-  - component: {fileID: 6275330994676434587}
   m_Layer: 6
   m_Name: Human
   m_TagString: Untagged
@@ -2314,8 +2313,9 @@ MonoBehaviour:
     _eyeKey: Eye1
     _eyeColor: {r: 0, g: 0, b: 0, a: 255}
     _mouthKey: Mouth5
-    _traits: []
+    _traits: 
     _purchasedFurniture: []
+    _needsManager: {fileID: 0}
   _headReference: {fileID: 3574647419012630760}
   _hairReference: {fileID: 6013353541832502982}
   _rEyeReference: {fileID: 6895803769218841303}
@@ -2327,38 +2327,6 @@ MonoBehaviour:
   _pantsReference: {fileID: 4597794918784457250}
   _shoesReference: {fileID: 2278076586430474919}
   _handsReference: {fileID: 37181954329550817}
---- !u!114 &6275330994676434587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4701405617498161557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d425b70f009ae45a3ebd53a31a31e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentLevelText: {fileID: 0}
-  _xpBar: {fileID: 0}
-  _xpTranslationType: {fileID: 11400000, guid: adc9591415cac184e828f509fa458079, type: 2}
-  _levelAcronym:
-    key: Level
-  OnLevelChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6275330994676434587}
-        m_TargetAssemblyTypeName: LevelingSystem.XPTracker, Assembly-CSharp
-        m_MethodName: OnLevelChange
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4944375550294701069
 GameObject:
   m_ObjectHideFlags: 0

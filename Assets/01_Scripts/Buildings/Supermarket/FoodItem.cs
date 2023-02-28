@@ -11,5 +11,6 @@ namespace ShopSystem
         public LocalisedString description;
         public Sprite icon;
         public int cost;
+        public int experienceReward = 50;
     }
 }
