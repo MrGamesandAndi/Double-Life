@@ -48,5 +48,18 @@ namespace General
             Debug.Log($"Could not find {name}");
             return new CharacterData();
         }
+
+        public CharacterData GetRandomDouble()
+        {
+            if (DoublesList.Count == 1)
+            {
+                return DoublesList[0];
+            }
+            else
+            {
+                int random = Random.Range(1, DoublesList.Count);
+                return DoublesList[random];
+            }
+        }
     }
 }

@@ -318,3 +318,7 @@ Greenhouse_Description","Una plaga de orugas ha invadido el invernadero. Hora de
 "treasure_TV_description","Uno de esos televisores grandes y gigantes de antaño. Consigue ayuda para mover esto.","CRT stands for cathode ray tube - the part of old TVs that made them so fat."
 "treasure_goldBar","Lingote de Oro","Gold Ingot"
 "treasure_goldBar_description","Este lingote de oro es pesado. Realmente pesado. Así es como sabes que vale mucho.","This gold bar is heavy. REALLY heavy. That's how you know it's worth a ton."
+"Battle_Attack","Atacar","Attack"
+"Battle_Heal","Curar","Heal"
+"Battle_Win","Ganaste","You Win!"
+"Battle_Lose","Perdiste","You Lose!"
