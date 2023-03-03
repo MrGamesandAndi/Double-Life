@@ -37,7 +37,8 @@ namespace General
             else
             {
                 tutorialDialogue.gameObject.SetActive(false);
-                GetComponent<SceneLoader>().sceneToLoad = SceneManagement.Scenes.City;
+                //GetComponent<SceneLoader>().sceneToLoad = SceneManagement.Scenes.City;
+                GetComponent<SceneLoader>().sceneToLoad = SceneManagement.Scenes.RPG_Minigame;
             }
         }
     }

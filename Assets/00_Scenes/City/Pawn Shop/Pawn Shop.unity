@@ -2014,14 +2014,17 @@ MonoBehaviour:
   _itemUIRoot: {fileID: 1903306167}
   _itemUIPrefab: {fileID: 7712846313677520931, guid: 954714e6c50f8d5478cdac1c23a9121b, type: 3}
   _availableItems:
-  - {fileID: 11400000, guid: 57790b4db0fe67c4c9792fe260467877, type: 2}
-  - {fileID: 11400000, guid: 452d36b7ec13807418d6fbd692f5c61a, type: 2}
-  - {fileID: 11400000, guid: 336fa98903d69334480fbe20e9b88393, type: 2}
-  - {fileID: 11400000, guid: 02a112973b69967418436bb90900407a, type: 2}
+  - {fileID: 11400000, guid: 08b121bc6dccc8348a71d54dfef02f91, type: 2}
+  - {fileID: 11400000, guid: c1ef7795c09378947a3e9c2eaf4afffe, type: 2}
+  - {fileID: 11400000, guid: 4941d3af436693c4584d3966ed087043, type: 2}
+  - {fileID: 11400000, guid: 06842b907fa57ed4a999813760a94eef, type: 2}
+  - {fileID: 11400000, guid: 9b0503bac2324ff49a028617cbc51eb4, type: 2}
+  - {fileID: 11400000, guid: 83dbee2e00369af4d825e94fb9d5ae34, type: 2}
   - {fileID: 11400000, guid: f5716c42675dc4b4f8aee2229e0bae8c, type: 2}
   - {fileID: 11400000, guid: cd062af8c9fd65f4ab9f58873c427e77, type: 2}
-  - {fileID: 11400000, guid: 962c8faf1a07102488a24b2bc1ebbfe9, type: 2}
+  - {fileID: 11400000, guid: e64711808b830224baa4e6cdeebdde24, type: 2}
   - {fileID: 11400000, guid: 59d22b2ecb540534bb9e0b06d7ebc68a, type: 2}
+  - {fileID: 11400000, guid: 27788085aeef08a47ba8f0c385971107, type: 2}
   _sellButton: {fileID: 701594959}
 --- !u!4 &1609799541553387333
 Transform:

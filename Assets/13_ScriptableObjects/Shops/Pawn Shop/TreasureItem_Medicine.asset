@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93abc84a05e1de4ea04d2d031a6b548, type: 3}
   m_Name: TreasureItem_Medicine
   m_EditorClassIdentifier: 
+  id: 6
   treasureName:
     key: treasure_medicine
   description:
     key: treasure_medicine_description
   icon: {fileID: 21300000, guid: de61b0be9b0c82a4db49de612a69d73c, type: 3}
   value: 10000
+  rarity: 0

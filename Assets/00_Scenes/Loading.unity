@@ -881,6 +881,7 @@ MonoBehaviour:
     resolutionX: 1920
     resolutionY: 1080
     isOnTutorial: 1
+    obtainedTreasures: []
   _doublesData: []
 --- !u!1 &1369581755
 GameObject:

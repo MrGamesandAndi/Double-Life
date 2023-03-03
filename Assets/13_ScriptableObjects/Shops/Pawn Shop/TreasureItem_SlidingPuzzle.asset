@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93abc84a05e1de4ea04d2d031a6b548, type: 3}
   m_Name: TreasureItem_SlidingPuzzle
   m_EditorClassIdentifier: 
+  id: 9
   treasureName:
     key: treasure_puzzle
   description:
     key: treasure_puzzle_description
   icon: {fileID: 21300000, guid: b0002bd999e8e0b49b1a62a7dd2a4353, type: 3}
   value: 2500
+  rarity: 0

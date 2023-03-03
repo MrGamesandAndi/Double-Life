@@ -2316,6 +2316,7 @@ MonoBehaviour:
     _traits: 
     _purchasedFurniture: []
     _needsManager: {fileID: 0}
+    _currentState: 0
   _headReference: {fileID: 3574647419012630760}
   _hairReference: {fileID: 6013353541832502982}
   _rEyeReference: {fileID: 6895803769218841303}
@@ -3234,7 +3235,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb7e7d7a0da337242b97674213eb5ff3, type: 2}
+  - {fileID: 2100000, guid: b930d005eee70e24abd9097724499db5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3316,7 +3317,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb7e7d7a0da337242b97674213eb5ff3, type: 2}
+  - {fileID: 2100000, guid: b930d005eee70e24abd9097724499db5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -13,5 +13,13 @@ namespace SaveSystem
         public int resolutionX = 1920;
         public int resolutionY = 1080;
         public bool isOnTutorial = false;
+        public Treasures[] obtainedTreasures;
+    }
+
+    [Serializable]
+    public struct Treasures
+    {
+        public int id;
+        public int amount;
     }
 }

@@ -24,7 +24,7 @@ namespace Needs
             if (_ringAmount >= useAmount)
             {
                 _ringAmount -= useAmount * Time.deltaTime;
-                Debug.Log("coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
+                //Debug.Log("coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
                 return true;
             }
             else
@@ -36,12 +36,12 @@ namespace Needs
                     OnCoreUse?.Invoke(this, EventArgs.Empty);
                     _ringAmount = 0f;
                     _coreAmount -= useAmount * Time.deltaTime;
-                    Debug.Log("coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
+                    //Debug.Log("coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
                     return true;
                 }
                 else
                 {
-                    Debug.Log("CANNOT USE! " + "coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
+                    //Debug.Log("CANNOT USE! " + "coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
                     ResetNeed();
                     return false;
                 }

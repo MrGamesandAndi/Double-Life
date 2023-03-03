@@ -47,5 +47,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00_Scenes/Tutorial.unity
     guid: 5e077b847f3c71e458534ceb749d6a19
+  - enabled: 1
+    path: Assets/00_Scenes/Treasure Interactions/RPG.unity
+    guid: 862e31c3c81d571469bfc37e3caba97a
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 3c734de1780c5b7469de4babaa2f7929, type: 2}

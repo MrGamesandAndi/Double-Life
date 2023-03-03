@@ -39,6 +39,8 @@ namespace Buildings
                     gameObject.SetActive(false);
                 }
             }
+
+            BuildingsDescription.Instance.AddBuilding(gameObject);
         }
 
 
@@ -49,8 +51,6 @@ namespace Buildings
 
         private void OnMouseDown()
         {
-            GetComponent<BoxCollider>().enabled = false;
-
             if (SaveManager.Instance.PlayerData.language == Language.Spanish)
             {
                 BuildingsDescription.Instance.ShowDescription(_content.Value, _spanishTitleCard, LoadScene);

@@ -15,6 +15,7 @@ namespace SceneManagement
         Sliding_Puzzle = 10,
         Apartment_Interior = 11,
         TV_Tower = 12,
-        Tutorial = 13
+        Tutorial = 13,
+        RPG_Minigame = 14
     }
 }
