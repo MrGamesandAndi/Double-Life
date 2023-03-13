@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Minigames
+namespace ParkMinigame
 {
     public class AudioSourceController : MonoBehaviour
     {

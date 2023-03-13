@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6166bdab320504b93d186ed450469c, type: 3}
   m_Name: Trait_Good
   m_EditorClassIdentifier: 
-  id: 6
+  id: 7
   displayName:
     key: Trait_Good
   description:
     key: Trait_Good_Desc
   opossiteTrait: {fileID: 11400000, guid: f8e0ed7c59e5b34448db9d851c779d41, type: 2}
   impacts:
-  - _linkedStat: {fileID: 11400000, guid: 44751eac2ed6f684da89dc463d8c0347, type: 2}
-    _scoringPositiveScale: 1.25
+  - _scoringPositiveScale: 1.25
     _scoringNegativeScale: 0.9
     _impactPositiveScale: 1
     _impactNegativeScale: 1

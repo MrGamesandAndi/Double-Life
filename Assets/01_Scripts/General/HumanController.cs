@@ -21,8 +21,16 @@ public class HumanController : MonoBehaviour
     [SerializeField] GameObject _shoesReference;
     [SerializeField] GameObject _handsReference;
 
-    private void Start()
+    private void Awake()
     {
+        if (Instance != null)
+        {
+            Debug.LogError($"Trying to create second HumanController on {gameObject.name}");
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
         characterData = GameManager.Instance.currentLoadedDouble;
         LoadParts();
     }
@@ -289,18 +297,6 @@ public class HumanController : MonoBehaviour
         bodyPart.GetComponent<MeshFilter>().mesh = newMesh;
     }
 
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Debug.LogError($"Trying to create second HumanController on {gameObject.name}");
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-    }
-
     public void LoadCharacterData(string fileName = "Base")
     {
         FileHandler.ReadFromJSON<CharacterData>(fileName, SaveType.Character_Data);
@@ -311,14 +307,12 @@ public class HumanController : MonoBehaviour
         if (!FileHandler.CheckIfCharacterFileExists(Name + LastName))
         {
             GenerateAI.Instance.AddIndividualAI(characterData);
+            PopulationManager.Instance.AddDouble(characterData);
         }
 
-        FileHandler.SaveToJSON(characterData, Name + LastName, SaveType.Character_Data);
-        PopulationManager.Instance.DoublesList = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
         AchievementManager.instance.AddAchievementProgress("Unlock_TownHall", 1);
         AchievementManager.instance.AddAchievementProgress("Unlock_Park", 1);
         AchievementManager.instance.AddAchievementProgress("Unlock_TV", 1);
-        SaveManager.Instance.LoadCharacterData();
     }
 
     public void PlayAnimation(string animationName)

@@ -1,5 +1,6 @@
 using General;
 using Localisation;
+using SaveSystem;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -39,17 +40,21 @@ namespace CharacterCreator
             switch (PlayerPrefs.GetInt("CC_State"))
             {
                 case 0:
+                    HumanController.Instance.characterData.Id = SaveManager.Instance.PlayerData.lastUsedCharacterID;
+                    SaveManager.Instance.PlayerData.lastUsedCharacterID++;
                     break;
                 case 1:
                     _nameInputField.interactable = false;
-                    _lastNameInputField.interactable = false;
                     _relationshipInputField.interactable = false;
+                    _lastNameInputField.interactable = false;
                     _zodiacInputField.interactable = false;
                     _genderImage.interactable = false;
                     _traitsPanel.SetActive(false);
                     PlayerPrefs.SetInt("CC_State", 0);
                     break;
                 case 2:
+                    HumanController.Instance.characterData.Id = SaveManager.Instance.PlayerData.lastUsedCharacterID;
+                    SaveManager.Instance.PlayerData.lastUsedCharacterID++;
                     _relationshipInputField.interactable = false;
                     PlayerPrefs.SetInt("CC_State", 0);
                     break;
@@ -92,7 +97,15 @@ namespace CharacterCreator
         {
             if (_relationshipInputField != null)
             {
-                _relationshipInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText(HumanController.Instance.RelationshipCode);
+                if(PlayerPrefs.GetInt("CC_State") == 2)
+                {
+                    _relationshipInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText("cc_rel_7");
+                    HumanController.Instance.RelationshipCode = "cc_rel_7";
+                }
+                else
+                {
+                    _relationshipInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText(HumanController.Instance.RelationshipCode);
+                }
             }
         }
 

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Minigames
+namespace ParkMinigame
 {
     public class PointController : MonoBehaviour
     {

@@ -1,17 +1,12 @@
-using Localisation;
 using SaveSystem;
 using ShopSystem;
 using UnityEngine;
-using Yarn.Unity;
 
 public class GameManager : MonoBehaviour, IPurchaser
 {
     public static GameManager Instance { get; private set; } = null;   
 
-    [Header("Misc.")]
     [SerializeField] int _targetFrameRate = 60;
-
-    [Header("Apartments")]
     public CharacterData currentLoadedDouble;
 
     private void Awake()
@@ -28,22 +23,6 @@ public class GameManager : MonoBehaviour, IPurchaser
 
     private void Start()
     {
-        DialogueRunner dialogueRunner = FindObjectOfType<DialogueRunner>();
-
-        if (SaveManager.Instance.PlayerData.language == Language.Spanish)
-        {
-            dialogueRunner.GetComponent<TextLineProvider>().textLanguageCode = "es-BO";
-        }
-        else
-        {
-            dialogueRunner.GetComponent<TextLineProvider>().textLanguageCode = "en";
-        }
-
-        if (!SaveManager.Instance.PlayerData.isOnTutorial)
-        {
-            dialogueRunner.gameObject.SetActive(false);
-        }
-
         PreparePresentation();      
     }
 

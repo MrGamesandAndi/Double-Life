@@ -43,7 +43,6 @@ namespace SaveSystem
             LoadFurnitureData();
             LoadPlayerData();
             LoadCharacterData();
-            SaveAllData();
         }
 
         public void LoadFoodData()
@@ -68,12 +67,13 @@ namespace SaveSystem
 
             if (PlayerData == null)
             {
-                DeletePlayerData();
+                PlayerData = new PlayerData();
             }
         }
 
         public void SavePlayerData()
         {
+            PlayerData.isOnTutorial = false;
             FileHandler.SaveToJSON(PlayerData, "Player_Data");
             AchievementManager.instance.SaveAchievementState();
         }
@@ -104,7 +104,16 @@ namespace SaveSystem
             SaveFoodData();
             SavePlayerData();
             SaveFurnitureData();
+            SaveAllCharacterData();
             AchievementManager.instance.SaveAchievementState();
+        }
+
+        public void SaveAllCharacterData()
+        {
+            foreach (var character in PopulationManager.Instance.DoublesList)
+            {
+                FileHandler.SaveToJSON(character, character.Name + character.LastName, SaveType.Character_Data);
+            }
         }
 
         public void DeleteAllCharacterData()
@@ -120,8 +129,7 @@ namespace SaveSystem
 
         public void DeletePlayerData()
         {
-            PlayerData = new PlayerData();
-            SavePlayerData();
+            FileHandler.DeleteFileFromFolder("Player_Data", SaveType.Player_Data);
         }
 
         public void DeleteFoodData()

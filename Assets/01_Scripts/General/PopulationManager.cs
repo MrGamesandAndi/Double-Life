@@ -33,15 +33,18 @@ namespace General
             DoublesList = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
         }
 
-        public CharacterData ReturnDouble(string name)
+        public void AddDouble(CharacterData characterData)
         {
-            foreach (var item in DoublesList)
-            {
-                var fullName = item.Name + item.LastName;
+            DoublesList.Add(characterData);
+        }
 
-                if (fullName == name)
+        public CharacterData ReturnDouble(int id)
+        {
+            foreach (CharacterData result in DoublesList)
+            {
+                if (result.Id == id)
                 {
-                    return item;
+                    return result;
                 }
             }
 
@@ -51,15 +54,8 @@ namespace General
 
         public CharacterData GetRandomDouble()
         {
-            if (DoublesList.Count == 1)
-            {
-                return DoublesList[0];
-            }
-            else
-            {
-                int random = Random.Range(1, DoublesList.Count);
+                int random = Random.Range(0, DoublesList.Count - 1);
                 return DoublesList[random];
-            }
         }
     }
 }

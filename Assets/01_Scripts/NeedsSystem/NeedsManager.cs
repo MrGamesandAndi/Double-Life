@@ -8,6 +8,7 @@ namespace Needs
     {
         [SerializeField] float _needUseAmount = 50f;
 
+        CharacterData _characterData;
         NeedsSystem _needsSystem;
         bool _isHungry = true;
         bool _wantsFriend;
@@ -20,6 +21,11 @@ namespace Needs
         private void Awake()
         {
             _needsSystem = new NeedsSystem();
+        }
+
+        public void LinkCharacterData(CharacterData characterData)
+        {
+            _characterData = characterData;
         }
 
         private void Update()
@@ -146,44 +152,37 @@ namespace Needs
 
         private void Date_OnCoreUse(object sender, System.EventArgs e)
         {
-            CharacterData character = PopulationManager.Instance.ReturnDouble(gameObject.name.Substring(0, gameObject.name.Length - 7));
-            character.CurrentState = DoubleState.Date;
+            _characterData.CurrentState = DoubleState.Date;
         }
 
         private void Fight_OnCoreUse(object sender, System.EventArgs e)
         {
-            CharacterData character = PopulationManager.Instance.ReturnDouble(gameObject.name.Substring(0, gameObject.name.Length - 7));
-            character.CurrentState = DoubleState.Angry;
+            _characterData.CurrentState = DoubleState.Angry;
         }
 
         private void Divorce_OnCoreUse(object sender, System.EventArgs e)
         {
-            CharacterData character = PopulationManager.Instance.ReturnDouble(gameObject.name.Substring(0, gameObject.name.Length - 7));
-            character.CurrentState = DoubleState.Sad;
+            _characterData.CurrentState = DoubleState.Sad;
         }
 
         private void Sick_OnCoreUse(object sender, System.EventArgs e)
         {
-            CharacterData character = PopulationManager.Instance.ReturnDouble(gameObject.name.Substring(0, gameObject.name.Length - 7));
-            character.CurrentState = DoubleState.Sick;
+            _characterData.CurrentState = DoubleState.Sick;
         }
 
         private void WantsInterior_OnCoreUse(object sender, System.EventArgs e)
         {
-            CharacterData character = PopulationManager.Instance.ReturnDouble(gameObject.name.Substring(0, gameObject.name.Length - 7));
-            character.CurrentState = DoubleState.Buy;
+            _characterData.CurrentState = DoubleState.Buy;
         }
 
         private void WantsFriend_OnCoreUse(object sender, System.EventArgs e)
         {
-            CharacterData character = PopulationManager.Instance.ReturnDouble(gameObject.name.Substring(0, gameObject.name.Length - 7));
-            character.CurrentState = DoubleState.MakeFriend;
+            _characterData.CurrentState = DoubleState.MakeFriend;
         }
 
         private void Hunger_OnCoreUse(object sender, System.EventArgs e)
         {
-            CharacterData character = PopulationManager.Instance.ReturnDouble(gameObject.name.Substring(0, gameObject.name.Length - 7));
-            character.CurrentState = DoubleState.Hungry;
+            _characterData.CurrentState = DoubleState.Hungry;
         }
     }
 }

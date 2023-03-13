@@ -15,7 +15,16 @@ namespace SaveSystem
             ModalWindow.Instance.ShowQuestion(_savePrompt.Value, () => 
             { 
                 SaveManager.Instance.SaveAllData();
-                ModalWindow.Instance.Hide();
+                ModalWindow.Instance.ShowQuestion(_saveContinuePrompt.Value, () =>
+                {
+                    ModalWindow.Instance.Hide();
+                }, () =>
+                {
+                    Application.Quit();
+#if UNITY_EDITOR
+                    EditorApplication.ExitPlaymode();
+#endif
+                });
             }, () => 
             {
                 ModalWindow.Instance.ShowQuestion(_saveContinuePrompt.Value, () =>

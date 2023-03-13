@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Minigames
+namespace ParkMinigame
 {
     public class MinigameManager : MonoBehaviour
     {

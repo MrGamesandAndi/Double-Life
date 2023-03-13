@@ -10,28 +10,57 @@ namespace SaveSystem
     [Serializable]
     public class CharacterData
     {
-        [SerializeField] string _name = "";
-        [SerializeField] string _lastName = "";
-        [SerializeField] string _nickname = "";
-        [SerializeField] string _relationshipCode = "cc_rel_6";
-        [SerializeField] Color _color = Color.red;
-        [SerializeField] string _zodiacCode = "cc_zodiac_01";
-        [SerializeField] string _sexPreferenceCode = "cc_sex_03";
-        [SerializeField] int _gender = 0;
+        [SerializeField] int _id;
+        [SerializeField] string _name;
+        [SerializeField] string _lastName;
+        [SerializeField] string _nickname;
+        [SerializeField] string _relationshipCode;
+        [SerializeField] Color _color;
+        [SerializeField] string _zodiacCode;
+        [SerializeField] string _sexPreferenceCode;
+        [SerializeField] int _gender;
+        [SerializeField] int _level;
+        [SerializeField] int _experience;
 
-        [SerializeField] Color _skintone = new Color(245, 210, 157, 255);
-        [SerializeField] string _hairKey = "Hair1";
-        [SerializeField] Color _hairColor = Color.black;
-        [SerializeField] string _eyebrowKey = "Brow1";
-        [SerializeField] Color _eyebrowColor = Color.black;
-        [SerializeField] string _eyeKey = "Eye1";
-        [SerializeField] Color _eyeColor = new Color(101, 50, 24, 255);
-        [SerializeField] string _mouthKey = "Mouth4";
+        [SerializeField] Color _skintone;
+        [SerializeField] string _hairKey;
+        [SerializeField] Color _hairColor;
+        [SerializeField] string _eyebrowKey;
+        [SerializeField] Color _eyebrowColor;
+        [SerializeField] string _eyeKey;
+        [SerializeField] Color _eyeColor;
+        [SerializeField] string _mouthKey;
 
-        [SerializeField] List<int> _traits = new List<int>(4);
-        [SerializeField] List<GridObject.SaveObject> _purchasedFurniture = new List<GridObject.SaveObject>();
+        [SerializeField] List<int> _traits;
+        [SerializeField] List<GridObject.SaveObject> _purchasedFurniture;
         [SerializeField] NeedsManager _needsManager;
         [SerializeField] DoubleState _currentState;
+
+        public CharacterData()
+        {
+            _id = 100;
+            _name = "";
+            _lastName = "";
+            _nickname = "";
+            _relationshipCode = "cc_rel_6";
+            _color = Color.red;
+            _zodiacCode = "cc_zodiac_01";
+            _sexPreferenceCode = "cc_sex_03";
+            _gender = 0;
+            _level = 0;
+            _experience = 0;
+
+            _skintone = new Color(245f, 210f, 157f, 255f);
+             _hairKey = "Hair1";
+            _hairColor = Color.black;
+             _eyebrowKey = "Brow1";
+            _eyebrowColor = Color.black;
+             _eyeKey = "Eye1";
+             _eyeColor = new Color(101f, 50f, 24f, 255f);
+             _mouthKey = "Mouth4";
+
+            _traits = new List<int>(4);
+        }
 
         public string Name { get => _name; set => _name = value; }
         public string LastName { get => _lastName; set => _lastName = value; }
@@ -53,5 +82,8 @@ namespace SaveSystem
         public List<GridObject.SaveObject> PurchasedFurniture { get => _purchasedFurniture; set => _purchasedFurniture = value; }
         public NeedsManager NeedsManager { get => _needsManager; set => _needsManager = value; }
         public DoubleState CurrentState { get => _currentState; set => _currentState = value; }
+        public int Level { get => _level; set => _level = value; }
+        public int Experience { get => _experience; set => _experience = value; }
+        public int Id { get => _id; set => _id = value; }
     }
 }

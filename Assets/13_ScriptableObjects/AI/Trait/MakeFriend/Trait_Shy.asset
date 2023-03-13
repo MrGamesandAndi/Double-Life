@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6166bdab320504b93d186ed450469c, type: 3}
   m_Name: Trait_Shy
   m_EditorClassIdentifier: 
-  id: 11
+  id: 12
   displayName:
     key: Trait_Shy
   description:
     key: Trait_Shy_Desc
   opossiteTrait: {fileID: 11400000, guid: acf15b352a464e849be78b4a6144cc99, type: 2}
   impacts:
-  - _linkedStat: {fileID: 11400000, guid: 8b6e7b9057869b94d9e827e22228bb42, type: 2}
-    _scoringPositiveScale: 1.25
+  - _scoringPositiveScale: 1.25
     _scoringNegativeScale: 0.9
     _impactPositiveScale: 1
     _impactNegativeScale: 1

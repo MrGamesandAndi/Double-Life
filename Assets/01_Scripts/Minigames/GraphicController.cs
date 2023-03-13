@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Minigames
+namespace ParkMinigame
 {
     public class GraphicController : MonoBehaviour
     {

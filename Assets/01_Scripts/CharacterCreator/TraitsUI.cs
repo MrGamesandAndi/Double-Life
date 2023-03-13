@@ -12,13 +12,13 @@ namespace CharacterCreator
     {
         [SerializeField] Transform _itemUIRoot;
         [SerializeField] GameObject _itemUIPrefab;
-        [SerializeField] List<Trait> _availableTraits = new List<Trait>();
         [SerializeField] List<GameObject> _traitSlots;
         [SerializeField] Button _giveButton;
         [SerializeField] Button _removeButton;
 
         Dictionary<Trait, TraitUIItem> _traitItemToUIMap;
         Trait _selectedTrait;
+        List<Trait> _availableTraits = new List<Trait>();
 
         private void Start()
         {
@@ -66,27 +66,43 @@ namespace CharacterCreator
 
         public void OnClickedGive()
         {
-            for (int i = 0; i < _traitSlots.Count; i++)
+            if (!HasOppositeTrait())
             {
-                if (_traitSlots[i].GetComponentInChildren<TextMeshProUGUI>().text == string.Empty)
+                for (int i = 0; i < _traitSlots.Count; i++)
                 {
-                    _traitSlots[i].GetComponentInChildren<TextMeshProUGUI>().text = _selectedTrait.displayName.Value;
-                    HumanController.Instance.characterData.Traits[i] = _selectedTrait.id;
-                    _selectedTrait = null;
-                    RefreshUICommon();
-                    break;
-                }
-                else
-                {
-                    if (_traitSlots[i].GetComponentInChildren<TextMeshProUGUI>().text == _selectedTrait.displayName.Value)
+                    if (_traitSlots[i].GetComponentInChildren<TextMeshProUGUI>().text == string.Empty)
                     {
+                        _traitSlots[i].GetComponentInChildren<TextMeshProUGUI>().text = _selectedTrait.displayName.Value;
+                        HumanController.Instance.characterData.Traits[i] = _selectedTrait.id;
                         _selectedTrait = null;
+                        RefreshUICommon();
                         break;
+                    }
+                    else
+                    {
+                        if (_traitSlots[i].GetComponentInChildren<TextMeshProUGUI>().text == _selectedTrait.displayName.Value)
+                        {
+                            _selectedTrait = null;
+                            break;
+                        }
                     }
                 }
             }
 
             RefreshUICommon();
+        }
+
+        private bool HasOppositeTrait()
+        {
+            foreach (int trait in HumanController.Instance.characterData.Traits)
+            {
+                if (_selectedTrait.opossiteTrait.id == trait)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public void OnClickedRemove()
@@ -96,13 +112,6 @@ namespace CharacterCreator
                 if (_traitSlots[i].GetComponentInChildren<TextMeshProUGUI>().text != string.Empty)
                 {
                     _traitSlots[i].GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
-
-                    foreach (var kvp in _traitItemToUIMap)
-                    {
-                        UnlockOppositeTrait(kvp.Key);
-                    }
-
-                    
                     HumanController.Instance.characterData.Traits[i] = 0;
                     break;
                 }
@@ -112,7 +121,6 @@ namespace CharacterCreator
         private void OnItemSelected(Trait newlySelectedTrait)
         {
             _selectedTrait = newlySelectedTrait;
-            LockOppositeTrait(_selectedTrait);
 
             foreach (var kvp in _traitItemToUIMap)
             {
@@ -123,38 +131,6 @@ namespace CharacterCreator
             }
 
             RefreshUICommon();
-        }
-
-        private void LockOppositeTrait(Trait trait)
-        {
-            foreach (var kvp in _traitItemToUIMap)
-            {
-                var item = kvp.Key;
-                var itemUI = kvp.Value;
-
-                if(item == trait.opossiteTrait)
-                {
-                    itemUI.SetCanEquip(false);
-                }
-
-                RefreshUICommon();
-            }
-        }
-
-        private void UnlockOppositeTrait(Trait trait)
-        {
-            foreach (var kvp in _traitItemToUIMap)
-            {
-                var item = kvp.Key;
-                var itemUI = kvp.Value;
-
-                if (item == trait.opossiteTrait)
-                {
-                    itemUI.SetCanEquip(true);
-                }
-
-                RefreshUICommon();
-            }
         }
     }
 }

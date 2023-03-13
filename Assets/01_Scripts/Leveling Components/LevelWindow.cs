@@ -11,6 +11,7 @@ namespace LevelingSystem
         private void SetLevelNumber(int levelNumber)
         {
             _levelText.text = $"{levelNumber + 1}";
+            HumanController.Instance.characterData.Level = levelNumber + 1;
         }
 
         public void SetLevelSystem()

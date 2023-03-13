@@ -53,7 +53,6 @@ namespace General
         [YarnCommand("go_to_city")]
         private void OpenCity()
         {
-            SaveManager.Instance.PlayerData.isOnTutorial = false;
             ScenesManager.Instance.LoadScene(Scenes.City, Scenes.Tutorial);
         }
     }

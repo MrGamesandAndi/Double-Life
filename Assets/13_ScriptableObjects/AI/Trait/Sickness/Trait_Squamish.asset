@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6166bdab320504b93d186ed450469c, type: 3}
   m_Name: Trait_Squamish
   m_EditorClassIdentifier: 
-  id: 15
+  id: 16
   displayName:
     key: Trait_Squeamish
   description:
     key: Trait_Squeamish_Desc
   opossiteTrait: {fileID: 11400000, guid: 9285dcaf1cadf3d41984e5c4cdd9c0bc, type: 2}
   impacts:
-  - _linkedStat: {fileID: 11400000, guid: 9dfba059b13f11940932737df007d67f, type: 2}
-    _scoringPositiveScale: 0.9
+  - _scoringPositiveScale: 0.9
     _scoringNegativeScale: 1.25
     _impactPositiveScale: 1
     _impactNegativeScale: 1

@@ -402,13 +402,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 960721660248445331}
+  - component: {fileID: 4060564054036364747}
   m_Layer: 0
   m_Name: Player Right 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &960721660248445331
 Transform:
   m_ObjectHideFlags: 0
@@ -426,6 +427,22 @@ Transform:
   m_Father: {fileID: 960721660310579403}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4060564054036364747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960721660248445330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb6ea70ac1a7bf4a81e5836e4ddc3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skintone: {fileID: 960721661499333135}
+  _lEye: {fileID: 960721661892822782}
+  _REye: {fileID: 960721660805475596}
+  _mouth: {fileID: 960721662059906397}
 --- !u!1 &960721660310579402
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +615,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f26704f0cf783ea429e31b25605b9e54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 12b808baaf7f2a846aa1dd6532b32a8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -713,7 +730,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b930d005eee70e24abd9097724499db5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1129,7 +1146,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b930d005eee70e24abd9097724499db5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1170,13 +1187,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 960721661115358563}
+  - component: {fileID: 1009035360648762840}
   m_Layer: 0
   m_Name: Player Right 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &960721661115358563
 Transform:
   m_ObjectHideFlags: 0
@@ -1194,6 +1212,22 @@ Transform:
   m_Father: {fileID: 960721660310579403}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1009035360648762840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960721661115358562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb6ea70ac1a7bf4a81e5836e4ddc3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skintone: {fileID: 960721660700260931}
+  _lEye: {fileID: 960721662142996596}
+  _REye: {fileID: 960721661020251112}
+  _mouth: {fileID: 960721661854712023}
 --- !u!1 &960721661271867988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,7 +1466,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f26704f0cf783ea429e31b25605b9e54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 12b808baaf7f2a846aa1dd6532b32a8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1657,7 +1691,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b930d005eee70e24abd9097724499db5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1988,7 +2022,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b930d005eee70e24abd9097724499db5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2029,13 +2063,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 960721661905784826}
+  - component: {fileID: 3148916751135223992}
   m_Layer: 0
   m_Name: Player Left 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &960721661905784826
 Transform:
   m_ObjectHideFlags: 0
@@ -2053,6 +2088,22 @@ Transform:
   m_Father: {fileID: 960721660310579403}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3148916751135223992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960721661905784825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb6ea70ac1a7bf4a81e5836e4ddc3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skintone: {fileID: 960721662010187132}
+  _lEye: {fileID: 960721661593239878}
+  _REye: {fileID: 960721661914171020}
+  _mouth: {fileID: 960721661868262873}
 --- !u!1 &960721661914170994
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,7 +2154,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b930d005eee70e24abd9097724499db5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2322,7 +2373,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f26704f0cf783ea429e31b25605b9e54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 12b808baaf7f2a846aa1dd6532b32a8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2629,7 +2680,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b930d005eee70e24abd9097724499db5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3203,7 +3254,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b930d005eee70e24abd9097724499db5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3244,13 +3295,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8390630612033160089}
+  - component: {fileID: 8189391066879297329}
   m_Layer: 0
   m_Name: Player Left 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8390630612033160089
 Transform:
   m_ObjectHideFlags: 0
@@ -3268,6 +3320,22 @@ Transform:
   m_Father: {fileID: 960721660310579403}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8189391066879297329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390630612033160090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb6ea70ac1a7bf4a81e5836e4ddc3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skintone: {fileID: 8390630612138479903}
+  _lEye: {fileID: 8390630612597361957}
+  _REye: {fileID: 8390630611974441711}
+  _mouth: {fileID: 8390630611794381242}
 --- !u!1 &8390630612079441543
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,7 +3492,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f26704f0cf783ea429e31b25605b9e54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 12b808baaf7f2a846aa1dd6532b32a8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3485,7 +3553,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b930d005eee70e24abd9097724499db5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

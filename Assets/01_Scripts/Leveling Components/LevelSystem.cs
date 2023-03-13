@@ -12,8 +12,8 @@ namespace LevelingSystem
 
         public LevelSystem()
         {
-            _level = 0;
-            _experience = 0;
+            _level = HumanController.Instance.characterData.Level;
+            _experience = HumanController.Instance.characterData.Experience;
             _experienceToNextLevel = 100;
         }
 

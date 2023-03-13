@@ -15,7 +15,7 @@ namespace LevelingSystem
         [SerializeField] ParticleSystem _engLevelUpParticle;
 
         LevelSystem _levelSystem;
-        private void Awake()
+        private void Start()
         {
             if (Instance == null)
             {

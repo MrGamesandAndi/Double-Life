@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6166bdab320504b93d186ed450469c, type: 3}
   m_Name: Trait_Flirty
   m_EditorClassIdentifier: 
-  id: 4
+  id: 5
   displayName:
     key: Trait_Flirty
   description:
     key: Trait_Flirty_Desc
-  opossiteTrait: {fileID: 0}
+  opossiteTrait: {fileID: 11400000, guid: 90e412b4684b0234fa592e89068954c4, type: 2}
   impacts:
-  - _linkedStat: {fileID: 11400000, guid: bf91f9bdadc56e54e84452e0f532f6d5, type: 2}
-    _scoringPositiveScale: 0.9
+  - _scoringPositiveScale: 0.9
     _scoringNegativeScale: 1.25
     _impactPositiveScale: 1
     _impactNegativeScale: 1

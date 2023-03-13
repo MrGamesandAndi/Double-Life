@@ -19,6 +19,7 @@ namespace TownHall
         [SerializeField] Slider _musicSlider;
 
         Resolution[] _resolutions;
+        int currentIndex;
 
         private void Start()
         {
@@ -54,7 +55,7 @@ namespace TownHall
         {
             _languagesDropdown.ClearOptions();
             List<string> languages = new List<string>();
-            int currentIndex = 0;
+            currentIndex = 0;
 
             foreach (Language language in (Language[])Enum.GetValues(typeof(Language)))
             {
@@ -100,7 +101,11 @@ namespace TownHall
 #if UNITY_EDITOR
                 EditorApplication.ExitPlaymode();
 #endif
-            }, () => { });
+            }, () => 
+            {
+                _languagesDropdown.value = currentIndex;
+                ModalWindow.Instance.Hide();
+            });
         }
     }
 }

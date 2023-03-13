@@ -38,10 +38,5 @@ namespace CharacterCreator
         {
             OnSelectedFn.Invoke(_traitItem);
         }
-
-        public void SetCanEquip(bool canEquip)
-        {
-            _backgroundPanel.color = canEquip ? _defaultColor : _unavailableColor;
-        }
     }
 }

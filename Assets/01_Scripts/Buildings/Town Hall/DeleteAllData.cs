@@ -9,7 +9,7 @@ public class DeleteAllData : MonoBehaviour
     [SerializeField] LocalisedString _question;
     public void DeleteData()
     {
-        ModalWindow.Instance.ShowQuestion( _question.Value, () => { StartDeleteProcess(); }, () => { });
+        ModalWindow.Instance.ShowQuestion( _question.Value, () => { StartDeleteProcess(); }, () => { ModalWindow.Instance.Hide(); });
     }
 
     private void StartDeleteProcess()

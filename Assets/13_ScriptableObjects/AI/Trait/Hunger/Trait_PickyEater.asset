@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6166bdab320504b93d186ed450469c, type: 3}
   m_Name: Trait_PickyEater
   m_EditorClassIdentifier: 
-  id: 9
+  id: 10
   displayName:
     key: Trait_PickyEater
   description:
     key: Trait_PickyEater_Desc
   opossiteTrait: {fileID: 11400000, guid: 6a2258c59b0778547b36406612c3667a, type: 2}
   impacts:
-  - _linkedStat: {fileID: 11400000, guid: 85ecd3ecbcb750f4dbe47771beecb52b, type: 2}
-    _scoringPositiveScale: 1.25
+  - _scoringPositiveScale: 1.25
     _scoringNegativeScale: 0.9
     _impactPositiveScale: 1
     _impactNegativeScale: 1

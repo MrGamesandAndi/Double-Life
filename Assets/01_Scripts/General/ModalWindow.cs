@@ -28,13 +28,13 @@ namespace General
         public void ShowQuestion(string question, Action yesAction, Action noAction)
         {
             gameObject.SetActive(true);
+            _textMeshPro.text = "";
             _textMeshPro.text = question;
             _confirmationButton.onClick.AddListener(()=> {
                 yesAction();
             });
             _cancelButton.onClick.AddListener(() => {
                 noAction();
-                Hide();
             });
         }
 

@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6166bdab320504b93d186ed450469c, type: 3}
   m_Name: Trait_Gloomy
   m_EditorClassIdentifier: 
-  id: 12
+  id: 13
   displayName:
     key: Trait_Gloomy
   description:
     key: Trait_Gloomy_Desc
   opossiteTrait: {fileID: 11400000, guid: 4b7a7980734c450469e8b4ff89918008, type: 2}
   impacts:
-  - _linkedStat: {fileID: 11400000, guid: f5421f70a6c948b4b9d606af40623e11, type: 2}
-    _scoringPositiveScale: 0.9
+  - _scoringPositiveScale: 0.9
     _scoringNegativeScale: 1.25
     _impactPositiveScale: 1
     _impactNegativeScale: 1
