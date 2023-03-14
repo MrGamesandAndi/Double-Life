@@ -83,7 +83,7 @@ namespace General
             return null;
         }
 
-        public List<Trait> ReturnTraitFromCharacterData(List<int> characterTraits)
+        public List<Trait> ReturnTraitsFromCharacterData(List<int> characterTraits)
         {
             List<Trait> returnedTraits = new List<Trait>();
 
@@ -98,21 +98,6 @@ namespace General
                 }
             }
             
-            return returnedTraits;
-        }
-
-        public List<Trait> ReturnTraitsByType(NeedType type)
-        {
-            List<Trait> returnedTraits = new List<Trait>();
-
-            for (int i = 0; i < traits.Count; i++)
-            {
-                if (traits[i].type == type)
-                {
-                    returnedTraits.Add(traits[i]);
-                }
-            }
-
             return returnedTraits;
         }
     }

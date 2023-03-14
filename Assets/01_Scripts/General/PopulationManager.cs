@@ -54,7 +54,6 @@ namespace General
                  ReturnTraits(characterData.Traits),
                  characterData.Gender,
                  characterData.PurchasedFurniture,
-                 characterData.NeedsManager,
                  characterData.CurrentState,
                  characterData.Level,
                  characterData.Experience,

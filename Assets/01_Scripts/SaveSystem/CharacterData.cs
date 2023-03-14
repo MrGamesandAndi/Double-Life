@@ -33,14 +33,13 @@ namespace SaveSystem
 
         [SerializeField] List<int> _traits;
         [SerializeField] List<GridObject.SaveObject> _purchasedFurniture;
-        [SerializeField] NeedsManager _needsManager;
         [SerializeField] DoubleState _currentState;
 
         public CharacterData()
         {
         }
 
-        public CharacterData(string name, string lastName, string nickname, string relationshipCode, Color color, string zodiacCode, string sexPreferenceCode, Color skintone, string hairKey, Color hairColor, string eyebrowKey, Color eyebrowColor, string eyeKey, Color eyeColor, string mouthKey, List<int> traits, int gender, List<GridObject.SaveObject> purchasedFurniture, NeedsManager needsManager, DoubleState currentState, int level, int experience, int id)
+        public CharacterData(string name, string lastName, string nickname, string relationshipCode, Color color, string zodiacCode, string sexPreferenceCode, Color skintone, string hairKey, Color hairColor, string eyebrowKey, Color eyebrowColor, string eyeKey, Color eyeColor, string mouthKey, List<int> traits, int gender, List<GridObject.SaveObject> purchasedFurniture, DoubleState currentState, int level, int experience, int id)
         {
             Name = name;
             LastName = lastName;
@@ -60,7 +59,6 @@ namespace SaveSystem
             Traits = traits;
             Gender = gender;
             PurchasedFurniture = purchasedFurniture;
-            NeedsManager = needsManager;
             CurrentState = currentState;
             Level = level;
             Experience = experience;
@@ -85,7 +83,6 @@ namespace SaveSystem
         public List<int> Traits { get => _traits; set => _traits = value; }
         public int Gender { get => _gender; set => _gender = value; }
         public List<GridObject.SaveObject> PurchasedFurniture { get => _purchasedFurniture; set => _purchasedFurniture = value; }
-        public NeedsManager NeedsManager { get => _needsManager; set => _needsManager = value; }
         public DoubleState CurrentState { get => _currentState; set => _currentState = value; }
         public int Level { get => _level; set => _level = value; }
         public int Experience { get => _experience; set => _experience = value; }

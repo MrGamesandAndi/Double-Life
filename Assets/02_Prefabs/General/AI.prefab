@@ -43,4 +43,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d30a23755cc0d41a1c29be3665a993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _needUseAmount: 10
+  _needUseAmount: 0.01
+  _characterData:
+    _id: 0
+    _name: 
+    _lastName: 
+    _nickname: 
+    _relationshipCode: 
+    _color: {r: 0, g: 0, b: 0, a: 0}
+    _zodiacCode: 
+    _sexPreferenceCode: 
+    _gender: 0
+    _level: 0
+    _experience: 0
+    _skintone: {r: 0, g: 0, b: 0, a: 0}
+    _hairKey: 
+    _hairColor: {r: 0, g: 0, b: 0, a: 0}
+    _eyebrowKey: 
+    _eyebrowColor: {r: 0, g: 0, b: 0, a: 0}
+    _eyeKey: 
+    _eyeColor: {r: 0, g: 0, b: 0, a: 0}
+    _mouthKey: 
+    _traits: 
+    _purchasedFurniture: []
+    _currentState: 0
+  _furnitureMultiplier: 1
+  _loveMultiplier: 1
+  _dateMultiplier: 1
+  _fightMultiplier: 1
+  _hungerMultiplier: 1
+  _friendMultiplier: 1
+  _depressionMultiplier: 1
+  _sicknessMultiplier: 1

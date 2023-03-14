@@ -20,11 +20,11 @@ namespace Needs
             _coreAmount = MAX;
         }
 
-        public bool TryUseNeed(float useAmount)
+        public bool TryUseNeed(float useAmount, float multiplier)
         {
             if (_ringAmount >= useAmount)
             {
-                _ringAmount -= useAmount * Time.deltaTime;
+                _ringAmount -= useAmount * Time.deltaTime * multiplier;
                 //Debug.Log("coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
                 return true;
             }
@@ -36,7 +36,7 @@ namespace Needs
                 {
                     OnCoreUse?.Invoke(this, EventArgs.Empty);
                     _ringAmount = 0f;
-                    _coreAmount -= useAmount * Time.deltaTime;
+                    _coreAmount -= useAmount * Time.deltaTime * multiplier;
                     //Debug.Log("coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
                     return true;
                 }
