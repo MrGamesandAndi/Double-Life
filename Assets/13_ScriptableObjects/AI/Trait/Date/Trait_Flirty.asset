@@ -18,9 +18,5 @@ MonoBehaviour:
   description:
     key: Trait_Flirty_Desc
   opossiteTrait: {fileID: 11400000, guid: 90e412b4684b0234fa592e89068954c4, type: 2}
-  impacts:
-  - _scoringPositiveScale: 0.9
-    _scoringNegativeScale: 1.25
-    _impactPositiveScale: 1
-    _impactNegativeScale: 1
-    _decayRateScale: 1
+  _decayRateMultiplier: 1.25
+  type: 2

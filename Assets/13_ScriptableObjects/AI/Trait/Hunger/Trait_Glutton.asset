@@ -18,9 +18,5 @@ MonoBehaviour:
   description:
     key: Trait_Glutton_Desc
   opossiteTrait: {fileID: 11400000, guid: db4be4336e1067446a34246dcbe20bd2, type: 2}
-  impacts:
-  - _scoringPositiveScale: 0.9
-    _scoringNegativeScale: 1.25
-    _impactPositiveScale: 1
-    _impactNegativeScale: 1
-    _decayRateScale: 1
+  _decayRateMultiplier: 1.25
+  type: 4

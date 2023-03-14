@@ -508,7 +508,7 @@ MonoBehaviour:
     _eyeKey: Eye1
     _eyeColor: {r: 0, g: 0, b: 0, a: 255}
     _mouthKey: Mouth4
-    _traits: 
+    _traits: 00000000000000000000000000000000
     _purchasedFurniture: []
     _needsManager: {fileID: 0}
     _currentState: 0

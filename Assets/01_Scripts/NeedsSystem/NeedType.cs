@@ -2,12 +2,13 @@ namespace Needs
 {
     public enum NeedType
     {
-        Hunger = 0,
-        WantsNewFriend = 1,
-        WantsNewInterior = 2,
-        Sickness = 3,
-        FailedRelationship = 4,
-        Fight = 5,
-        Date = 6
+        BuyFurniture = 0,
+        ConfessLove = 1,
+        HaveDate = 2,
+        HaveFight = 3,
+        Hunger = 4,
+        MakeFriend = 5,
+        HaveDepression = 6,
+        Sickness = 7
     }
 }

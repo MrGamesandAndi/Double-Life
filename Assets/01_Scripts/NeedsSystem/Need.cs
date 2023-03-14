@@ -1,4 +1,5 @@
 using System;
+using TraitSystem;
 using UnityEngine;
 
 namespace Needs

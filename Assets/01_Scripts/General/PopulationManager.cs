@@ -35,7 +35,43 @@ namespace General
 
         public void AddDouble(CharacterData characterData)
         {
-            DoublesList.Add(characterData);
+            DoublesList.Add(new CharacterData(
+                 characterData.Name,
+                 characterData.LastName,
+                 characterData.Nickname,
+                 characterData.RelationshipCode,
+                 characterData.Color,
+                 characterData.ZodiacCode,
+                 characterData.SexPreferenceCode,
+                 characterData.Skintone,
+                 characterData.HairKey,
+                 characterData.HairColor,
+                 characterData.EyebrowKey,
+                 characterData.EyebrowColor,
+                 characterData.EyeKey,
+                 characterData.EyeColor,
+                 characterData.MouthKey,
+                 ReturnTraits(characterData.Traits),
+                 characterData.Gender,
+                 characterData.PurchasedFurniture,
+                 characterData.NeedsManager,
+                 characterData.CurrentState,
+                 characterData.Level,
+                 characterData.Experience,
+                 characterData.Id
+                 ));
+        }
+
+        private List<int> ReturnTraits(List<int> oldTraits)
+        {
+            List<int> newTraits = new List<int>();
+
+            foreach (var oldTrait in oldTraits)
+            {
+                newTraits.Add(oldTrait);
+            }
+
+            return newTraits;
         }
 
         public CharacterData ReturnDouble(int id)

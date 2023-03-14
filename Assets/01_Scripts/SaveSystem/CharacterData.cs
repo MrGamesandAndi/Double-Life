@@ -38,28 +38,33 @@ namespace SaveSystem
 
         public CharacterData()
         {
-            _id = 100;
-            _name = "";
-            _lastName = "";
-            _nickname = "";
-            _relationshipCode = "cc_rel_6";
-            _color = Color.red;
-            _zodiacCode = "cc_zodiac_01";
-            _sexPreferenceCode = "cc_sex_03";
-            _gender = 0;
-            _level = 0;
-            _experience = 0;
+        }
 
-            _skintone = new Color(245f, 210f, 157f, 255f);
-             _hairKey = "Hair1";
-            _hairColor = Color.black;
-             _eyebrowKey = "Brow1";
-            _eyebrowColor = Color.black;
-             _eyeKey = "Eye1";
-             _eyeColor = new Color(101f, 50f, 24f, 255f);
-             _mouthKey = "Mouth4";
-
-            _traits = new List<int>(4);
+        public CharacterData(string name, string lastName, string nickname, string relationshipCode, Color color, string zodiacCode, string sexPreferenceCode, Color skintone, string hairKey, Color hairColor, string eyebrowKey, Color eyebrowColor, string eyeKey, Color eyeColor, string mouthKey, List<int> traits, int gender, List<GridObject.SaveObject> purchasedFurniture, NeedsManager needsManager, DoubleState currentState, int level, int experience, int id)
+        {
+            Name = name;
+            LastName = lastName;
+            Nickname = nickname;
+            RelationshipCode = relationshipCode;
+            Color = color;
+            ZodiacCode = zodiacCode;
+            SexPreferenceCode = sexPreferenceCode;
+            Skintone = skintone;
+            HairKey = hairKey;
+            HairColor = hairColor;
+            EyebrowKey = eyebrowKey;
+            EyebrowColor = eyebrowColor;
+            EyeKey = eyeKey;
+            EyeColor = eyeColor;
+            MouthKey = mouthKey;
+            Traits = traits;
+            Gender = gender;
+            PurchasedFurniture = purchasedFurniture;
+            NeedsManager = needsManager;
+            CurrentState = currentState;
+            Level = level;
+            Experience = experience;
+            Id = id;
         }
 
         public string Name { get => _name; set => _name = value; }

@@ -18,10 +18,5 @@ MonoBehaviour:
   description:
     key: Trait_PPincher_Desc
   opossiteTrait: {fileID: 11400000, guid: 283919d6e387ba54d949360b6344545c, type: 2}
-  impacts:
-  - _linkedStat: {fileID: 11400000, guid: bc78f4a3132b2b34aa0c230595f6d66a, type: 2}
-    _scoringPositiveScale: 1.25
-    _scoringNegativeScale: 0.9
-    _impactPositiveScale: 1
-    _impactNegativeScale: 1
-    _decayRateScale: 1
+  _decayRateMultiplier: 0.9
+  type: 0

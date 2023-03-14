@@ -1,4 +1,5 @@
 using CharacterCreator;
+using Needs;
 using System.Collections.Generic;
 using TraitSystem;
 using UnityEngine;
@@ -80,6 +81,39 @@ namespace General
             }
 
             return null;
+        }
+
+        public List<Trait> ReturnTraitFromCharacterData(List<int> characterTraits)
+        {
+            List<Trait> returnedTraits = new List<Trait>();
+
+            for (int i = 0; i < traits.Count; i++)
+            {
+                for (int j = 0; j < characterTraits.Count; j++)
+                {
+                    if (traits[i].id == characterTraits[j])
+                    {
+                        returnedTraits.Add(traits[i]);
+                    }
+                }
+            }
+            
+            return returnedTraits;
+        }
+
+        public List<Trait> ReturnTraitsByType(NeedType type)
+        {
+            List<Trait> returnedTraits = new List<Trait>();
+
+            for (int i = 0; i < traits.Count; i++)
+            {
+                if (traits[i].type == type)
+                {
+                    returnedTraits.Add(traits[i]);
+                }
+            }
+
+            return returnedTraits;
         }
     }
 }

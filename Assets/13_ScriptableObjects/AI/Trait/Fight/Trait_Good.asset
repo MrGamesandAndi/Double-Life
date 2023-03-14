@@ -18,9 +18,5 @@ MonoBehaviour:
   description:
     key: Trait_Good_Desc
   opossiteTrait: {fileID: 11400000, guid: f8e0ed7c59e5b34448db9d851c779d41, type: 2}
-  impacts:
-  - _scoringPositiveScale: 1.25
-    _scoringNegativeScale: 0.9
-    _impactPositiveScale: 1
-    _impactNegativeScale: 1
-    _decayRateScale: 1
+  _decayRateMultiplier: 0.9
+  type: 3

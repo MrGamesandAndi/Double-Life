@@ -18,9 +18,5 @@ MonoBehaviour:
   description:
     key: Trait_Goofball_Desc
   opossiteTrait: {fileID: 11400000, guid: 8ea915ddd4921db49a660b344f605658, type: 2}
-  impacts:
-  - _scoringPositiveScale: 1.25
-    _scoringNegativeScale: 0.9
-    _impactPositiveScale: 1
-    _impactNegativeScale: 1
-    _decayRateScale: 1
+  _decayRateMultiplier: 0.9
+  type: 6

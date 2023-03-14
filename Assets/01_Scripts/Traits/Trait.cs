@@ -1,4 +1,5 @@
 using Localisation;
+using Needs;
 using UnityEngine;
 
 namespace TraitSystem
@@ -10,6 +11,7 @@ namespace TraitSystem
         public LocalisedString displayName;
         public LocalisedString description;
         public Trait opossiteTrait;
-        public TraitElement[] impacts;
+        [Range(0.5f, 1.5f)] public float _decayRateMultiplier = 1f;
+        public NeedType type;
     }
 }

@@ -18,9 +18,5 @@ MonoBehaviour:
   description:
     key: Trait_PickyEater_Desc
   opossiteTrait: {fileID: 11400000, guid: 6a2258c59b0778547b36406612c3667a, type: 2}
-  impacts:
-  - _scoringPositiveScale: 1.25
-    _scoringNegativeScale: 0.9
-    _impactPositiveScale: 1
-    _impactNegativeScale: 1
-    _decayRateScale: 1
+  _decayRateMultiplier: 0.9
+  type: 4

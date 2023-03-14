@@ -9,13 +9,15 @@ namespace Needs
         public NeedsSystem()
         {
             _needDictionary = new Dictionary<NeedType, Need>();
+            _needDictionary[NeedType.BuyFurniture] = new Need();
+            _needDictionary[NeedType.ConfessLove] = new Need();
+            _needDictionary[NeedType.HaveDate] = new Need();
+            _needDictionary[NeedType.HaveFight] = new Need();
             _needDictionary[NeedType.Hunger] = new Need();
-            _needDictionary[NeedType.WantsNewFriend] = new Need();
-            _needDictionary[NeedType.WantsNewInterior] = new Need();
+            _needDictionary[NeedType.MakeFriend] = new Need();
+            _needDictionary[NeedType.HaveDepression] = new Need();
             _needDictionary[NeedType.Sickness] = new Need();
-            _needDictionary[NeedType.FailedRelationship] = new Need();
-            _needDictionary[NeedType.Fight] = new Need();
-            _needDictionary[NeedType.Date] = new Need();
+
         }
 
         public Need GetNeed(NeedType needType)

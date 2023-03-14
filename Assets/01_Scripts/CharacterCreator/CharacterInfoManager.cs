@@ -29,21 +29,21 @@ namespace CharacterCreator
 
         private void InitializeValues()
         {
-            GetNameValue();
-            GetLastNameValue();
-            GetNicknameValue();
-            GetRelationshipValue();
-            GetZodiacValue();
-            GetSexPreferenceValue();
-            GetColorValue();
-
             switch (PlayerPrefs.GetInt("CC_State"))
             {
                 case 0:
+                    GameManager.Instance.ResetCurrentLoadedDouble();
                     HumanController.Instance.characterData.Id = SaveManager.Instance.PlayerData.lastUsedCharacterID;
                     SaveManager.Instance.PlayerData.lastUsedCharacterID++;
                     break;
                 case 1:
+                    GetNameValue();
+                    GetLastNameValue();
+                    GetNicknameValue();
+                    GetRelationshipValue();
+                    GetZodiacValue();
+                    GetSexPreferenceValue();
+                    GetColorValue();
                     _nameInputField.interactable = false;
                     _relationshipInputField.interactable = false;
                     _lastNameInputField.interactable = false;

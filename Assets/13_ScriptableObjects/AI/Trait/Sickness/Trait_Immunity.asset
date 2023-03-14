@@ -18,9 +18,5 @@ MonoBehaviour:
   description:
     key: Trait_Immunity_Desc
   opossiteTrait: {fileID: 11400000, guid: 24d773fb3323980478bde85bdc24d29a, type: 2}
-  impacts:
-  - _scoringPositiveScale: 1.25
-    _scoringNegativeScale: 0.9
-    _impactPositiveScale: 1
-    _impactNegativeScale: 1
-    _decayRateScale: 1
+  _decayRateMultiplier: 0.9
+  type: 7

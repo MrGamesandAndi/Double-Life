@@ -1,5 +1,6 @@
 using General;
 using SaveSystem;
+using System;
 using UnityEngine;
 
 namespace Needs
@@ -11,12 +12,13 @@ namespace Needs
         CharacterData _characterData;
         NeedsSystem _needsSystem;
         bool _isHungry = true;
-        bool _wantsFriend;
-        bool _wantsInterior;
-        bool _isSick;
-        bool _isDivorcing;
-        bool _wantsFight;
-        bool _wantsDate;
+        bool _wantsFriend = true;
+        bool _wantsInterior = true;
+        bool _isSick = true;
+        bool _isDivorcing = true;
+        bool _wantsFight = true;
+        bool _wantsDate = true;
+        bool _wantsLove = true;
 
         private void Awake()
         {
@@ -49,16 +51,16 @@ namespace Needs
 
             if (_wantsFriend)
             {
-                _needsSystem.GetNeed(NeedType.WantsNewFriend).OnCoreUse += WantsFriend_OnCoreUse;
+                _needsSystem.GetNeed(NeedType.MakeFriend).OnCoreUse += WantsFriend_OnCoreUse;
 
-                if (!_needsSystem.GetNeed(NeedType.WantsNewFriend).TryUseNeed(_needUseAmount * Time.deltaTime))
+                if (!_needsSystem.GetNeed(NeedType.MakeFriend).TryUseNeed(_needUseAmount * Time.deltaTime))
                 {
                     _wantsFriend = false;
                 }
             }
             else
             {
-                if (_needsSystem.GetNeed(NeedType.WantsNewFriend).GetTotalRingNormalizedValue() == 1)
+                if (_needsSystem.GetNeed(NeedType.MakeFriend).GetTotalRingNormalizedValue() == 1)
                 {
                     _wantsFriend = true;
                 }
@@ -66,16 +68,16 @@ namespace Needs
 
             if (_wantsInterior)
             {
-                _needsSystem.GetNeed(NeedType.WantsNewInterior).OnCoreUse += WantsInterior_OnCoreUse;
+                _needsSystem.GetNeed(NeedType.BuyFurniture).OnCoreUse += WantsInterior_OnCoreUse;
 
-                if (!_needsSystem.GetNeed(NeedType.WantsNewInterior).TryUseNeed(_needUseAmount * Time.deltaTime))
+                if (!_needsSystem.GetNeed(NeedType.BuyFurniture).TryUseNeed(_needUseAmount * Time.deltaTime))
                 {
                     _wantsInterior = false;
                 }
             }
             else
             {
-                if (_needsSystem.GetNeed(NeedType.WantsNewInterior).GetTotalRingNormalizedValue() == 1)
+                if (_needsSystem.GetNeed(NeedType.BuyFurniture).GetTotalRingNormalizedValue() == 1)
                 {
                     _wantsInterior = true;
                 }
@@ -100,16 +102,16 @@ namespace Needs
 
             if (_isDivorcing)
             {
-                _needsSystem.GetNeed(NeedType.FailedRelationship).OnCoreUse += Divorce_OnCoreUse;
+                _needsSystem.GetNeed(NeedType.HaveDepression).OnCoreUse += Divorce_OnCoreUse;
 
-                if (!_needsSystem.GetNeed(NeedType.FailedRelationship).TryUseNeed(_needUseAmount * Time.deltaTime))
+                if (!_needsSystem.GetNeed(NeedType.HaveDepression).TryUseNeed(_needUseAmount * Time.deltaTime))
                 {
                     _isDivorcing = false;
                 }
             }
             else
             {
-                if (_needsSystem.GetNeed(NeedType.FailedRelationship).GetTotalRingNormalizedValue() == 1)
+                if (_needsSystem.GetNeed(NeedType.HaveDepression).GetTotalRingNormalizedValue() == 1)
                 {
                     _isDivorcing = true;
                 }
@@ -117,16 +119,16 @@ namespace Needs
 
             if (_wantsFight)
             {
-                _needsSystem.GetNeed(NeedType.Fight).OnCoreUse += Fight_OnCoreUse;
+                _needsSystem.GetNeed(NeedType.HaveFight).OnCoreUse += Fight_OnCoreUse;
 
-                if (!_needsSystem.GetNeed(NeedType.Fight).TryUseNeed(_needUseAmount * Time.deltaTime))
+                if (!_needsSystem.GetNeed(NeedType.HaveFight).TryUseNeed(_needUseAmount * Time.deltaTime))
                 {
                     _wantsFight = false;
                 }
             }
             else
             {
-                if (_needsSystem.GetNeed(NeedType.Fight).GetTotalRingNormalizedValue() == 1)
+                if (_needsSystem.GetNeed(NeedType.HaveFight).GetTotalRingNormalizedValue() == 1)
                 {
                     _wantsFight = true;
                 }
@@ -134,53 +136,75 @@ namespace Needs
 
             if (_wantsDate)
             {
-                _needsSystem.GetNeed(NeedType.Date).OnCoreUse += Date_OnCoreUse;
+                _needsSystem.GetNeed(NeedType.HaveDate).OnCoreUse += Date_OnCoreUse;
 
-                if (!_needsSystem.GetNeed(NeedType.Date).TryUseNeed(_needUseAmount * Time.deltaTime))
+                if (!_needsSystem.GetNeed(NeedType.HaveDate).TryUseNeed(_needUseAmount * Time.deltaTime))
                 {
                     _wantsDate = false;
                 }
             }
             else
             {
-                if (_needsSystem.GetNeed(NeedType.Date).GetTotalRingNormalizedValue() == 1)
+                if (_needsSystem.GetNeed(NeedType.HaveDate).GetTotalRingNormalizedValue() == 1)
                 {
                     _wantsDate = true;
                 }
             }
+
+            if (_wantsLove)
+            {
+                _needsSystem.GetNeed(NeedType.ConfessLove).OnCoreUse += Confess_OnCoreUse;
+
+                if (!_needsSystem.GetNeed(NeedType.ConfessLove).TryUseNeed(_needUseAmount * Time.deltaTime))
+                {
+                    _wantsLove = false;
+                }
+            }
+            else
+            {
+                if (_needsSystem.GetNeed(NeedType.ConfessLove).GetTotalRingNormalizedValue() == 1)
+                {
+                    _wantsLove = true;
+                }
+            }
         }
 
-        private void Date_OnCoreUse(object sender, System.EventArgs e)
+        private void Confess_OnCoreUse(object sender, EventArgs e)
+        {
+            _characterData.CurrentState = DoubleState.Confession;
+        }
+
+        private void Date_OnCoreUse(object sender, EventArgs e)
         {
             _characterData.CurrentState = DoubleState.Date;
         }
 
-        private void Fight_OnCoreUse(object sender, System.EventArgs e)
+        private void Fight_OnCoreUse(object sender, EventArgs e)
         {
             _characterData.CurrentState = DoubleState.Angry;
         }
 
-        private void Divorce_OnCoreUse(object sender, System.EventArgs e)
+        private void Divorce_OnCoreUse(object sender, EventArgs e)
         {
             _characterData.CurrentState = DoubleState.Sad;
         }
 
-        private void Sick_OnCoreUse(object sender, System.EventArgs e)
+        private void Sick_OnCoreUse(object sender, EventArgs e)
         {
             _characterData.CurrentState = DoubleState.Sick;
         }
 
-        private void WantsInterior_OnCoreUse(object sender, System.EventArgs e)
+        private void WantsInterior_OnCoreUse(object sender, EventArgs e)
         {
             _characterData.CurrentState = DoubleState.Buy;
         }
 
-        private void WantsFriend_OnCoreUse(object sender, System.EventArgs e)
+        private void WantsFriend_OnCoreUse(object sender, EventArgs e)
         {
             _characterData.CurrentState = DoubleState.MakeFriend;
         }
 
-        private void Hunger_OnCoreUse(object sender, System.EventArgs e)
+        private void Hunger_OnCoreUse(object sender, EventArgs e)
         {
             _characterData.CurrentState = DoubleState.Hungry;
         }

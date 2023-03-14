@@ -25,7 +25,6 @@ namespace Buildings
             }
 
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
 
         public void AddBuilding(GameObject building)

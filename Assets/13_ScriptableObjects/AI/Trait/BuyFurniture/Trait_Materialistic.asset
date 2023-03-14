@@ -18,9 +18,5 @@ MonoBehaviour:
   description:
     key: Trait_Materialistic_Desc
   opossiteTrait: {fileID: 11400000, guid: 945d655936e5e8642be17e1f85c9fbbb, type: 2}
-  impacts:
-  - _scoringPositiveScale: 0.9
-    _scoringNegativeScale: 1.25
-    _impactPositiveScale: 1
-    _impactNegativeScale: 1
-    _decayRateScale: 1
+  _decayRateMultiplier: 1.25
+  type: 0

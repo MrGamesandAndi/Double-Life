@@ -18,9 +18,5 @@ MonoBehaviour:
   description:
     key: Trait_Noncommittal_Desc
   opossiteTrait: {fileID: 11400000, guid: a0da0164caafe7340be0cefa5043607e, type: 2}
-  impacts:
-  - _scoringPositiveScale: 1.25
-    _scoringNegativeScale: 0.9
-    _impactPositiveScale: 1
-    _impactNegativeScale: 1
-    _decayRateScale: 1
+  _decayRateMultiplier: 0.9
+  type: 1
