@@ -15,7 +15,7 @@ public class RoomManager : MonoBehaviour
     public static RoomManager Instance { get; private set; }
     public FurnitureItem SelectedFurniture { get => _selectedFurniture; set => _selectedFurniture = value; }
 
-    public FurnitureItem _selectedFurniture;
+    public FurnitureItem _selectedFurniture = null;
 
     [SerializeField] GameObject _grid;
     [SerializeField] Camera _camera;

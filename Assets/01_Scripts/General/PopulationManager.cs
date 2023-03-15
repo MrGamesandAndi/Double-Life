@@ -58,7 +58,8 @@ namespace General
                  characterData.CurrentState,
                  characterData.Level,
                  characterData.Experience,
-                 characterData.Id
+                 characterData.Id,
+                 new List<Vector3>()
                  ));
         }
 

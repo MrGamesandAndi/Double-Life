@@ -103,5 +103,18 @@ namespace General
             
             return returnedTraits;
         }
+
+        public FurnitureItem GetFurniture(int id)
+        {
+            foreach (var item in furniture)
+            {
+                if (item.id == id)
+                {
+                    return item;
+                }
+            }
+
+            return null;
+        }
     }
 }

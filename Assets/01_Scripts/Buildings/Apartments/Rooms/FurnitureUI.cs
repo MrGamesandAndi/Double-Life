@@ -80,6 +80,7 @@ namespace Apartments
             }
 
             RoomManager.Instance.EnableGrid();
+            GridBuildingSystem3D.Instance.SetFurniture();
             ResetAllButtons();
         }
 
