@@ -243,7 +243,7 @@ Greenhouse_Description","Una plaga de orugas ha invadido el invernadero. Hora de
 "Save_Warning","Todos los datos serán sobrescritos. ¿Quieres continuar?","All data will be overwritten. Do you wish to continue?"
 "Save_Success","La partida ha sido guardada exitosamente.","The game has been saved successfully."
 "Save_Continue","¿Quieres seguir jugando?","Do you want to keep playing?"
-"ChangeLanguage_Warning","El idioma cambiará la próxima vez que inicies el juego. Si quieres salir ahora ten en cuenta que la partida se guardará automáticamente. ¿Quieres continuar?","The language will change the next time you start the game. If you want to exit now keep in mind that the game will be saved automatically. Do you want to continue?"
+"ChangeLanguage_Warning","El juego se reiniciará para cambiar el idioma y la partida se guardará automáticamente. ¿Quieres continuar?","The game will restart to change the language and the game will save automatically. Do you want to continue?"
 "DeleteDouble_Prompt","¿Estás seguro? Esta acción no se puede revertir.","Are you sure? This action cannot be reversed."
 "City_TV","Torre de Televisión","News Tower"
 "City_TV_Description","Tu fuente de información de la ciudad con informes al mediodía y por la noche.","Your source for the latest city news with reports at noon and night."

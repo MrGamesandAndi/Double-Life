@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Sink_Description
   icon: {fileID: 21300000, guid: fc285278baef9e24eb941a4827516d80, type: 3}
   cost: 5000
-  model: {fileID: 3205710848153139817, guid: a3d8d66f2adb94f45991e742a5a31535, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: a3d8d66f2adb94f45991e742a5a31535, type: 3}
   width: 1
   height: 1
+  id: 8

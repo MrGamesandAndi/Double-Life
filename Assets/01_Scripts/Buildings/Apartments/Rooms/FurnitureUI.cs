@@ -1,4 +1,3 @@
-using GridSystem;
 using SaveSystem;
 using ShopSystem;
 using System.Collections.Generic;
@@ -17,7 +16,7 @@ namespace Apartments
 
         Dictionary<FurnitureItem, FurnitureUIItem> _furnitureItemToUIMap = new Dictionary<FurnitureItem, FurnitureUIItem>();
         List<FurnitureItem> _orderedList = new List<FurnitureItem>();
-        FurnitureItem _selectedItem;
+        public FurnitureItem _selectedItem;
 
         private void OnEnable()
         {
@@ -91,8 +90,6 @@ namespace Apartments
                 var itemUI = kvp.Value;
                 itemUI.SetIsSelected(false);
             }
-
-            _selectedItem = null;
 
             foreach (Transform child in _itemUIRoot)
             {

@@ -38,7 +38,7 @@ namespace General
         {
             GameObject ai = _aiPrefab;
             ai.name = $"{character.Name}{character.LastName}";
-            ai.GetComponent<NeedsManager>().LinkCharacterData(character);
+            ai.GetComponent<NeedsManager>().LinkCharacterData(character.Id);
             ai.GetComponent<NeedsManager>().SetMultipliers();
 
             for (int i = 0; i < character.Traits.Count; i++)

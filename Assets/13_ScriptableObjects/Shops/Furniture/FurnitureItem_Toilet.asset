@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Toilet_Description
   icon: {fileID: 21300000, guid: e8525831d42b6994ea573d47622d6521, type: 3}
   cost: 5000
-  model: {fileID: 3205710848153139817, guid: 92e8e9772597d734387972b7d742b8f4, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: 92e8e9772597d734387972b7d742b8f4, type: 3}
   width: 1
   height: 1
+  id: 16

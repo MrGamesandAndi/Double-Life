@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Stove_Description
   icon: {fileID: 21300000, guid: 4cd417a19f0b89c44bd95c1fd1ed9655, type: 3}
   cost: 10000
-  model: {fileID: 3205710848153139817, guid: d0930189915747e489070c33871bc819, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: d0930189915747e489070c33871bc819, type: 3}
   width: 1
   height: 1
+  id: 9

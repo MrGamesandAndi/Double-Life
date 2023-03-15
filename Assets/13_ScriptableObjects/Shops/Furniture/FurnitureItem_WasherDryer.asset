@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_WasherDryer_Description
   icon: {fileID: 21300000, guid: c9eb4ad44dba1704d8b98c0b7ea83dee, type: 3}
   cost: 45000
-  model: {fileID: 3205710848153139817, guid: b579a01facd30e54fa05f1a13a42b0f8, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: b579a01facd30e54fa05f1a13a42b0f8, type: 3}
   width: 1
   height: 1
+  id: 19

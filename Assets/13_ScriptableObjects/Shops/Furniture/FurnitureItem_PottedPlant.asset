@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Plant_Description
   icon: {fileID: 21300000, guid: cfd055f32ff68144ea7ec2137616d565, type: 3}
   cost: 2000
-  model: {fileID: 3205710848153139817, guid: be3437058224fa545b0a73ef376cef98, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: be3437058224fa545b0a73ef376cef98, type: 3}
   width: 1
   height: 1
+  id: 12

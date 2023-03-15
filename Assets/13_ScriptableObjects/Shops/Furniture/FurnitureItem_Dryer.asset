@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Dryer_Description
   icon: {fileID: 21300000, guid: f451811bd0958c2478a09f27fa9a2d90, type: 3}
   cost: 20000
-  model: {fileID: 3205710848153139817, guid: b994968f5bbb8fc449cc86876d16101d, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: b994968f5bbb8fc449cc86876d16101d, type: 3}
   width: 1
   height: 1
+  id: 5

@@ -1,5 +1,5 @@
 using CharacterCreator;
-using Needs;
+using ShopSystem;
 using System.Collections.Generic;
 using TraitSystem;
 using UnityEngine;
@@ -14,6 +14,9 @@ namespace General
         {
             Instance = this;
         }
+
+        [Header("Furniture")]
+        public List<FurnitureItem> furniture;
 
 
         [Header("Hair Parts")]

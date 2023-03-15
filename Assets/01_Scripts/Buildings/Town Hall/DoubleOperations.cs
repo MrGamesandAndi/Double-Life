@@ -78,7 +78,7 @@ namespace TownHall
 
         public void OnClickedDelete()
         {
-            if(_selectedDouble.RelationshipCode!= "cc_rel_7")
+            if(_selectedDouble.RelationshipCode != "cc_rel_7")
             {
                 ModalWindow.Instance.ShowQuestion(_deletePrompt.Value, () =>
                 {

@@ -22497,7 +22497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData:
-    id: 100
+    _id: 0
     _name: 
     _lastName: 
     _nickname: 
@@ -22518,7 +22518,6 @@ MonoBehaviour:
     _mouthKey: Mouth5
     _traits: 00000000000000000000000000000000
     _purchasedFurniture: []
-    _needsManager: {fileID: 0}
     _currentState: 0
   _headReference: {fileID: 1554014307}
   _hairReference: {fileID: 248260649}

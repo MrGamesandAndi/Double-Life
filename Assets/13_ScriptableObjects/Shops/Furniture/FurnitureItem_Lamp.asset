@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Lamp_Description
   icon: {fileID: 21300000, guid: 97d00ff901d9576479082144d7388e9a, type: 3}
   cost: 2500
-  model: {fileID: 3205710848153139817, guid: dfd1cc0ff5f733b4b9aa37eb813135db, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: dfd1cc0ff5f733b4b9aa37eb813135db, type: 3}
   width: 1
   height: 1
+  id: 10

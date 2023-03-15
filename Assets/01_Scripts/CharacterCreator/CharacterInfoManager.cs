@@ -55,6 +55,8 @@ namespace CharacterCreator
                 case 2:
                     HumanController.Instance.characterData.Id = SaveManager.Instance.PlayerData.lastUsedCharacterID;
                     SaveManager.Instance.PlayerData.lastUsedCharacterID++;
+                    _relationshipInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText("cc_rel_7");
+                    HumanController.Instance.RelationshipCode = "cc_rel_7";
                     _relationshipInputField.interactable = false;
                     PlayerPrefs.SetInt("CC_State", 0);
                     break;
@@ -97,15 +99,7 @@ namespace CharacterCreator
         {
             if (_relationshipInputField != null)
             {
-                if(PlayerPrefs.GetInt("CC_State") == 2)
-                {
-                    _relationshipInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText("cc_rel_7");
-                    HumanController.Instance.RelationshipCode = "cc_rel_7";
-                }
-                else
-                {
-                    _relationshipInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText(HumanController.Instance.RelationshipCode);
-                }
+                _relationshipInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText(HumanController.Instance.RelationshipCode);
             }
         }
 

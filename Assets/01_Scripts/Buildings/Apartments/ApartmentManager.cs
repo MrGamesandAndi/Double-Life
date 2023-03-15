@@ -1,7 +1,7 @@
 using DialogueSystem;
 using General;
 using SaveSystem;
-using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -31,7 +31,7 @@ namespace Apartments
 
         public void PrepareApartment()
         {
-            for (int i = 0; i < GenerateAI.Instance.transform.childCount; i++)
+            for (int i = 0; i < PopulationManager.Instance.DoublesList.Count; i++)
             {
                 _apartmentWindowsList.GetChild(i).GetComponent<WindowManager>()._double = PopulationManager.Instance.DoublesList[i];
                 _apartmentWindowsList.GetChild(i).GetComponent<ProblemDialogue>().ChangeEmote(PopulationManager.Instance.DoublesList[i].CurrentState);
@@ -50,7 +50,6 @@ namespace Apartments
         {
             int males = 0;
             int females = 0;
-            string result = "";
 
             foreach (var person in PopulationManager.Instance.DoublesList)
             {
@@ -64,8 +63,7 @@ namespace Apartments
                 }
             }
 
-            result = $"{males}/{females}";
-            return result;
+            return $"{males}/{females}";
         }
     }
 }

@@ -58,7 +58,6 @@ public class DragInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-
         if (collision.gameObject.name == "Snap Point")
         {
             _isCorrectPlace = true;
@@ -67,7 +66,6 @@ public class DragInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-
         if (collision.gameObject.name == "Snap Point")
         {
             _isCorrectPlace = false;

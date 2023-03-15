@@ -134,4 +134,9 @@ public class RoomManager : MonoBehaviour
         _pagesArea.SetActive(false);
         _speechBubble.SetActive(false);
     }
+
+    public void ResetSelectedFurniture()
+    {
+        _selectedFurniture = null;
+    }
 }

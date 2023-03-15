@@ -1,6 +1,5 @@
 using Localisation;
 using System;
-using UnityEngine;
 
 [Serializable]
 public class PurchasedFurniture

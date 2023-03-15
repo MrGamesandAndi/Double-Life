@@ -510,7 +510,6 @@ MonoBehaviour:
     _mouthKey: Mouth4
     _traits: 00000000000000000000000000000000
     _purchasedFurniture: []
-    _needsManager: {fileID: 0}
     _currentState: 0
 --- !u!1 &815342177
 GameObject:
@@ -785,6 +784,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d813aaa00e070814a83abd2901bd8d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  furniture:
+  - {fileID: 11400000, guid: b73fbfac919b1d641b9b3b6385298a78, type: 2}
+  - {fileID: 11400000, guid: 85d39ddcedf9078499d9a3515ba1d639, type: 2}
+  - {fileID: 11400000, guid: e92be27d06bbf8141bab37c0fabfca6e, type: 2}
+  - {fileID: 11400000, guid: 835ac60c7cc37454aa4fe852f883a221, type: 2}
+  - {fileID: 11400000, guid: 5b42892fe8b33ff4f8e71a4a5a80bf73, type: 2}
+  - {fileID: 11400000, guid: 4261b2641d9d9fe489ccf7faa515fcd4, type: 2}
+  - {fileID: 11400000, guid: b71e3e50db203264eab1c1d9fa869b29, type: 2}
+  - {fileID: 11400000, guid: ea02681cafcbec546a7de4917ac01299, type: 2}
+  - {fileID: 11400000, guid: ef7ed1c03087ade43b9c0a078ccc32c6, type: 2}
+  - {fileID: 11400000, guid: c0bcc0f0dae132246a8b30328207fcaf, type: 2}
+  - {fileID: 11400000, guid: fbc6d06f80dbe374ebf2068bbe857f7c, type: 2}
+  - {fileID: 11400000, guid: bd08f6ac82b02d946a27501cad5e7677, type: 2}
+  - {fileID: 11400000, guid: eeece285721cbcd42acb28cc724444fb, type: 2}
+  - {fileID: 11400000, guid: a800d3081c4ec9c4e97efcd5c40e11d4, type: 2}
+  - {fileID: 11400000, guid: 6c4db8942744f3445aefb70a42175fc9, type: 2}
+  - {fileID: 11400000, guid: 0561e57a6fae31c4b9ed2ee51ae03855, type: 2}
+  - {fileID: 11400000, guid: fd9e8f237fcb0914fb3bea8d88b765d7, type: 2}
+  - {fileID: 11400000, guid: 4402c0bab68728d41985500b0063f099, type: 2}
+  - {fileID: 11400000, guid: a3441b3a29cc1934d9b0a483cb70dc8a, type: 2}
   hairs:
   - {fileID: 11400000, guid: 80e7f82752262e44bbc3fa7b4bfe08a3, type: 2}
   - {fileID: 11400000, guid: 26f9721da93f86a43b6c2e986bd9f016, type: 2}

@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Box_Description
   icon: {fileID: 21300000, guid: 2b98f22e451c2104084d3f7ee2ed9e43, type: 3}
   cost: 2000
-  model: {fileID: 3205710848153139817, guid: 64f8dfc69e2949c4c96c70b856a6eda8, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: 64f8dfc69e2949c4c96c70b856a6eda8, type: 3}
   width: 1
   height: 1
+  id: 2

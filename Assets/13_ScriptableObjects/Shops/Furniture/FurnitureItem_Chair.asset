@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Chair_Description
   icon: {fileID: 21300000, guid: dd0c9225f2be40542a72cdd916c78ebe, type: 3}
   cost: 5000
-  model: {fileID: 3205710848153139817, guid: fe40c7f57fa0518439d99688d02ddc79, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: fe40c7f57fa0518439d99688d02ddc79, type: 3}
   width: 1
   height: 1
+  id: 3

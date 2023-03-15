@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Bed_Description
   icon: {fileID: 21300000, guid: f30bf4b51db3b624b86f545735f12491, type: 3}
   cost: 10000
-  model: {fileID: 3205710848153139817, guid: aad32b4489a4a4746aea9b88a098d0d2, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: aad32b4489a4a4746aea9b88a098d0d2, type: 3}
   width: 1
   height: 2
+  id: 1

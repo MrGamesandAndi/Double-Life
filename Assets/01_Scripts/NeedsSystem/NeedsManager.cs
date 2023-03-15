@@ -1,8 +1,6 @@
 using General;
-using SaveSystem;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using TraitSystem;
 using UnityEngine;
 
@@ -12,41 +10,33 @@ namespace Needs
     {
         [SerializeField] float _needUseAmount = 50f;
 
-        CharacterData _characterData;
+        public int characterId;
         NeedsSystem _needsSystem;
-        bool _isHungry = true;
-        bool _wantsFriend = true;
-        bool _wantsInterior = true;
-        bool _isSick = true;
-        bool _isDivorcing = true;
-        bool _wantsFight = true;
-        bool _wantsDate = true;
-        bool _wantsLove = true;
 
-        public float _furnitureMultiplier = 1f;
-        public float _loveMultiplier = 1f;
-        public float _dateMultiplier = 1f;
-        public float _fightMultiplier = 1f;
-        public float _hungerMultiplier = 1f;
-        public float _friendMultiplier = 1f;
-        public float _depressionMultiplier = 1f;
-        public float _sicknessMultiplier = 1f;
-        public List<Trait> traits;
+        float _furnitureMultiplier = 1f;
+        float _loveMultiplier = 1f;
+        float _dateMultiplier = 1f;
+        float _fightMultiplier = 1f;
+        float _hungerMultiplier = 1f;
+        float _friendMultiplier = 1f;
+        float _depressionMultiplier = 1f;
+        float _sicknessMultiplier = 1f;
+        List<Trait> traits;
 
         private void Awake()
         {
             _needsSystem = new NeedsSystem();
         }
 
-        public void LinkCharacterData(CharacterData characterData)
+        public void LinkCharacterData(int id)
         {
-            _characterData = characterData;
+            characterId = id;
         }
 
         public void SetMultipliers()
         {
             traits = new List<Trait>();
-            traits = BodyPartsCollection.Instance.ReturnTraitsFromCharacterData(_characterData.Traits);
+            traits = BodyPartsCollection.Instance.ReturnTraitsFromCharacterData(PopulationManager.Instance.ReturnDouble(characterId).Traits);
 
             _hungerMultiplier = ReturnTypeMultiplier(NeedType.Hunger);
             _loveMultiplier = ReturnTypeMultiplier(NeedType.ConfessLove);
@@ -72,183 +62,88 @@ namespace Needs
             return 1;
         }
 
+        private void Start()
+        {
+            _needsSystem.GetNeed(NeedType.Hunger).OnCoreUse += Hunger_OnCoreUse;
+            _needsSystem.GetNeed(NeedType.Hunger).OnNeedReset += OnNeedReset;
+
+            _needsSystem.GetNeed(NeedType.MakeFriend).OnCoreUse += WantsFriend_OnCoreUse;
+            _needsSystem.GetNeed(NeedType.MakeFriend).OnNeedReset += OnNeedReset;
+
+            _needsSystem.GetNeed(NeedType.BuyFurniture).OnCoreUse += WantsInterior_OnCoreUse;
+            _needsSystem.GetNeed(NeedType.BuyFurniture).OnNeedReset += OnNeedReset;
+
+            _needsSystem.GetNeed(NeedType.Sickness).OnCoreUse += Sick_OnCoreUse;
+            _needsSystem.GetNeed(NeedType.Sickness).OnNeedReset += OnNeedReset;
+
+            _needsSystem.GetNeed(NeedType.HaveDepression).OnCoreUse += Divorce_OnCoreUse;
+            _needsSystem.GetNeed(NeedType.HaveDepression).OnNeedReset += OnNeedReset;
+
+            _needsSystem.GetNeed(NeedType.HaveFight).OnCoreUse += Fight_OnCoreUse;
+            _needsSystem.GetNeed(NeedType.HaveFight).OnNeedReset += OnNeedReset;
+
+            _needsSystem.GetNeed(NeedType.HaveDate).OnCoreUse += Date_OnCoreUse;
+            _needsSystem.GetNeed(NeedType.HaveDate).OnNeedReset += OnNeedReset;
+
+            _needsSystem.GetNeed(NeedType.ConfessLove).OnCoreUse += Confess_OnCoreUse;
+            _needsSystem.GetNeed(NeedType.ConfessLove).OnNeedReset += OnNeedReset;
+        }
+
+        private void OnNeedReset(object sender, EventArgs e)
+        {
+            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Happy;
+        }
+
         private void Update()
         {
-            if (_isHungry)
-            {
-                _needsSystem.GetNeed(NeedType.Hunger).OnCoreUse += Hunger_OnCoreUse;
-
-                if (!_needsSystem.GetNeed(NeedType.Hunger).TryUseNeed(_needUseAmount, _hungerMultiplier))
-                {
-                    _isHungry = false;
-                }
-            }
-            else
-            {
-                if (_needsSystem.GetNeed(NeedType.Hunger).GetTotalRingNormalizedValue() == 1)
-                {
-                    _isHungry = true;
-                }
-            }
-
-            if (_wantsFriend)
-            {
-                _needsSystem.GetNeed(NeedType.MakeFriend).OnCoreUse += WantsFriend_OnCoreUse;
-
-                if (!_needsSystem.GetNeed(NeedType.MakeFriend).TryUseNeed(_needUseAmount, _friendMultiplier))
-                {
-                    _wantsFriend = false;
-                }
-            }
-            else
-            {
-                if (_needsSystem.GetNeed(NeedType.MakeFriend).GetTotalRingNormalizedValue() == 1)
-                {
-                    _wantsFriend = true;
-                }
-            }
-
-            if (_wantsInterior)
-            {
-                _needsSystem.GetNeed(NeedType.BuyFurniture).OnCoreUse += WantsInterior_OnCoreUse;
-
-                if (!_needsSystem.GetNeed(NeedType.BuyFurniture).TryUseNeed(_needUseAmount, _furnitureMultiplier))
-                {
-                    _wantsInterior = false;
-                }
-            }
-            else
-            {
-                if (_needsSystem.GetNeed(NeedType.BuyFurniture).GetTotalRingNormalizedValue() == 1)
-                {
-                    _wantsInterior = true;
-                }
-            }
-
-            if (_isSick)
-            {
-                _needsSystem.GetNeed(NeedType.Sickness).OnCoreUse += Sick_OnCoreUse;
-
-                if (!_needsSystem.GetNeed(NeedType.Sickness).TryUseNeed(_needUseAmount, _sicknessMultiplier))
-                {
-                    _isSick = false;
-                }
-            }
-            else
-            {
-                if (_needsSystem.GetNeed(NeedType.Sickness).GetTotalRingNormalizedValue() == 1)
-                {
-                    _isSick = true;
-                }
-            }
-
-            if (_isDivorcing)
-            {
-                _needsSystem.GetNeed(NeedType.HaveDepression).OnCoreUse += Divorce_OnCoreUse;
-
-                if (!_needsSystem.GetNeed(NeedType.HaveDepression).TryUseNeed(_needUseAmount, _depressionMultiplier))
-                {
-                    _isDivorcing = false;
-                }
-            }
-            else
-            {
-                if (_needsSystem.GetNeed(NeedType.HaveDepression).GetTotalRingNormalizedValue() == 1)
-                {
-                    _isDivorcing = true;
-                }
-            }
-
-            if (_wantsFight)
-            {
-                _needsSystem.GetNeed(NeedType.HaveFight).OnCoreUse += Fight_OnCoreUse;
-
-                if (!_needsSystem.GetNeed(NeedType.HaveFight).TryUseNeed(_needUseAmount, _fightMultiplier))
-                {
-                    _wantsFight = false;
-                }
-            }
-            else
-            {
-                if (_needsSystem.GetNeed(NeedType.HaveFight).GetTotalRingNormalizedValue() == 1)
-                {
-                    _wantsFight = true;
-                }
-            }
-
-            if (_wantsDate)
-            {
-                _needsSystem.GetNeed(NeedType.HaveDate).OnCoreUse += Date_OnCoreUse;
-
-                if (!_needsSystem.GetNeed(NeedType.HaveDate).TryUseNeed(_needUseAmount, _dateMultiplier))
-                {
-                    _wantsDate = false;
-                }
-            }
-            else
-            {
-                if (_needsSystem.GetNeed(NeedType.HaveDate).GetTotalRingNormalizedValue() == 1)
-                {
-                    _wantsDate = true;
-                }
-            }
-
-            if (_wantsLove)
-            {
-                _needsSystem.GetNeed(NeedType.ConfessLove).OnCoreUse += Confess_OnCoreUse;
-
-                if (!_needsSystem.GetNeed(NeedType.ConfessLove).TryUseNeed(_needUseAmount, _loveMultiplier))
-                {
-                    _wantsLove = false;
-                }
-            }
-            else
-            {
-                if (_needsSystem.GetNeed(NeedType.ConfessLove).GetTotalRingNormalizedValue() == 1)
-                {
-                    _wantsLove = true;
-                }
-            }
+            _needsSystem.GetNeed(NeedType.Hunger).UseNeed(_needUseAmount, _hungerMultiplier);
+            _needsSystem.GetNeed(NeedType.MakeFriend).UseNeed(_needUseAmount, _friendMultiplier);
+            _needsSystem.GetNeed(NeedType.BuyFurniture).UseNeed(_needUseAmount, _furnitureMultiplier);
+            _needsSystem.GetNeed(NeedType.Sickness).UseNeed(_needUseAmount, _sicknessMultiplier);
+            _needsSystem.GetNeed(NeedType.HaveDepression).UseNeed(_needUseAmount, _depressionMultiplier);
+            _needsSystem.GetNeed(NeedType.HaveFight).UseNeed(_needUseAmount, _fightMultiplier);
+            _needsSystem.GetNeed(NeedType.HaveDate).UseNeed(_needUseAmount, _dateMultiplier);
+            _needsSystem.GetNeed(NeedType.ConfessLove).UseNeed(_needUseAmount, _loveMultiplier);
         }
 
         private void Confess_OnCoreUse(object sender, EventArgs e)
         {
-            _characterData.CurrentState = DoubleState.Confession;
+            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Confession;
         }
 
         private void Date_OnCoreUse(object sender, EventArgs e)
         {
-            _characterData.CurrentState = DoubleState.Date;
+            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Date;
         }
 
         private void Fight_OnCoreUse(object sender, EventArgs e)
         {
-            _characterData.CurrentState = DoubleState.Angry;
+            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Angry;
         }
 
         private void Divorce_OnCoreUse(object sender, EventArgs e)
         {
-            _characterData.CurrentState = DoubleState.Sad;
+            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Sad;
         }
 
         private void Sick_OnCoreUse(object sender, EventArgs e)
         {
-            _characterData.CurrentState = DoubleState.Sick;
+            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Sick;
         }
 
         private void WantsInterior_OnCoreUse(object sender, EventArgs e)
         {
-            _characterData.CurrentState = DoubleState.Buy;
+            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Buy;
         }
 
         private void WantsFriend_OnCoreUse(object sender, EventArgs e)
         {
-            _characterData.CurrentState = DoubleState.MakeFriend;
+            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.MakeFriend;
         }
 
         private void Hunger_OnCoreUse(object sender, EventArgs e)
         {
-            _characterData.CurrentState = DoubleState.Hungry;
+            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Hungry;
         }
     }
 }

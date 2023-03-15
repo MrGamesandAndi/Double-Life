@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_CoatRack_Description
   icon: {fileID: 21300000, guid: b73b52e8dd5a772479660b0591af0046, type: 3}
   cost: 15000
-  model: {fileID: 3205710848153139817, guid: 1732800f468055a4e9d655f95cdac7d1, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: 1732800f468055a4e9d655f95cdac7d1, type: 3}
   width: 1
   height: 1
+  id: 4

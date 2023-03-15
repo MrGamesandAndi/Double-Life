@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Shower_Description
   icon: {fileID: 21300000, guid: 4a599bf285c85844699bece7a0e9b654, type: 3}
   cost: 10000
-  model: {fileID: 3205710848153139817, guid: 0233bd3d859636b4f825be7f7492f498, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: 0233bd3d859636b4f825be7f7492f498, type: 3}
   width: 1
   height: 1
+  id: 13

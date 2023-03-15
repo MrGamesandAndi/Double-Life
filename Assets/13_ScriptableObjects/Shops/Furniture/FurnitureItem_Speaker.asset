@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Speaker_Description
   icon: {fileID: 21300000, guid: 9c8b1e5321213b24eac4ee212d56f00f, type: 3}
   cost: 5000
-  model: {fileID: 3205710848153139817, guid: 3f11d7e7739f23f40b8119a7274e1992, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: 3f11d7e7739f23f40b8119a7274e1992, type: 3}
   width: 1
   height: 1
+  id: 14

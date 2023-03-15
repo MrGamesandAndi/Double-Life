@@ -18,6 +18,7 @@ MonoBehaviour:
     key: Furniture_Sofa_Description
   icon: {fileID: 21300000, guid: 89ab7d4d527619144907c0f4f24e43e1, type: 3}
   cost: 30000
-  model: {fileID: 3205710848153139817, guid: 5a38498f75b9b6f40b69d5daf4d73d47, type: 3}
+  prefab: {fileID: 3205710848153139817, guid: 5a38498f75b9b6f40b69d5daf4d73d47, type: 3}
   width: 3
   height: 1
+  id: 11

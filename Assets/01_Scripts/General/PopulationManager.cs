@@ -1,5 +1,6 @@
 using SaveSystem;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace General
@@ -31,6 +32,7 @@ namespace General
         private void LoadAllDoubles()
         {
             DoublesList = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
+            DoublesList = DoublesList.OrderBy(o => o.Id).ToList();
         }
 
         public void AddDouble(CharacterData characterData)
@@ -53,7 +55,6 @@ namespace General
                  characterData.MouthKey,
                  ReturnTraits(characterData.Traits),
                  characterData.Gender,
-                 characterData.PurchasedFurniture,
                  characterData.CurrentState,
                  characterData.Level,
                  characterData.Experience,
@@ -83,7 +84,7 @@ namespace General
                 }
             }
 
-            Debug.Log($"Could not find {name}");
+            Debug.Log($"Could not find Double with ID {id}.");
             return new CharacterData();
         }
 
