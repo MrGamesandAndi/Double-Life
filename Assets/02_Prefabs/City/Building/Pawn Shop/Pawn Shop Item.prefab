@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -279, y: -187}
+  m_AnchoredPosition: {x: -236, y: -187}
   m_SizeDelta: {x: 1004, y: 96}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2892552534715539929
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 318.52103, y: 0, z: 287.8308, w: 0}
+  m_margin: {x: 318.52103, y: 0, z: 378.16302, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -334,6 +334,7 @@ MonoBehaviour:
   _treasureName: {fileID: 7712846314961901907}
   _treasureDescription: {fileID: 7712846313848911195}
   _treasurePrice: {fileID: 3790563258509365863}
+  _quantity: {fileID: 0}
   _icon: {fileID: 7712846313594157389}
   _defaultColor: {r: 0.81960785, g: 0.8, b: 0.7529412, a: 1}
   _selectedColor: {r: 0.5176471, g: 0.5058824, b: 0.47843137, a: 1}

@@ -1,3 +1,4 @@
+using SaveSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -32,6 +33,11 @@ namespace ShopSystem
         public void SetIsSelected(bool isSelected)
         {
             _backgroundPanel.color = isSelected ? _selectedColor : _defaultColor;
+        }
+
+        public void SetCanSell(bool canSell)
+        {
+            _treasureName.color = canSell ? Color.black : Color.red;
         }
 
         public void OnClicked()

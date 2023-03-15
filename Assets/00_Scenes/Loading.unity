@@ -509,8 +509,8 @@ MonoBehaviour:
     _eyeColor: {r: 0, g: 0, b: 0, a: 255}
     _mouthKey: Mouth4
     _traits: 00000000000000000000000000000000
-    _purchasedFurniture: []
     _currentState: 0
+    _purchasedFurniture: []
 --- !u!1 &815342177
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +850,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4b7a7980734c450469e8b4ff89918008, type: 2}
   - {fileID: 11400000, guid: 9285dcaf1cadf3d41984e5c4cdd9c0bc, type: 2}
   - {fileID: 11400000, guid: 24d773fb3323980478bde85bdc24d29a, type: 2}
+  treasures:
+  - {fileID: 11400000, guid: 08b121bc6dccc8348a71d54dfef02f91, type: 2}
+  - {fileID: 11400000, guid: c1ef7795c09378947a3e9c2eaf4afffe, type: 2}
+  - {fileID: 11400000, guid: 4941d3af436693c4584d3966ed087043, type: 2}
+  - {fileID: 11400000, guid: 06842b907fa57ed4a999813760a94eef, type: 2}
+  - {fileID: 11400000, guid: 9b0503bac2324ff49a028617cbc51eb4, type: 2}
+  - {fileID: 11400000, guid: 83dbee2e00369af4d825e94fb9d5ae34, type: 2}
+  - {fileID: 11400000, guid: f5716c42675dc4b4f8aee2229e0bae8c, type: 2}
+  - {fileID: 11400000, guid: cd062af8c9fd65f4ab9f58873c427e77, type: 2}
+  - {fileID: 11400000, guid: e64711808b830224baa4e6cdeebdde24, type: 2}
+  - {fileID: 11400000, guid: 59d22b2ecb540534bb9e0b06d7ebc68a, type: 2}
+  - {fileID: 11400000, guid: 27788085aeef08a47ba8f0c385971107, type: 2}
 --- !u!1 &1185281549
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +915,9 @@ MonoBehaviour:
     resolutionX: 1920
     resolutionY: 1080
     isOnTutorial: 1
-    obtainedTreasures: []
+    obtainedTreasures:
+    - id: 1
+      amount: 999
     lastUsedCharacterID: 100
   _doublesData: []
 --- !u!1 &1369581755

@@ -109,6 +109,28 @@ public class GameManager : MonoBehaviour, IPurchaser
         SaveManager.Instance.PlayerData.currency += amount;
         AchievementManager.instance.AddAchievementProgress("Unlock_Furniture", amount);
     }
+
+    public void SpendTreasure(int id, int amount)
+    {
+        for (int i = 0; i < SaveManager.Instance.PlayerData.obtainedTreasures.Length; i++)
+        {
+            if (SaveManager.Instance.PlayerData.obtainedTreasures[i].id == id)
+            {
+                SaveManager.Instance.PlayerData.obtainedTreasures[i].amount -= amount;
+            }
+        }
+    }
+
+    public void GainTreasure(int id, int amount)
+    {
+        for (int i = 0; i < SaveManager.Instance.PlayerData.obtainedTreasures.Length; i++)
+        {
+            if (SaveManager.Instance.PlayerData.obtainedTreasures[i].id == id)
+            {
+                SaveManager.Instance.PlayerData.obtainedTreasures[i].amount += amount;
+            }
+        }
+    }
     
     public void ResetCurrentLoadedDouble()
     {

@@ -1,4 +1,5 @@
 using CharacterCreator;
+using SaveSystem;
 using ShopSystem;
 using System.Collections.Generic;
 using TraitSystem;
@@ -33,6 +34,9 @@ namespace General
 
         [Header("AI")]
         public List<Trait> traits;
+
+        [Header("Treasures")]
+        public List<Treasure> treasures;
 
         public Mesh ReturnHairMesh(string hairName)
         {
@@ -115,6 +119,32 @@ namespace General
             }
 
             return null;
+        }
+
+        public Treasure ReturnTreasure(int id)
+        {
+            foreach (var item in treasures)
+            {
+                if (item.id == id)
+                {
+                    return item;
+                }
+            }
+
+            return null;
+        }
+
+        public Treasures ReturnPlayerTreasure(int id)
+        {
+            foreach (var item in SaveManager.Instance.PlayerData.obtainedTreasures)
+            {
+                if (item.id == id)
+                {
+                    return item;
+                }
+            }
+
+            return new Treasures();
         }
     }
 }

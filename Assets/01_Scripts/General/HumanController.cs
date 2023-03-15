@@ -306,8 +306,8 @@ public class HumanController : MonoBehaviour
     {
         if (!FileHandler.CheckIfCharacterFileExists(Name + LastName))
         {
-            GenerateAI.Instance.AddIndividualAI(characterData);
             PopulationManager.Instance.AddDouble(characterData);
+            GenerateAI.Instance.AddIndividualAI(characterData);
         }
 
         AchievementManager.instance.AddAchievementProgress("Unlock_TownHall", 1);

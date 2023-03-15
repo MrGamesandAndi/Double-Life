@@ -1,3 +1,5 @@
+using General;
+using SaveSystem;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -11,15 +13,29 @@ namespace ShopSystem
         [SerializeField] TextMeshProUGUI _availableFundsText;
         [SerializeField] Transform _itemUIRoot;
         [SerializeField] GameObject _itemUIPrefab;
-        [SerializeField] List<Treasure> _availableItems;
         [SerializeField] Button _sellButton;
 
         Dictionary<Treasure, PawnShopUIItem> _treasureItemToUIMap;
         Treasure _selectedItem;
+        List<Treasure> _availableItems;
 
         private void Start()
         {
+            GetPlayerTreasure();
             RefreshUIProducts();
+        }
+
+        private void GetPlayerTreasure()
+        {
+            _availableItems = new List<Treasure>();
+
+            if (SaveManager.Instance.PlayerData.obtainedTreasures.Length != 0)
+            {
+                foreach (var item in SaveManager.Instance.PlayerData.obtainedTreasures)
+                {
+                    _availableItems.Add(BodyPartsCollection.Instance.ReturnTreasure(item.id));
+                }
+            }
         }
 
         public void RefreshUICommon()
@@ -28,7 +44,7 @@ namespace ShopSystem
             _availableFundsText.text = $"{(GameManager.Instance.GetCurrentFunds() / 100f):0.00}";
             _sellButton.GetComponent<Button>().onClick.RemoveAllListeners();
 
-            if (_selectedItem != null)
+            if (_selectedItem != null && BodyPartsCollection.Instance.ReturnPlayerTreasure(_selectedItem.id).amount > 0)
             {
                 _sellButton.GetComponent<Button>().onClick.AddListener(OnClickedPurchase);
             }
@@ -37,6 +53,7 @@ namespace ShopSystem
             {
                 var item = kvp.Key;
                 var itemUI = kvp.Value;
+                itemUI.SetCanSell(BodyPartsCollection.Instance.ReturnPlayerTreasure(item.id).amount > 0);
             }
         }
 
@@ -45,12 +62,12 @@ namespace ShopSystem
             _treasureItemToUIMap = new Dictionary<Treasure, PawnShopUIItem>();
             List<Treasure> orderedList = _availableItems.OrderBy(o => o.treasureName.Value).ToList();
 
-            foreach (var item in orderedList)
+            for (int i = 0; i < _availableItems.Count; i++)
             {
                 var itemGO = Instantiate(_itemUIPrefab, _itemUIRoot);
                 var itemUI = itemGO.GetComponent<PawnShopUIItem>();
-                itemUI.Bind(item, OnItemSelected);
-                _treasureItemToUIMap[item] = itemUI;
+                itemUI.Bind(_availableItems[i], OnItemSelected);
+                _treasureItemToUIMap[_availableItems[i]] = itemUI;
             }
 
             RefreshUICommon();
@@ -59,6 +76,7 @@ namespace ShopSystem
         public void OnClickedPurchase()
         {
             GameManager.Instance.GainFunds(_selectedItem.value);
+            GameManager.Instance.SpendTreasure(_selectedItem.id, 1);
             RefreshUICommon();
         }
 
