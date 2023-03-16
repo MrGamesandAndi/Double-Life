@@ -23,6 +23,7 @@ namespace Apartments
 
         private void OnEnable()
         {
+            ResetAllButtons();
             RefreshUIProducts();
         }
 
@@ -85,7 +86,6 @@ namespace Apartments
             }
 
             RoomManager.Instance.HideTabs();
-            ResetAllButtons();
         }
 
         private void ResetAllButtons()
@@ -116,16 +116,6 @@ namespace Apartments
             }
 
             RefreshUICommon();
-        }
-
-        public void AddGiveButtonListener()
-        {
-            _giveButton.GetComponent<Button>().onClick.AddListener(OnClickedGive);
-        }
-
-        public void RemoveGiveButtonListener()
-        {
-            _giveButton.GetComponent<Button>().onClick.RemoveListener(OnClickedGive);
         }
     }
 }

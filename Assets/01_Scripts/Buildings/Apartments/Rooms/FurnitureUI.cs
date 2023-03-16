@@ -20,6 +20,7 @@ namespace Apartments
 
         private void OnEnable()
         {
+            ResetAllButtons();
             RefreshUIProducts();
         }
 
@@ -81,7 +82,6 @@ namespace Apartments
 
             RoomManager.Instance.EnableGrid();
             GridBuildingSystem3D.Instance.SetFurniture();
-            ResetAllButtons();
         }
 
         private void ResetAllButtons()
@@ -111,16 +111,6 @@ namespace Apartments
             }
 
             RefreshUICommon();
-        }
-
-        public void AddGiveButtonListener()
-        {
-            _giveButton.GetComponent<Button>().onClick.AddListener(OnClickedGive);
-        }
-
-        public void RemoveGiveButtonListener()
-        {
-            _giveButton.GetComponent<Button>().onClick.RemoveListener(OnClickedGive);
         }
     }
 }

@@ -1,4 +1,5 @@
 using General;
+using SceneManagement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -37,7 +38,6 @@ namespace BattleMinigame
 
         private void InitializePlayer()
         {
-            GameManager.Instance.currentLoadedDouble = PopulationManager.Instance.GetRandomDouble();
             _player.SetActive(true);
             _player.GetComponent<Animator>().Play("Battle_Idle");
         }
@@ -58,6 +58,7 @@ namespace BattleMinigame
 
                 if (_enemyHealth <= 0f)
                 {
+                    _enemy.gameObject.SetActive(false);
                     _player.GetComponent<Animator>().Play("Level_Up");
                     _battlePanel.SetActive(false);
                     _winPanel.SetActive(true);
@@ -152,6 +153,11 @@ namespace BattleMinigame
                     Heal(_enemy, _amountEnemyHeal);
                     break;
             }
+        }
+
+        public void ExitMinigame()
+        {
+            ScenesManager.Instance.LoadScene(Scenes.Apartment_Room, Scenes.RPG_Minigame);
         }
     }
 }

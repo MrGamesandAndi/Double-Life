@@ -1,4 +1,5 @@
 using Localisation;
+using SceneManagement;
 using UnityEngine;
 
 namespace ShopSystem
@@ -12,5 +13,7 @@ namespace ShopSystem
         public Sprite icon;
         public int value;
         public TreasureRarity rarity;
+        public Scenes scene;
+        public bool canBeGiven = false;
     }
 }

@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4878171257684730276}
   - component: {fileID: 4878171257684730277}
-  - component: {fileID: 7476377799119793998}
   - component: {fileID: 3688716135989023791}
   - component: {fileID: 4068928570764444607}
+  - component: {fileID: 5131988584333296501}
   m_Layer: 0
-  m_Name: Food Base
+  m_Name: Treasure Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9999
-  m_Sprite: {fileID: 21300000, guid: 4260993ed7e92144db96da7a686da7f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6bd236320849f2441945fa69206cec23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7476377799119793998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4878171257684730282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1027c60945aa74bb18c67fb2dc1c3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _snapPoint: {fileID: 0}
-  expReward: 50
-  _foodParticles: {fileID: 2145026394363407450, guid: 36b27620a20187c4a8089d833918c792, type: 3}
-  _foodSound: {fileID: 8300000, guid: f318639f6a97812418e1962a7529111d, type: 3}
 --- !u!65 &3688716135989023791
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -130,3 +114,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 3
+--- !u!114 &5131988584333296501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878171257684730282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c938575cc00ca96439a47ed5c33ba50c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _snapPoint: {fileID: 0}
+  _sceneToLoad: 14
+  _foodParticles: {fileID: 0}
+  _foodSound: {fileID: 0}

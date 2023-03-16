@@ -20,3 +20,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a3960d2639d9b3f4c899292a1ac34d02, type: 3}
   value: 5000
   rarity: 0
+  scene: 0
+  canBeGiven: 1
