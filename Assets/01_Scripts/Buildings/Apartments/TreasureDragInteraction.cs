@@ -1,4 +1,7 @@
+using General;
+using Needs;
 using SceneManagement;
+using ShopSystem;
 using UnityEngine;
 
 namespace Apartments
@@ -7,6 +10,7 @@ namespace Apartments
     {
         public GameObject _snapPoint;
         public Scenes _sceneToLoad;
+        public int id;
 
         Vector3 _snapPointPosition;
         Vector3 _screenPoint;
@@ -43,10 +47,33 @@ namespace Apartments
         {
             if (_isCorrectPlace)
             {
-                ScenesManager.Instance.LoadScene(_sceneToLoad, Scenes.Apartment_Room);
                 gameObject.transform.position = _snapPointPosition;
                 alreadySticked = true;
-                Debug.Log("Dialogue here");
+
+                if (id == 1 || id == 9)
+                {
+                    ScenesManager.Instance.LoadScene(_sceneToLoad, Scenes.Apartment_Room);
+                }
+                else
+                {
+                    Destroy(gameObject);
+
+                    if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Sick && id == 6)
+                    {
+                        RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
+                        Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Rare);
+                        GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
+                        PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.Sickness);
+                    }
+
+                    if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Angry && id == 7)
+                    {
+                        RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
+                        Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Rare);
+                        GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
+                        PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.HaveFight);
+                    }
+                }
             }
         }
 

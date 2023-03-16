@@ -1,5 +1,6 @@
 using General;
 using SaveSystem;
+using SceneManagement;
 using ShopSystem;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace Apartments
             {
                 foreach (var item in SaveManager.Instance.PlayerData.obtainedTreasures)
                 {
-                    if (BodyPartsCollection.Instance.ReturnTreasure(item.id).canBeGiven)
+                    if (BodyPartsCollection.Instance.ReturnTreasure(item.id).canBeGiven && item.amount > 0)
                     {
                         _availableItems.Add(item);
                     }
@@ -66,6 +67,7 @@ namespace Apartments
 
         public void RefreshUITreasures()
         {
+            GetPlayerTreasure();
             _treasureItemToUIMap.Clear();
             _orderedList.Clear();
             _orderedList = _availableItems.OrderBy(o => o.id).ToList();
@@ -85,7 +87,13 @@ namespace Apartments
         {
             _treasurePrefab.GetComponent<SpriteRenderer>().sprite = _selectedItem.icon;
             _treasurePrefab.GetComponent<TreasureDragInteraction>()._snapPoint = _snapPoint;
-            _treasurePrefab.GetComponent<TreasureDragInteraction>()._sceneToLoad = _selectedItem.scene;
+            _treasurePrefab.GetComponent<TreasureDragInteraction>().id = _selectedItem.id;
+
+            if (_selectedItem.scene != Scenes.Loading_Screen)
+            {
+                _treasurePrefab.GetComponent<TreasureDragInteraction>()._sceneToLoad = _selectedItem.scene;
+            }
+
             Instantiate(_treasurePrefab, _treasureSpawnArea);
             RoomManager.Instance.HideTabs();
             GameManager.Instance.SpendTreasure(_selectedItem.id, 1);

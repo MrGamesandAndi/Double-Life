@@ -1,2 +1,3 @@
-language,id,text,file,node,lineNumber,lock,comment
+﻿language,id,text,file,node,lineNumber,lock,comment
 en,line:056b602,I'd like something new for my apartment.,Assets/14_DialogueScripts/Normal Problem/Furniture/Furniture1.yarn,Furniture1,4,5bd6c0c0,
+en,line:0ceb464,Thanks for helping me. Take this as thanks.,Assets/14_DialogueScripts/Normal Problem/Furniture/Thanks.yarn,Thanks,4,fc8e20eb,

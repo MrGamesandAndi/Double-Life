@@ -25,7 +25,13 @@ namespace SaveSystem
             resolutionX = 1920;
             resolutionY = 1080;
             isOnTutorial = true;
-            obtainedTreasures = new Treasures[0];
+            obtainedTreasures = new Treasures[11];
+
+            for (int i = 0; i < obtainedTreasures.Length; i++)
+            {
+                obtainedTreasures[i].id = i;
+            }
+
             lastUsedCharacterID = 100;
         }
     }

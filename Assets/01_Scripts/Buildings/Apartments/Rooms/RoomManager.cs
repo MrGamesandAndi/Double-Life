@@ -2,7 +2,6 @@ using Apartments;
 using AudioSystem;
 using General;
 using Localisation;
-using Needs;
 using SaveSystem;
 using ShopSystem;
 using System.Collections.Generic;
@@ -14,6 +13,7 @@ public class RoomManager : MonoBehaviour
 {
     public static RoomManager Instance { get; private set; }
     public FurnitureItem SelectedFurniture { get => _selectedFurniture; set => _selectedFurniture = value; }
+    public DialogueRunner DialogueRunner { get => _dialogueRunner; set => _dialogueRunner = value; }
 
     public FurnitureItem _selectedFurniture = null;
 
@@ -30,6 +30,8 @@ public class RoomManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _moneyText;
     public GameObject humanModel;
 
+    DialogueRunner _dialogueRunner;
+
     private void Awake()
     {
         Instance = this;
@@ -37,6 +39,7 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
+        _dialogueRunner = _language.GetComponent<DialogueRunner>();
         _wallMaterial.color = GameManager.Instance.currentLoadedDouble.Color;
 
         if (SaveManager.Instance.PlayerData.language == Language.Spanish)

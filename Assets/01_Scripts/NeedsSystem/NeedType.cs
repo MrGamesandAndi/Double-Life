@@ -9,6 +9,7 @@ namespace Needs
         Hunger = 4,
         MakeFriend = 5,
         HaveDepression = 6,
-        Sickness = 7
+        Sickness = 7,
+        TalkToFriend = 8
     }
 }

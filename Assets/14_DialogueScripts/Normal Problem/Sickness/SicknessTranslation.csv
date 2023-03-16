@@ -1,3 +1,4 @@
-language,id,text,file,node,lineNumber,lock,comment
+﻿language,id,text,file,node,lineNumber,lock,comment
 en,line:0a70c25,I caught a cold. I don't feel so good...,Assets/14_DialogueScripts/Normal Problem/Sickness/Sickness1.yarn,Sickness1,4,596797f0,
 en,line:01f24a1,My tummy doesn't feel too good.,Assets/14_DialogueScripts/Normal Problem/Sickness/Sickness2.yarn,Sickness2,4,e9401640,
+en,line:0ceb464,Thanks for helping me. Take this as thanks.,Assets/14_DialogueScripts/Normal Problem/Sickness/Thanks.yarn,Thanks,4,fc8e20eb,

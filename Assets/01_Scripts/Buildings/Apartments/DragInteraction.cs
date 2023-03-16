@@ -1,5 +1,8 @@
 using AudioSystem;
+using General;
 using LevelingSystem;
+using Needs;
+using ShopSystem;
 using UnityEngine;
 
 public class DragInteraction : MonoBehaviour
@@ -42,16 +45,22 @@ public class DragInteraction : MonoBehaviour
     {
         if (_isCorrectPlace)
         {
-            int randomAmount = 0;
-            randomAmount = Random.Range(50, 101);
-            ExperienceManager.Instance.LevelSystem.AddExperience(expReward);
-            GameManager.Instance.GainFunds(randomAmount);
-            AudioManager.Instance.PlaySfx(_foodSound);
             gameObject.transform.position = _snapPointPosition;
             alreadySticked = true;
+            ExperienceManager.Instance.LevelSystem.AddExperience(expReward);
+            GameManager.Instance.GainFunds(Random.Range(50, 101));
+            AudioManager.Instance.PlaySfx(_foodSound);
             Instantiate(_foodParticles, _snapPoint.transform, false);
             Destroy(gameObject);
-            RoomManager.Instance.ShowTabs();
+
+            if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Hungry)
+            {
+                RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
+                Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Uncommon);
+                GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
+                PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.Hunger);
+            }
+
             RoomManager.Instance.UpdateMoneyText();
         }
     }

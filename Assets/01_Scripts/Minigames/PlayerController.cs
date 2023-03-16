@@ -31,7 +31,15 @@ namespace ParkMinigame
                 Instance = this;
             }
 
-            _randomDouble = PopulationManager.Instance.GetRandomDouble();
+            if (PopulationManager.Instance.DoublesList.Count > 1)
+            {
+                _randomDouble = PopulationManager.Instance.GetRandomDouble();
+            }
+            else
+            {
+                _randomDouble = PopulationManager.Instance.DoublesList[0];
+            }
+
             _playerPlacement[CurrentPosition].gameObject.SetActive(true);
         }
 

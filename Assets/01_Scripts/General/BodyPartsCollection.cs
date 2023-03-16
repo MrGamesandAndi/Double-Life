@@ -146,5 +146,20 @@ namespace General
 
             return new Treasures();
         }
+
+        public Treasure ReturnRandomTreasure(TreasureRarity rarity)
+        {
+            List<Treasure> foundTreasures = new List<Treasure>();
+
+            foreach (var item in treasures)
+            {
+                if (item.rarity == rarity)
+                {
+                    foundTreasures.Add(item);
+                }
+            }
+
+            return foundTreasures[Random.Range(0, foundTreasures.Count)];
+        }
     }
 }

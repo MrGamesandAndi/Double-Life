@@ -915,9 +915,7 @@ MonoBehaviour:
     resolutionX: 1920
     resolutionY: 1080
     isOnTutorial: 1
-    obtainedTreasures:
-    - id: 1
-      amount: 999
+    obtainedTreasures: []
     lastUsedCharacterID: 100
   _doublesData: []
 --- !u!1 &1369581755
@@ -994,6 +992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _doublesList: []
+  _doublesAI: []
 --- !u!4 &1708927957
 Transform:
   m_ObjectHideFlags: 0

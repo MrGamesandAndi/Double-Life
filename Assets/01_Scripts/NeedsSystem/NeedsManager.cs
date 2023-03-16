@@ -1,4 +1,5 @@
 using General;
+using Relationships;
 using System;
 using System.Collections.Generic;
 using TraitSystem;
@@ -67,6 +68,9 @@ namespace Needs
             _needsSystem.GetNeed(NeedType.Hunger).OnCoreUse += Hunger_OnCoreUse;
             _needsSystem.GetNeed(NeedType.Hunger).OnNeedReset += OnNeedReset;
 
+            _needsSystem.GetNeed(NeedType.TalkToFriend).OnCoreUse += Talk_OnCoreUse;
+            _needsSystem.GetNeed(NeedType.TalkToFriend).OnNeedReset += OnNeedReset;
+
             _needsSystem.GetNeed(NeedType.MakeFriend).OnCoreUse += WantsFriend_OnCoreUse;
             _needsSystem.GetNeed(NeedType.MakeFriend).OnNeedReset += OnNeedReset;
 
@@ -94,6 +98,12 @@ namespace Needs
             PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Happy;
         }
 
+        public void NeedCompleted(NeedType need)
+        {
+            OnNeedReset(this, EventArgs.Empty);
+            _needsSystem.GetNeed(need).ResetNeed();
+        }
+
         private void Update()
         {
             _needsSystem.GetNeed(NeedType.Hunger).UseNeed(_needUseAmount, _hungerMultiplier);
@@ -104,16 +114,41 @@ namespace Needs
             _needsSystem.GetNeed(NeedType.HaveFight).UseNeed(_needUseAmount, _fightMultiplier);
             _needsSystem.GetNeed(NeedType.HaveDate).UseNeed(_needUseAmount, _dateMultiplier);
             _needsSystem.GetNeed(NeedType.ConfessLove).UseNeed(_needUseAmount, _loveMultiplier);
+            _needsSystem.GetNeed(NeedType.TalkToFriend).UseNeed(_needUseAmount, _friendMultiplier);
+        }
+
+        private void Talk_OnCoreUse(object sender, EventArgs e)
+        {
+            if (RelationshipSystem.Instance.CheckIfDoubleHasRelationships(PopulationManager.Instance.ReturnDouble(characterId)))
+            {
+                RelationshipSystem.Instance.TalkToExistingFriend(PopulationManager.Instance.ReturnDouble(characterId));
+            }
+
+            NeedCompleted(NeedType.TalkToFriend);
         }
 
         private void Confess_OnCoreUse(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Confession;
+            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(PopulationManager.Instance.ReturnDouble(characterId)))
+            {
+                PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Confession;
+            }
+            else
+            {
+                NeedCompleted(NeedType.ConfessLove);
+            }
         }
 
         private void Date_OnCoreUse(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Date;
+            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(PopulationManager.Instance.ReturnDouble(characterId)))
+            {
+                PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Date;
+            }
+            else
+            {
+                NeedCompleted(NeedType.HaveDate);
+            }
         }
 
         private void Fight_OnCoreUse(object sender, EventArgs e)
@@ -123,7 +158,14 @@ namespace Needs
 
         private void Divorce_OnCoreUse(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Sad;
+            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(PopulationManager.Instance.ReturnDouble(characterId)))
+            {
+                PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Sad;
+            }
+            else
+            {
+                NeedCompleted(NeedType.HaveDepression);
+            }
         }
 
         private void Sick_OnCoreUse(object sender, EventArgs e)
@@ -138,7 +180,14 @@ namespace Needs
 
         private void WantsFriend_OnCoreUse(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.MakeFriend;
+            if (PopulationManager.Instance.DoublesList.Count > 1)
+            {
+                PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.MakeFriend;
+            }
+            else
+            {
+                NeedCompleted(NeedType.MakeFriend);
+            }
         }
 
         private void Hunger_OnCoreUse(object sender, EventArgs e)

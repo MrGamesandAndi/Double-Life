@@ -1,3 +1,4 @@
+using Needs;
 using SaveSystem;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,10 @@ namespace General
     {
         public static PopulationManager Instance { get; private set; } = null;
         public List<CharacterData> DoublesList { get => _doublesList; set => _doublesList = value; }
+        public List<NeedsManager> DoublesAI { get => _doublesAI; set => _doublesAI = value; }
 
         [SerializeField] List<CharacterData> _doublesList;
+        [SerializeField] List<NeedsManager> _doublesAI;
         private void Awake()
         {
             if (Instance != null)
@@ -59,6 +62,7 @@ namespace General
                  characterData.Level,
                  characterData.Experience,
                  characterData.Id,
+                 new List<Vector3>(),
                  new List<Vector3>()
                  ));
         }
@@ -91,8 +95,23 @@ namespace General
 
         public CharacterData GetRandomDouble()
         {
-                int random = Random.Range(0, DoublesList.Count - 1);
-                return DoublesList[random];
+            var randomDoubles = (from s in DoublesList
+                                where s.Id != GameManager.Instance.currentLoadedDouble.Id
+                                select s).ToList();
+            return randomDoubles[Random.Range(0, randomDoubles.Count)];
+        }
+
+        public NeedsManager GetAIByID(int id)
+        {
+            foreach (var item in DoublesAI)
+            {
+                if (item.characterId == id)
+                {
+                    return item;
+                }
+            }
+
+            return null;
         }
     }
 }

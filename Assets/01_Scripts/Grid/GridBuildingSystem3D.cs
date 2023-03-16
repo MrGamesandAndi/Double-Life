@@ -4,6 +4,7 @@ using UnityEngine;
 using ShopSystem;
 using SaveSystem;
 using General;
+using Needs;
 
 public class GridBuildingSystem3D : MonoBehaviour {
 
@@ -111,8 +112,15 @@ public class GridBuildingSystem3D : MonoBehaviour {
                 
                 OnObjectPlaced?.Invoke(this, EventArgs.Empty);
                 RoomManager.Instance.DisableGrid();
-                RoomManager.Instance.ShowTabs();
                 RoomManager.Instance.ResetSelectedFurniture();
+
+                if(GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Buy)
+                {
+                    RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
+                    Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Rare);
+                    GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
+                    PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.BuyFurniture);
+                }
             }
         }
 

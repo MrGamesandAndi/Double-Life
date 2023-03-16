@@ -32,12 +32,13 @@ namespace SaveSystem
         [SerializeField] List<int> _traits;
         [SerializeField] DoubleState _currentState;
         [SerializeField] List<Vector3> _purchasedFurniture;
+        [SerializeField] List<Vector3> _relationships;
 
         public CharacterData()
         {
         }
 
-        public CharacterData(string name, string lastName, string nickname, string relationshipCode, Color color, string zodiacCode, string sexPreferenceCode, Color skintone, string hairKey, Color hairColor, string eyebrowKey, Color eyebrowColor, string eyeKey, Color eyeColor, string mouthKey, List<int> traits, int gender, DoubleState currentState, int level, int experience, int id, List<Vector3> purchasedFurniture)
+        public CharacterData(string name, string lastName, string nickname, string relationshipCode, Color color, string zodiacCode, string sexPreferenceCode, Color skintone, string hairKey, Color hairColor, string eyebrowKey, Color eyebrowColor, string eyeKey, Color eyeColor, string mouthKey, List<int> traits, int gender, DoubleState currentState, int level, int experience, int id, List<Vector3> purchasedFurniture, List<Vector3> relationships)
         {
             Name = name;
             LastName = lastName;
@@ -61,6 +62,7 @@ namespace SaveSystem
             Experience = experience;
             Id = id;
             PurchasedFurniture = purchasedFurniture;
+            Relationships = relationships;
         }
 
         public string Name { get => _name; set => _name = value; }
@@ -85,5 +87,6 @@ namespace SaveSystem
         public int Experience { get => _experience; set => _experience = value; }
         public int Id { get => _id; set => _id = value; }
         public List<Vector3> PurchasedFurniture { get => _purchasedFurniture; set => _purchasedFurniture = value; }
+        public List<Vector3> Relationships { get => _relationships; set => _relationships = value; }
     }
 }

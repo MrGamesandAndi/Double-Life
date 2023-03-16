@@ -17,7 +17,7 @@ namespace Needs
             _needDictionary[NeedType.MakeFriend] = new Need();
             _needDictionary[NeedType.HaveDepression] = new Need();
             _needDictionary[NeedType.Sickness] = new Need();
-
+            _needDictionary[NeedType.TalkToFriend] = new Need();
         }
 
         public Need GetNeed(NeedType needType)

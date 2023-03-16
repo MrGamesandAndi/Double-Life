@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour, IPurchaser
             if (SaveManager.Instance.PlayerData.obtainedTreasures[i].id == id)
             {
                 SaveManager.Instance.PlayerData.obtainedTreasures[i].amount -= amount;
+                break;
             }
         }
     }
@@ -128,6 +129,7 @@ public class GameManager : MonoBehaviour, IPurchaser
             if (SaveManager.Instance.PlayerData.obtainedTreasures[i].id == id)
             {
                 SaveManager.Instance.PlayerData.obtainedTreasures[i].amount += amount;
+                break;
             }
         }
     }

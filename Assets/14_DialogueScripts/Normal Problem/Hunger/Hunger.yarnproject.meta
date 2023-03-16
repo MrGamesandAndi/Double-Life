@@ -13,6 +13,7 @@ ScriptedImporter:
   - {fileID: 6391573757903218779, guid: f6dd6c1a15930ac4eb7cfc8022c3ecf1, type: 3}
   - {fileID: 6391573757903218779, guid: ba86e0f4d6e7ec246bbf8b3fd63dc2ef, type: 3}
   - {fileID: 6391573757903218779, guid: d71efc6995d063646bb6900d23f43700, type: 3}
+  - {fileID: 6391573757903218779, guid: 946a0947e4a5d13469e604e22156cc66, type: 3}
   compileErrors: []
   serializedDeclarations: []
   defaultLanguage: es-BO

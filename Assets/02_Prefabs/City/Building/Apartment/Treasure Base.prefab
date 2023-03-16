@@ -130,3 +130,4 @@ MonoBehaviour:
   _sceneToLoad: 14
   _foodParticles: {fileID: 0}
   _foodSound: {fileID: 0}
+  _treasureProject: {fileID: 7545569452688597077, guid: 57675bb4acd9ba247aee5951fa1e6677, type: 3}

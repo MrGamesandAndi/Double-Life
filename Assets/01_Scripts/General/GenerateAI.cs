@@ -40,19 +40,7 @@ namespace General
             ai.name = $"{character.Name}{character.LastName}";
             ai.GetComponent<NeedsManager>().LinkCharacterData(character.Id);
             ai.GetComponent<NeedsManager>().SetMultipliers();
-
-            for (int i = 0; i < character.Traits.Count; i++)
-            {
-                for (int j = 0; j < BodyPartsCollection.Instance.traits.Count; j++)
-                {
-                    if (character.Traits[i] == BodyPartsCollection.Instance.traits[j].id)
-                    {
-                        break;
-                    }
-                }
-            }
-
-            Instantiate(ai, transform);
+            PopulationManager.Instance.DoublesAI.Add(Instantiate(ai, transform).GetComponent<NeedsManager>());
         }
 
         public void RemoveIndividualAI(CharacterData character)
@@ -63,6 +51,7 @@ namespace General
 
                 if(data.name == character.Name + character.LastName)
                 {
+                    PopulationManager.Instance.DoublesAI.RemoveAt(i);
                     Destroy(data);
                 }
             }
