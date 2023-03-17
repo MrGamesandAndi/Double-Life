@@ -51,6 +51,10 @@ namespace DialogueSystem
                     _emoteWindow.sprite = _emotes[5];
                     GetComponent<WindowManager>().state = DoubleState.Sad;
                     break;
+                case DoubleState.BreakUp:
+                    _emoteWindow.sprite = _emotes[5];
+                    GetComponent<WindowManager>().state = DoubleState.BreakUp;
+                    break;
                 default:
                     _emoteWindow.sprite = _emotes[0];
                     GetComponent<WindowManager>().state = DoubleState.Happy;

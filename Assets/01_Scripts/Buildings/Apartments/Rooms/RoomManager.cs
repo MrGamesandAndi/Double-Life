@@ -90,6 +90,10 @@ public class RoomManager : MonoBehaviour
                 AudioManager.Instance.PlayMusic(_moodMusicList[4]);
                 _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[5]);
                 break;
+            case DoubleState.BreakUp:
+                AudioManager.Instance.PlayMusic(_moodMusicList[4]);
+                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[8]);
+                break;
             default:
                 AudioManager.Instance.PlayMusic(_moodMusicList[0]);
                 _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[0]);

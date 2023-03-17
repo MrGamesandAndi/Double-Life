@@ -509,13 +509,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 368009630}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1652,13 +1652,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 332555000}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3884,13 +3884,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1235500161}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6761,13 +6761,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 2029529758}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8472,13 +8472,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 663787357}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12514,13 +12514,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 2134967122}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13428,13 +13428,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 208490039}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -19799,13 +19799,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 524625732}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22272,13 +22272,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 331043621}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22417,13 +22417,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 218892322}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22503,7 +22503,7 @@ MonoBehaviour:
     _nickname: 
     _relationshipCode: cc_rel_6
     _color: {r: 1, g: 0, b: 0, a: 1}
-    _zodiacCode: cc_zodiac_01
+    _zodiacCode: 0
     _sexPreferenceCode: cc_sex_03
     _gender: 0
     _level: 1
@@ -22517,8 +22517,9 @@ MonoBehaviour:
     _eyeColor: {r: 0, g: 0, b: 0, a: 255}
     _mouthKey: Mouth5
     _traits: 00000000000000000000000000000000
-    _purchasedFurniture: []
     _currentState: 0
+    _purchasedFurniture: []
+    _relationships: []
   _headReference: {fileID: 1554014307}
   _hairReference: {fileID: 248260649}
   _rEyeReference: {fileID: 266986794}
@@ -25408,13 +25409,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1103079236}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -25823,13 +25824,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1910713067}
-        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoController, Assembly-CSharp
+        m_TargetAssemblyTypeName: CharacterCreator.CharacterInfoManager, Assembly-CSharp
         m_MethodName: SetZodiacValue
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 859820893}
-          m_ObjectArgumentAssemblyTypeName: Localisation.TextLocaliserUI, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

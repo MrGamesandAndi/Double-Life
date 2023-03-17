@@ -5,6 +5,8 @@ Estaba pensado en llevar a mi pareja a algún lugar. ¿Qué te parece? #line:0e3
 
 -> Me parece bien. #line:076379e 
     ¡Qué bueno! Pero antes voy a arreglarme un poco. #line:0afbe49 
+	<<go_to_date Room>>
 -> No lo sé... #line:0a248c1 
-    ¿Por qué? ¿Acaso te gusto? #line:06a209b 
+    ¿Por qué? ¿Acaso te gusto? #line:06a209b
+	<<reset_need Room 2>>	
 ===

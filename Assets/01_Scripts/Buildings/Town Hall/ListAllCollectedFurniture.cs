@@ -10,16 +10,17 @@ namespace TownHall
     {
         [SerializeField] GameObject _furnitureButtonPrefab;
         [SerializeField] Transform _furnitureUIRoot;
-        [SerializeField] List<PurchasedFurniture> _purchasedFurnitureList;
         [SerializeField] List<FurnitureItem> _furnitureList;
+
+        List<PurchasedFurniture> _purchasedFurnitureList;
 
         private void Start()
         {
             _purchasedFurnitureList = SaveManager.Instance.FurnitureData;
-            RefreshUIFood();
+            RefreshUIFurniture();
         }
 
-        public void RefreshUIFood()
+        public void RefreshUIFurniture()
         {
             List<PurchasedFurniture> orderedList = _purchasedFurnitureList.OrderBy(o => o.furnitureName.Value).ToList();
             List<FurnitureItem> furniture = _furnitureList.OrderBy(o => o.furnitureName.Value).ToList();
@@ -36,7 +37,6 @@ namespace TownHall
                         break;
                     }
                 }
-                
             }
         }
     }

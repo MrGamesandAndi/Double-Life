@@ -3429,7 +3429,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _furnitureButtonPrefab: {fileID: 3666031868469812986, guid: 31a84ccac3343904fb9b9572ebbcefee, type: 3}
   _furnitureUIRoot: {fileID: 1555915347}
-  _purchasedFurnitureList: []
   _furnitureList:
   - {fileID: 11400000, guid: b73fbfac919b1d641b9b3b6385298a78, type: 2}
   - {fileID: 11400000, guid: 85d39ddcedf9078499d9a3515ba1d639, type: 2}
@@ -5479,6 +5478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1101087248}
+  - component: {fileID: 1101087249}
   m_Layer: 5
   m_Name: Page 3-Treasures
   m_TagString: Untagged
@@ -5506,6 +5506,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1101087249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101087247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47b911b63b0f044c99a494c0436579b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _treasureButtonPrefab: {fileID: 3666031868469812986, guid: 2a824a6827c23f7429bce85609aa5aa8, type: 3}
+  _treasureUIRoot: {fileID: 1066656032}
 --- !u!1 &1123248141
 GameObject:
   m_ObjectHideFlags: 0

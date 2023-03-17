@@ -1,4 +1,5 @@
 using CharacterCreator;
+using Relationships;
 using SaveSystem;
 using ShopSystem;
 using System.Collections.Generic;
@@ -38,6 +39,9 @@ namespace General
         [Header("Treasures")]
         public List<Treasure> treasures;
 
+        [Header("Zodiac")]
+        public List<ZodiacSign> zodiac;
+
         public Mesh ReturnHairMesh(string hairName)
         {
             foreach (BaseScriptableObject hair in hairs)
@@ -45,6 +49,19 @@ namespace General
                 if (hair.name == hairName)
                 {
                     return hair.Mesh;
+                }
+            }
+
+            return null;
+        }
+
+        public ZodiacSign ReturnZodiacById(int id)
+        {
+            foreach (var item in zodiac)
+            {
+                if(item.id == id)
+                {
+                    return item;
                 }
             }
 

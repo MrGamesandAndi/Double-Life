@@ -14,7 +14,6 @@ namespace SaveSystem
         public int resolutionY;
         public bool isOnTutorial;
         public Treasures[] obtainedTreasures;
-        public int lastUsedCharacterID;
 
         public PlayerData()
         {
@@ -31,8 +30,6 @@ namespace SaveSystem
             {
                 obtainedTreasures[i].id = i;
             }
-
-            lastUsedCharacterID = 100;
         }
     }
 

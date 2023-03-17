@@ -3,6 +3,7 @@ using SaveSystem;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static SaveSystem.CharacterData;
 
 namespace General
 {
@@ -63,7 +64,7 @@ namespace General
                  characterData.Experience,
                  characterData.Id,
                  new List<Vector3>(),
-                 new List<Vector3>()
+                 new List<RelationshipData>()
                  ));
         }
 

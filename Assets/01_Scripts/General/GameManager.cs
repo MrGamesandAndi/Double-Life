@@ -1,3 +1,4 @@
+using General;
 using SaveSystem;
 using ShopSystem;
 using System.Collections.Generic;
@@ -136,13 +137,13 @@ public class GameManager : MonoBehaviour, IPurchaser
     
     public void ResetCurrentLoadedDouble()
     {
-        currentLoadedDouble.Id = SaveManager.Instance.PlayerData.lastUsedCharacterID;
+        currentLoadedDouble.Id = PopulationManager.Instance.DoublesAI.Count;
         currentLoadedDouble.Name = "";
         currentLoadedDouble.LastName = "";
         currentLoadedDouble.Nickname = "";
         currentLoadedDouble.RelationshipCode = "cc_rel_6";
         currentLoadedDouble.Color = Color.red;
-        currentLoadedDouble.ZodiacCode = "cc_zodiac_01";
+        currentLoadedDouble.ZodiacCode = 1;
         currentLoadedDouble.SexPreferenceCode = "cc_sex_03";
         currentLoadedDouble.Gender = 0;
         currentLoadedDouble.Level = 0;

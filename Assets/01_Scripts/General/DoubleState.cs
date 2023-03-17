@@ -10,6 +10,7 @@ namespace General
         Sick,
         Date,
         Hungry,
-        Sad
+        Sad,
+        BreakUp
     }
 }

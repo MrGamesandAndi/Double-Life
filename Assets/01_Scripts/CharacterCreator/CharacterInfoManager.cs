@@ -33,8 +33,7 @@ namespace CharacterCreator
             {
                 case 0:
                     GameManager.Instance.ResetCurrentLoadedDouble();
-                    HumanController.Instance.characterData.Id = SaveManager.Instance.PlayerData.lastUsedCharacterID;
-                    SaveManager.Instance.PlayerData.lastUsedCharacterID++;
+                    HumanController.Instance.characterData.Id = PopulationManager.Instance.DoublesAI.Count + 1;
                     break;
                 case 1:
                     GetNameValue();
@@ -53,8 +52,7 @@ namespace CharacterCreator
                     PlayerPrefs.SetInt("CC_State", 0);
                     break;
                 case 2:
-                    HumanController.Instance.characterData.Id = SaveManager.Instance.PlayerData.lastUsedCharacterID;
-                    SaveManager.Instance.PlayerData.lastUsedCharacterID++;
+                    HumanController.Instance.characterData.Id = 1;
                     _relationshipInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText("cc_rel_7");
                     HumanController.Instance.RelationshipCode = "cc_rel_7";
                     _relationshipInputField.interactable = false;
@@ -111,13 +109,13 @@ namespace CharacterCreator
 
         private void GetZodiacValue()
         {
-            _zodiacInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText(HumanController.Instance.ZodiacCode);
+            _zodiacInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText(BodyPartsCollection.Instance.ReturnZodiacById(HumanController.Instance.ZodiacCode).zodiacName);
         }
 
-        public void SetZodiacValue(TextLocaliserUI text)
+        public void SetZodiacValue(int id)
         {
-            HumanController.Instance.ZodiacCode = text.ReturnLocalisationKey();
-            _zodiacInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText(HumanController.Instance.ZodiacCode);
+            HumanController.Instance.ZodiacCode = id;
+            _zodiacInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText(BodyPartsCollection.Instance.ReturnZodiacById(HumanController.Instance.ZodiacCode).zodiacName);
         }
 
         private void GetSexPreferenceValue()

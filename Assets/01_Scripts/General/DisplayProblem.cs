@@ -54,8 +54,12 @@ namespace General
                     gameObject.SetActive(false);
                     break;
                 case DoubleState.Sad:
-                    randomIndex = Random.Range(1, 4);
+                    randomIndex = Random.Range(2, 4);
                     _dialogueRunner.StartDialogue($"Sad{randomIndex}");
+                    gameObject.SetActive(false);
+                    break;
+                case DoubleState.BreakUp:
+                    _dialogueRunner.StartDialogue($"RelFailed2");
                     gameObject.SetActive(false);
                     break;
                 default:

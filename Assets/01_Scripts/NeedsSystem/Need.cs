@@ -47,6 +47,11 @@ namespace Needs
             }
         }
 
+        public void SetNeed()
+        {
+            _ringAmount = 0;
+        }
+
         public void ResetNeed()
         {
             _ringAmount = _totalRingAmount;

@@ -150,7 +150,7 @@ public class HumanController : MonoBehaviour
         set => characterData.Color = value;
     }
 
-    public string ZodiacCode
+    public int ZodiacCode
     {
         get => characterData.ZodiacCode;
         set => characterData.ZodiacCode = value;

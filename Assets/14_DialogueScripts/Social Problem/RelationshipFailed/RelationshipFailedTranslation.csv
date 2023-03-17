@@ -1,5 +1,4 @@
-language,id,text,file,node,lineNumber,lock,comment
-en,line:0095037,Things are not going so well with me and my partner.,Assets/14_DialogueScripts/Social Problem/RelationshipFailed/RelFailed1.yarn,RelFailed1,4,ef123cd6,
+﻿language,id,text,file,node,lineNumber,lock,comment
 en,line:0d0ecbc,I want to break up with my partner.,Assets/14_DialogueScripts/Social Problem/RelationshipFailed/RelFailed2.yarn,RelFailed2,4,afafd7ec,Line metadata: lastline
 en,line:09d1a64,I support you.,Assets/14_DialogueScripts/Social Problem/RelationshipFailed/RelFailed2.yarn,RelFailed2,6,eef21cb9,
 en,line:0a4b2c3,Thanks. It's good to know that I have someone to support me.,Assets/14_DialogueScripts/Social Problem/RelationshipFailed/RelFailed2.yarn,RelFailed2,7,0317c2b0,

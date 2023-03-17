@@ -4,7 +4,10 @@ tags:
 Quiero romper con mi pareja. #line:0d0ecbc 
 
 -> Te apoyo. #line:09d1a64 
-    Gracias. Es bueno saber que tengo a alguien que me apoya. #line:0a4b2c3 
+    Gracias. Es bueno saber que tengo a alguien que me apoya. #line:0a4b2c3
+	<<break_up Room>>
+	<<reset_need Room 9>>
 -> ¡No lo hagas! #line:021be10 
-    Trataré de seguir en mi relación pero no creo que pueda seguir. #line:0f439dc 
+    Trataré de seguir en mi relación pero no creo que pueda seguir. #line:0f439dc
+	<<reset_need Room 9>>	
 ===

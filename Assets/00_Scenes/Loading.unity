@@ -495,7 +495,7 @@ MonoBehaviour:
     _nickname: 
     _relationshipCode: cc_rel_6
     _color: {r: 1, g: 0, b: 0, a: 1}
-    _zodiacCode: cc_zodiac_01
+    _zodiacCode: 0
     _sexPreferenceCode: cc_sex_03
     _gender: 0
     _level: 0
@@ -511,6 +511,7 @@ MonoBehaviour:
     _traits: 00000000000000000000000000000000
     _currentState: 0
     _purchasedFurniture: []
+    _relationships: []
 --- !u!1 &815342177
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,6 +863,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e64711808b830224baa4e6cdeebdde24, type: 2}
   - {fileID: 11400000, guid: 59d22b2ecb540534bb9e0b06d7ebc68a, type: 2}
   - {fileID: 11400000, guid: 27788085aeef08a47ba8f0c385971107, type: 2}
+  zodiac:
+  - {fileID: 11400000, guid: 46dab0659582ce34b91fe8522b2a5e0a, type: 2}
+  - {fileID: 11400000, guid: b275aef3debf62747b5b4b4aab68874f, type: 2}
+  - {fileID: 11400000, guid: 9ec13dc68763c624a93b1f736077e670, type: 2}
+  - {fileID: 11400000, guid: e324f4433c9357442a62fe4af9ec692e, type: 2}
+  - {fileID: 11400000, guid: b9d6489587c2a5e43acec175228d3a24, type: 2}
+  - {fileID: 11400000, guid: dc110807e109fa144964305197e15049, type: 2}
+  - {fileID: 11400000, guid: 0b88019f5481c114b98246fdc24c4c6d, type: 2}
+  - {fileID: 11400000, guid: 8a07f67380087364dbdbf286338a649a, type: 2}
+  - {fileID: 11400000, guid: 1268ea7a8f5e88f469e52e14a1e58c45, type: 2}
+  - {fileID: 11400000, guid: 4c6583051ec63cb4d91cb2a76e31d0d0, type: 2}
+  - {fileID: 11400000, guid: eab0ec0277a96794fb8169bee4e2a4a8, type: 2}
+  - {fileID: 11400000, guid: 70a21b4d2701ec242b23402ef8894280, type: 2}
 --- !u!1 &1185281549
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,7 +930,6 @@ MonoBehaviour:
     resolutionY: 1080
     isOnTutorial: 1
     obtainedTreasures: []
-    lastUsedCharacterID: 100
   _doublesData: []
 --- !u!1 &1369581755
 GameObject:

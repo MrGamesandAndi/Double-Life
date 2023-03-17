@@ -14,7 +14,7 @@ namespace SaveSystem
         [SerializeField] string _nickname;
         [SerializeField] string _relationshipCode;
         [SerializeField] Color _color;
-        [SerializeField] string _zodiacCode;
+        [SerializeField] int _zodiacCode;
         [SerializeField] string _sexPreferenceCode;
         [SerializeField] int _gender;
         [SerializeField] int _level;
@@ -32,13 +32,13 @@ namespace SaveSystem
         [SerializeField] List<int> _traits;
         [SerializeField] DoubleState _currentState;
         [SerializeField] List<Vector3> _purchasedFurniture;
-        [SerializeField] List<Vector3> _relationships;
+        [SerializeField] List<RelationshipData> _relationships;
 
         public CharacterData()
         {
         }
 
-        public CharacterData(string name, string lastName, string nickname, string relationshipCode, Color color, string zodiacCode, string sexPreferenceCode, Color skintone, string hairKey, Color hairColor, string eyebrowKey, Color eyebrowColor, string eyeKey, Color eyeColor, string mouthKey, List<int> traits, int gender, DoubleState currentState, int level, int experience, int id, List<Vector3> purchasedFurniture, List<Vector3> relationships)
+        public CharacterData(string name, string lastName, string nickname, string relationshipCode, Color color, int zodiacCode, string sexPreferenceCode, Color skintone, string hairKey, Color hairColor, string eyebrowKey, Color eyebrowColor, string eyeKey, Color eyeColor, string mouthKey, List<int> traits, int gender, DoubleState currentState, int level, int experience, int id, List<Vector3> purchasedFurniture, List<RelationshipData> relationships)
         {
             Name = name;
             LastName = lastName;
@@ -70,7 +70,7 @@ namespace SaveSystem
         public string Nickname { get => _nickname; set => _nickname = value; }
         public string RelationshipCode { get => _relationshipCode; set => _relationshipCode = value; }
         public Color Color { get => _color; set => _color = value; }
-        public string ZodiacCode { get => _zodiacCode; set => _zodiacCode = value; }
+        public int ZodiacCode { get => _zodiacCode; set => _zodiacCode = value; }
         public string SexPreferenceCode { get => _sexPreferenceCode; set => _sexPreferenceCode = value; }
         public Color Skintone { get => _skintone; set => _skintone = value; }
         public string HairKey { get => _hairKey; set => _hairKey = value; }
@@ -87,6 +87,21 @@ namespace SaveSystem
         public int Experience { get => _experience; set => _experience = value; }
         public int Id { get => _id; set => _id = value; }
         public List<Vector3> PurchasedFurniture { get => _purchasedFurniture; set => _purchasedFurniture = value; }
-        public List<Vector3> Relationships { get => _relationships; set => _relationships = value; }
+        public List<RelationshipData> Relationships { get => _relationships; set => _relationships = value; }
+
+        [Serializable]
+        public struct RelationshipData
+        {
+            public int targetId;
+            public int relationshipLevel;
+            public bool isLove;
+
+            public RelationshipData(int targetId, int relationshipLevel, bool isLove)
+            {
+                this.targetId = targetId;
+                this.relationshipLevel = relationshipLevel;
+                this.isLove = isLove;
+            }
+        }
     }
 }
