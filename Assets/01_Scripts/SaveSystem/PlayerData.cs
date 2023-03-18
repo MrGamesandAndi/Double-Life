@@ -14,6 +14,7 @@ namespace SaveSystem
         public int resolutionY;
         public bool isOnTutorial;
         public Treasures[] obtainedTreasures;
+        public int lastUsedID;
 
         public PlayerData()
         {
@@ -25,6 +26,7 @@ namespace SaveSystem
             resolutionY = 1080;
             isOnTutorial = true;
             obtainedTreasures = new Treasures[11];
+            lastUsedID = 1;
 
             for (int i = 0; i < obtainedTreasures.Length; i++)
             {

@@ -45,14 +45,13 @@ namespace General
 
         public void RemoveIndividualAI(CharacterData character)
         {
-            for (int i = 0; i < transform.childCount; i++)
+            for (int i = 0; i < PopulationManager.Instance.DoublesAI.Count; i++)
             {
-                var data = transform.GetChild(i).gameObject;
-
-                if(data.name == character.Name + character.LastName)
+                if (PopulationManager.Instance.DoublesAI[i].characterId == character.Id)
                 {
+                    Destroy(PopulationManager.Instance.DoublesAI[i].gameObject);
                     PopulationManager.Instance.DoublesAI.RemoveAt(i);
-                    Destroy(data);
+                    break;
                 }
             }
         }

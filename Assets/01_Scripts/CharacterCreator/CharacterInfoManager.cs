@@ -32,8 +32,9 @@ namespace CharacterCreator
             switch (PlayerPrefs.GetInt("CC_State"))
             {
                 case 0:
+                    SaveManager.Instance.PlayerData.lastUsedID++;
                     GameManager.Instance.ResetCurrentLoadedDouble();
-                    HumanController.Instance.characterData.Id = PopulationManager.Instance.DoublesAI.Count + 1;
+                    HumanController.Instance.characterData.Id = SaveManager.Instance.PlayerData.lastUsedID;
                     break;
                 case 1:
                     GetNameValue();
@@ -52,7 +53,7 @@ namespace CharacterCreator
                     PlayerPrefs.SetInt("CC_State", 0);
                     break;
                 case 2:
-                    HumanController.Instance.characterData.Id = 1;
+                    HumanController.Instance.characterData.Id = SaveManager.Instance.PlayerData.lastUsedID;
                     _relationshipInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText("cc_rel_7");
                     HumanController.Instance.RelationshipCode = "cc_rel_7";
                     _relationshipInputField.interactable = false;

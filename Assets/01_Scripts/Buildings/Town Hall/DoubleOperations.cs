@@ -1,5 +1,6 @@
 using General;
 using Localisation;
+using Relationships;
 using SaveSystem;
 using SceneManagement;
 using System.Collections.Generic;
@@ -82,9 +83,9 @@ namespace TownHall
             {
                 ModalWindow.Instance.ShowQuestion(_deletePrompt.Value, () =>
                 {
+                    RelationshipSystem.Instance.DeleteRelationship(_selectedDouble.Id);
                     GenerateAI.Instance.RemoveIndividualAI(_selectedDouble);
-                    FileHandler.DeleteFileFromFolder(_selectedDouble.Name + _selectedDouble.LastName, SaveType.Character_Data);
-                    PopulationManager.Instance.DoublesList = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
+                    PopulationManager.Instance.RemoveDouble(_selectedDouble.Id);
                     RefreshUIDoubles();
                     ScenesManager.Instance.LoadScene(Scenes.City, Scenes.Town_Hall);
                 }, () => { });

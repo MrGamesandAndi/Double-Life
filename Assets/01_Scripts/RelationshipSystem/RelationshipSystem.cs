@@ -2,6 +2,7 @@ using General;
 using Needs;
 using SaveSystem;
 using System.Collections.Generic;
+using System.Linq;
 using TraitSystem;
 using UnityEngine;
 using Yarn.Unity;
@@ -29,6 +30,26 @@ namespace Relationships
         {
             CharacterData newFriend = PopulationManager.Instance.GetRandomDouble();
             AddNewRelationship(GameManager.Instance.currentLoadedDouble.Id, newFriend.Id, 4);
+            ResetNeed((int)NeedType.MakeFriend);
+        }
+
+        public void DeleteRelationship(int targetID)
+        {
+            foreach (var item in PopulationManager.Instance.DoublesList)
+            {
+                if(item.Id != targetID)
+                {
+                    for (int i = 0; i < item.Relationships.Count; i++)
+                    {
+                        if (item.Relationships[i].targetId == targetID)
+                        {
+                            SetLoveLevel(item.Id, targetID, false);
+                            item.Relationships.RemoveAt(i);
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         private void AddNewRelationship(int initiatorID, int targetID, int amount)
@@ -40,20 +61,25 @@ namespace Relationships
         [YarnCommand("break_up")]
         public void BreakUp()
         {
-            
+            SetLoveLevel(GameManager.Instance.currentLoadedDouble.Id, GetLoveInterestId(), false);
+            ResetNeed((int)NeedType.BreakUp);
         }
 
-        private int GetRelationshipIndex(CharacterData initiator, int targetId)
+        private void SetRelationshipLevel(int initiatorID, int targetID, int amount)
         {
-            for (int i = 0; i < initiator.Relationships.Count; i++)
-            {
-                if(initiator.Relationships[i].targetId == targetId)
-                {
-                    return i;
-                }
-            }
+            PopulationManager.Instance.ReturnDouble(initiatorID).Relationships.First(i => i.targetId == targetID).SetNewRelationshipValues(amount);
+            PopulationManager.Instance.ReturnDouble(targetID).Relationships.First(i => i.targetId == initiatorID).SetNewRelationshipValues(amount);
+        }
 
-            return 0;
+        private void SetLoveLevel(int initiatorID, int targetID, bool isLove)
+        {
+            PopulationManager.Instance.ReturnDouble(initiatorID).Relationships.First(i => i.targetId == targetID).SetLoveStatus(isLove);
+            PopulationManager.Instance.ReturnDouble(targetID).Relationships.First(i => i.targetId == initiatorID).SetLoveStatus(isLove);
+        }
+
+        private int GetLoveInterestId()
+        {
+            return PopulationManager.Instance.ReturnDouble(GameManager.Instance.currentLoadedDouble.Id).Relationships.First(i => i.isLove).targetId;
         }
 
         public bool CheckIfLoveInterestExists(CharacterData character)
@@ -99,38 +125,37 @@ namespace Relationships
         public void TalkToRandomExistingFriend()
         {
             int index = Random.Range(0, GameManager.Instance.currentLoadedDouble.Relationships.Count);
-            RelationshipData relationship = GameManager.Instance.currentLoadedDouble.Relationships[index];
+            int randomChance = Random.Range(0, 11);
 
-            if (relationship.relationshipLevel != 7 && relationship.relationshipLevel != 1)
+            if(randomChance >= 5)
             {
-                relationship.relationshipLevel += Mathf.Clamp(Random.Range(0, 101), -1, 1);
-                PopulationManager.Instance.ReturnDouble(GameManager.Instance.currentLoadedDouble.Id).Relationships[index] = relationship;
-                PopulationManager.Instance.ReturnDouble(GetLoveInterest(GameManager.Instance.currentLoadedDouble).Id).Relationships[index] = relationship;
+                SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GameManager.Instance.currentLoadedDouble.Relationships[index].targetId, 1);
+            }
+            else
+            {
+                SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GameManager.Instance.currentLoadedDouble.Relationships[index].targetId, -1);
             }
         }
-
-        private CharacterData GetLoveInterest(CharacterData target)
-        {
-            foreach (var item in target.Relationships)
-            {
-                if (item.isLove)
-                {
-                    return PopulationManager.Instance.ReturnDouble(item.targetId);
-                }
-            }
-
-            return new CharacterData();
-        }
-
 
         [YarnCommand("go_to_date")]
         public void GoToDate()
         {
-           
+            int randomChance = Random.Range(0, 11);
+
+            if (randomChance >= 5)
+            {
+                SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GetLoveInterestId(), 1);
+            }
+            else
+            {
+                SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GetLoveInterestId(), -1);
+            }
+
+            ResetNeed((int)NeedType.HaveDate);
         }
 
         [YarnCommand("reset_need")]
-        private void ResetNeed(int needId)
+        public void ResetNeed(int needId)
         {
             PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted((NeedType)needId);
         }
@@ -139,25 +164,20 @@ namespace Relationships
         public void TryConfessLove()
         {
             CharacterData loveInterest = PopulationManager.Instance.ReturnDouble(GameManager.Instance.currentLoadedDouble.Relationships[Random.Range(0, GameManager.Instance.currentLoadedDouble.Relationships.Count)].targetId);
+            float chance = CheckForTraitCompatibility(loveInterest) + CheckForZodiacCompatibility(loveInterest);
 
-            if (CheckIfLoveInterestExists(loveInterest))
+            if (chance >= 5f)
             {
-                return;
-            }
-
-            float chance = 5f + CheckForTraitCompatibility(loveInterest) + CheckForZodiacCompatibility(loveInterest);
-
-            if (chance >= Random.Range(0f, 10f))
-            {
-                Debug.Log(chance);
+                SetLoveLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, true);
+                ResetNeed((int)NeedType.ConfessLove);
             }
             else
             {
-                Debug.Log(chance);
+                ResetNeed((int)NeedType.ConfessLove);
                 PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).GetNeed(NeedType.HaveDepression).SetNeed();
             }
 
-
+            
         }
 
         private float CheckForTraitCompatibility(CharacterData loveInterest)
@@ -172,13 +192,13 @@ namespace Relationships
                 {
                     if(currentTraits[i] == loveTraits[j])
                     {
-                        score += 0.6f;
+                        score += 2.5f;
                         break;
                     }
 
                     if (currentTraits[i].opossiteTrait == loveTraits[j])
                     {
-                        score -= 0.6f;
+                        score -= 2.5f;
                         break;
                     }
                 }
@@ -195,7 +215,7 @@ namespace Relationships
                 {
                     if (loveInterest.ZodiacCode == compatibleSign.id)
                     {
-                        return 2.5f;
+                        return 5f;
                     }
                 }
             }

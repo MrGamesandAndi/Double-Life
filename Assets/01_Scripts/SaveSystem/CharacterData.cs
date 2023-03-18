@@ -90,7 +90,7 @@ namespace SaveSystem
         public List<RelationshipData> Relationships { get => _relationships; set => _relationships = value; }
 
         [Serializable]
-        public struct RelationshipData
+        public class RelationshipData
         {
             public int targetId;
             public int relationshipLevel;
@@ -100,6 +100,16 @@ namespace SaveSystem
             {
                 this.targetId = targetId;
                 this.relationshipLevel = relationshipLevel;
+                this.isLove = isLove;
+            }
+
+            public void SetNewRelationshipValues(int amount)
+            {
+                relationshipLevel += amount;
+            }
+
+            public void SetLoveStatus(bool isLove)
+            {
                 this.isLove = isLove;
             }
         }

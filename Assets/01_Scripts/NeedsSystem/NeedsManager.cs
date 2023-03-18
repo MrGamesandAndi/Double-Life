@@ -120,6 +120,19 @@ namespace Needs
             _needsSystem.GetNeed(need).ResetNeed();
         }
 
+        public void ResetAllNeeds()
+        {
+            NeedCompleted(NeedType.Hunger);
+            NeedCompleted(NeedType.MakeFriend);
+            NeedCompleted(NeedType.BuyFurniture);
+            NeedCompleted(NeedType.Sickness);
+            NeedCompleted(NeedType.HaveDepression);
+            NeedCompleted(NeedType.HaveFight);
+            NeedCompleted(NeedType.HaveDate);
+            NeedCompleted(NeedType.ConfessLove);
+            NeedCompleted(NeedType.TalkToFriend);
+        }
+
         private void Update()
         {
             _needsSystem.GetNeed(NeedType.Hunger).UseNeed(_needUseAmount, _hungerMultiplier);
@@ -150,9 +163,16 @@ namespace Needs
 
         private void Confess_OnCoreUse(object sender, EventArgs e)
         {
-            if (RelationshipSystem.Instance.CheckIfDoubleHasRelationships(PopulationManager.Instance.ReturnDouble(characterId)))
+            if (!RelationshipSystem.Instance.CheckIfLoveInterestExists(PopulationManager.Instance.ReturnDouble(characterId)))
             {
-                PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Confession;
+                if (RelationshipSystem.Instance.CheckIfDoubleHasRelationships(PopulationManager.Instance.ReturnDouble(characterId)))
+                {
+                    PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Confession;
+                }
+                else
+                {
+                    NeedCompleted(NeedType.ConfessLove);
+                }
             }
             else
             {
@@ -194,22 +214,21 @@ namespace Needs
 
         private void WantsFriend_OnCoreUse(object sender, EventArgs e)
         {
-            
-                if (PopulationManager.Instance.DoublesList.Count > 1)
+            if (PopulationManager.Instance.DoublesList.Count > 1)
+            {
+                if (GameManager.Instance.currentLoadedDouble.Relationships.Count <= PopulationManager.Instance.DoublesList.Count - 1)
                 {
-                    if (GameManager.Instance.currentLoadedDouble.Relationships.Count <= PopulationManager.Instance.DoublesList.Count - 1)
-                    {
-                        PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.MakeFriend;
-                    }
-                    else
-                    {
-                        NeedCompleted(NeedType.MakeFriend);
-                    }
+                    PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.MakeFriend;
                 }
                 else
                 {
                     NeedCompleted(NeedType.MakeFriend);
                 }
+            }
+            else
+            {
+                NeedCompleted(NeedType.MakeFriend);
+            }
                 
         }
 

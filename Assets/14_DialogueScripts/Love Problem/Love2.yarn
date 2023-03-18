@@ -4,8 +4,8 @@ tags:
 Creo que le gusto a alguien. ¿Qué opinas? #line:00a4b91 
 -> ¡Yo también lo creo! #line:0e7a4ab 
     Esta bien. Me armaré de valor e iré a proponerme.  #line:0944062 
-	<<confess_love Room>>
+	<<confess_love RelationshipSystem>>
 -> No funcionará #line:0cf969d 
     No es como si me gustara tanto de todos modos... #line:0714322
-	<<reset_need Room 1>>	
+	<<reset_need RelationshipSystem 1>>	
 ===

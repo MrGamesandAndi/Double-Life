@@ -110,6 +110,8 @@ namespace SaveSystem
 
         public void SaveAllCharacterData()
         {
+            DeleteAllCharacterData();
+
             foreach (var character in PopulationManager.Instance.DoublesList)
             {
                 FileHandler.SaveToJSON(character, character.Name + character.LastName, SaveType.Character_Data);
@@ -118,12 +120,12 @@ namespace SaveSystem
 
         public void DeleteAllCharacterData()
         {
-            DoublesData = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
+            //DoublesData = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
 
             foreach (var character in DoublesData)
             {
                 FileHandler.DeleteFileFromFolder(character.Name + character.LastName, SaveType.Character_Data);
-                PopulationManager.Instance.DoublesList = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
+                //PopulationManager.Instance.DoublesList = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
             }
         }
 

@@ -13,6 +13,7 @@ namespace Buildings
         [SerializeField] TextMeshProUGUI _descriptionSpace;
         [SerializeField] Image _titleSpace;
         [SerializeField] Button _enterButton;
+        [SerializeField] GameObject _modalWindow;
 
         List<GameObject> _buildings = new List<GameObject>();
 
@@ -34,18 +35,29 @@ namespace Buildings
 
         public void ShowDescription(string description, Sprite _titleImage, UnityAction buttonEvent)
         {
-            HideBuildingColliders();
-            _descriptionSpace.text = description;
-            _titleSpace.sprite = _titleImage;
-            _enterButton.onClick.AddListener(buttonEvent);
-            gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            if (!_modalWindow.activeSelf)
+            {
+                HideBuildingColliders();
+                _descriptionSpace.text = description;
+                _titleSpace.sprite = _titleImage;
+                _enterButton.onClick.AddListener(buttonEvent);
+                gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            }
         }
 
-        private void HideBuildingColliders()
+        public void HideBuildingColliders()
         {
             foreach (GameObject building in _buildings)
             {
                 building.GetComponent<BoxCollider>().enabled = false;
+            }
+        }
+
+        public void ShowBuildingColliders()
+        {
+            foreach (GameObject building in _buildings)
+            {
+                building.GetComponent<BoxCollider>().enabled = true;
             }
         }
     }

@@ -114,5 +114,18 @@ namespace General
 
             return null;
         }
+
+        public void RemoveDouble(int id)
+        {
+            for (int i = 0; i < DoublesList.Count; i++)
+            {
+                DoublesAI[i].ResetAllNeeds();
+
+                if (DoublesList[i].Id == id)
+                {
+                    DoublesList.RemoveAt(i);
+                }
+            }
+        }
     }
 }
