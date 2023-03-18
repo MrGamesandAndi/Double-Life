@@ -1,6 +1,7 @@
 using General;
 using Needs;
 using SaveSystem;
+using ShopSystem;
 using System.Collections.Generic;
 using System.Linq;
 using TraitSystem;
@@ -31,6 +32,14 @@ namespace Relationships
             CharacterData newFriend = PopulationManager.Instance.GetRandomDouble();
             AddNewRelationship(GameManager.Instance.currentLoadedDouble.Id, newFriend.Id, 4);
             ResetNeed((int)NeedType.MakeFriend);
+            GainTreasure();
+        }
+
+        public void GainTreasure()
+        {
+            //RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
+            Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.UltraRare);
+            GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
         }
 
         public void DeleteRelationship(int targetID)
@@ -145,6 +154,7 @@ namespace Relationships
             if (randomChance >= 5)
             {
                 SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GetLoveInterestId(), 1);
+                GainTreasure();
             }
             else
             {
@@ -170,14 +180,13 @@ namespace Relationships
             {
                 SetLoveLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, true);
                 ResetNeed((int)NeedType.ConfessLove);
+                GainTreasure();
             }
             else
             {
                 ResetNeed((int)NeedType.ConfessLove);
                 PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).GetNeed(NeedType.HaveDepression).SetNeed();
             }
-
-            
         }
 
         private float CheckForTraitCompatibility(CharacterData loveInterest)
