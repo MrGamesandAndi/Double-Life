@@ -99,7 +99,7 @@ namespace Needs
 
         private void BreakUp_OnCoreUse(object sender, EventArgs e)
         {
-            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(PopulationManager.Instance.ReturnDouble(characterId)))
+            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(characterId))
             {
                 PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.BreakUp;
             }
@@ -163,7 +163,7 @@ namespace Needs
 
         private void Confess_OnCoreUse(object sender, EventArgs e)
         {
-            if (!RelationshipSystem.Instance.CheckIfLoveInterestExists(PopulationManager.Instance.ReturnDouble(characterId)))
+            if (!RelationshipSystem.Instance.CheckIfLoveInterestExists(characterId))
             {
                 if (RelationshipSystem.Instance.CheckIfDoubleHasRelationships(PopulationManager.Instance.ReturnDouble(characterId)))
                 {
@@ -182,7 +182,7 @@ namespace Needs
 
         private void Date_OnCoreUse(object sender, EventArgs e)
         {
-            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(PopulationManager.Instance.ReturnDouble(characterId)))
+            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(characterId))
             {
                 PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Date;
             }

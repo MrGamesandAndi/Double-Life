@@ -127,5 +127,20 @@ namespace General
                 }
             }
         }
+
+        public List<CharacterData> GetAllNoFamilyFromRelationshipData(List<RelationshipData> relationships)
+        {
+            List<CharacterData> result = new List<CharacterData>();
+
+            foreach (var item in relationships)
+            {
+                if(ReturnDouble(item.targetId).RelationshipCode == "cc_rel_1" || ReturnDouble(item.targetId).RelationshipCode == "cc_rel_6")
+                {
+                    result.Add(ReturnDouble(item.targetId));
+                }
+            }
+
+            return result;
+        }
     }
 }

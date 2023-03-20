@@ -61,10 +61,10 @@ namespace Relationships
             }
         }
 
-        private void AddNewRelationship(int initiatorID, int targetID, int amount)
+        public void AddNewRelationship(int initiatorID, int targetID, int amount, bool isLove = false)
         {
-            PopulationManager.Instance.ReturnDouble(initiatorID).Relationships.Add(new RelationshipData(targetID, amount, false));
-            PopulationManager.Instance.ReturnDouble(targetID).Relationships.Add(new RelationshipData(initiatorID, amount, false));
+            PopulationManager.Instance.ReturnDouble(initiatorID).Relationships.Add(new RelationshipData(targetID, amount, isLove));
+            PopulationManager.Instance.ReturnDouble(targetID).Relationships.Add(new RelationshipData(initiatorID, amount, isLove));
         }
 
         [YarnCommand("break_up")]
@@ -91,8 +91,10 @@ namespace Relationships
             return PopulationManager.Instance.ReturnDouble(GameManager.Instance.currentLoadedDouble.Id).Relationships.First(i => i.isLove).targetId;
         }
 
-        public bool CheckIfLoveInterestExists(CharacterData character)
+        public bool CheckIfLoveInterestExists(int id)
         {
+            CharacterData character = PopulationManager.Instance.ReturnDouble(id);
+
             if (character.Relationships.Count == 0)
             {
                 return false;
@@ -101,9 +103,23 @@ namespace Relationships
             {
                 foreach (var item in character.Relationships)
                 {
-                    if (item.isLove)
+                    if(id == 1)
                     {
-                        return true;
+                        if (PopulationManager.Instance.ReturnDouble(item.targetId).RelationshipCode == "cc_rel_1" ||
+                        PopulationManager.Instance.ReturnDouble(item.targetId).RelationshipCode == "cc_rel_6")
+                        {
+                            if (item.isLove)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (item.isLove)
+                        {
+                            return true;
+                        }
                     }
                 }
             }
@@ -173,20 +189,30 @@ namespace Relationships
         [YarnCommand("confess_love")]
         public void TryConfessLove()
         {
-            CharacterData loveInterest = PopulationManager.Instance.ReturnDouble(GameManager.Instance.currentLoadedDouble.Relationships[Random.Range(0, GameManager.Instance.currentLoadedDouble.Relationships.Count)].targetId);
-            float chance = CheckForTraitCompatibility(loveInterest) + CheckForZodiacCompatibility(loveInterest);
+            List<CharacterData> result = new List<CharacterData>();
 
-            if (chance >= 5f)
+            result = GameManager.Instance.currentLoadedDouble.Id == 1
+                ? PopulationManager.Instance.GetAllNoFamilyFromRelationshipData(GameManager.Instance.currentLoadedDouble.Relationships)
+                : PopulationManager.Instance.DoublesList;
+
+
+            if (result.Count > 0)
             {
-                SetLoveLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, true);
-                ResetNeed((int)NeedType.ConfessLove);
-                GainTreasure();
+                CharacterData loveInterest = result[Random.Range(0, result.Count)];
+                float chance = CheckForTraitCompatibility(loveInterest) + CheckForZodiacCompatibility(loveInterest);
+
+                if (chance >= 5f)
+                {
+                    SetLoveLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, true);
+                    GainTreasure();
+                }
+                else
+                {
+                    PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).GetNeed(NeedType.HaveDepression).SetNeed();
+                }
             }
-            else
-            {
-                ResetNeed((int)NeedType.ConfessLove);
-                PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).GetNeed(NeedType.HaveDepression).SetNeed();
-            }
+
+            ResetNeed((int)NeedType.ConfessLove);
         }
 
         private float CheckForTraitCompatibility(CharacterData loveInterest)

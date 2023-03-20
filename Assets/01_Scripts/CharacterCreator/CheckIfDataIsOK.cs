@@ -1,4 +1,5 @@
 using General;
+using Relationships;
 using UnityEngine;
 
 public class CheckIfDataIsOK : MonoBehaviour
@@ -24,6 +25,18 @@ public class CheckIfDataIsOK : MonoBehaviour
         }
 
         HumanController.Instance.SaveCharacterData();
+        AddExtraRelationship();
         GetComponent<SceneLoader>().LoadScene();
+    }
+
+    private void AddExtraRelationship()
+    {
+        if (HumanController.Instance.RelationshipCode == "cc_rel_1")
+        {
+            if (!RelationshipSystem.Instance.CheckIfLoveInterestExists(1))
+            {
+                RelationshipSystem.Instance.AddNewRelationship(GameManager.Instance.currentLoadedDouble.Id, 1, 4, true);
+            }
+        }
     }
 }
