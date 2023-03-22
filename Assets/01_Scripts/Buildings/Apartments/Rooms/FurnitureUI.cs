@@ -81,6 +81,7 @@ namespace Apartments
             }
 
             RoomManager.Instance.EnableGrid();
+            RoomManager.Instance.ShowInstructions();
             GridBuildingSystem3D.Instance.SetFurniture();
         }
 

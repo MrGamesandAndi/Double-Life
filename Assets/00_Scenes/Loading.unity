@@ -337,6 +337,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5869116409126469268, guid: 31c71d95d8fbeb7479842253d3964958, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5869893064832991959, guid: 31c71d95d8fbeb7479842253d3964958, type: 3}
       propertyPath: m_Name
       value: Achievement Manager
@@ -383,6 +387,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5869893064832991961, guid: 31c71d95d8fbeb7479842253d3964958, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5938704051228999786, guid: 31c71d95d8fbeb7479842253d3964958, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5938704051228999786, guid: 31c71d95d8fbeb7479842253d3964958, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5938994040409916176, guid: 31c71d95d8fbeb7479842253d3964958, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5938994040409916176, guid: 31c71d95d8fbeb7479842253d3964958, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -973,6 +993,7 @@ MonoBehaviour:
     resolutionY: 1080
     isOnTutorial: 1
     obtainedTreasures: []
+    lastUsedID: 1
   _doublesData: []
 --- !u!1 &1369581755
 GameObject:

@@ -111,6 +111,7 @@ public class GridBuildingSystem3D : MonoBehaviour {
                 }
                 
                 OnObjectPlaced?.Invoke(this, EventArgs.Empty);
+                RoomManager.Instance.ShowTabs();
                 RoomManager.Instance.DisableGrid();
                 RoomManager.Instance.ResetSelectedFurniture();
 

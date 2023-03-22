@@ -28,6 +28,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] List<YarnProject> _moodDialogueList;
     [SerializeField] GameObject _speechBubble;
     [SerializeField] TextMeshProUGUI _moneyText;
+    [SerializeField] GameObject _instructions;
     public GameObject humanModel;
 
     DialogueRunner _dialogueRunner;
@@ -132,6 +133,7 @@ public class RoomManager : MonoBehaviour
         _mainPanel.SetActive(true);
         _tabArea.SetActive(true);
         _pagesArea.SetActive(false);
+        HideInstructions();
     }
 
     public void HideTabs()
@@ -140,10 +142,21 @@ public class RoomManager : MonoBehaviour
         _tabArea.SetActive(false);
         _pagesArea.SetActive(false);
         _speechBubble.SetActive(false);
+        HideInstructions();
     }
 
     public void ResetSelectedFurniture()
     {
         _selectedFurniture = null;
+    }
+
+    public void ShowInstructions()
+    {
+        _instructions.SetActive(true);
+    }
+
+    public void HideInstructions()
+    {
+        _instructions.SetActive(false);
     }
 }
