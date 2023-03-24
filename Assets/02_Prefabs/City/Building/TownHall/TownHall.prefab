@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scene: 8
   _flag: Unlock_TownHall
-  _usesAchievements: 1
+  _usesAchievements: 0
   _content:
     key: City_TownHall_Description
   _spanishTitleCard: {fileID: -3566294396843786497, guid: 44301422dbfbd9c4fa75b4114e7ac332, type: 3}

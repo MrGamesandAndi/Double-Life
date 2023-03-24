@@ -35,9 +35,9 @@ public class GridBuildingSystem3D : MonoBehaviour {
 
     public void SetFurniture()
     {
-        if (RoomManager.Instance._selectedFurniture != null)
+        if (RoomManager.Instance.SelectedFurniture != null)
         {
-            placedObjectTypeSO = RoomManager.Instance._selectedFurniture;
+            placedObjectTypeSO = RoomManager.Instance.SelectedFurniture;
         }
     }
 

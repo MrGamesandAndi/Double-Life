@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ReturnObjectToSpawn : MonoBehaviour
+namespace General
 {
-    [SerializeField] Transform _spawnPoint;
-    private void OnTriggerEnter(Collider other)
+    public class ReturnObjectToSpawn : MonoBehaviour
     {
-        other.transform.position = _spawnPoint.position;
-        other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        [SerializeField] Transform _spawnPoint;
 
+        private void OnTriggerEnter(Collider other)
+        {
+            other.transform.position = new Vector3(_spawnPoint.position.x, _spawnPoint.position.y, other.transform.position.z);
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        }
     }
 }

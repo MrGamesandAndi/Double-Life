@@ -15,7 +15,7 @@ public class RoomManager : MonoBehaviour
     public FurnitureItem SelectedFurniture { get => _selectedFurniture; set => _selectedFurniture = value; }
     public DialogueRunner DialogueRunner { get => _dialogueRunner; set => _dialogueRunner = value; }
 
-    public FurnitureItem _selectedFurniture = null;
+    FurnitureItem _selectedFurniture = null;
 
     [SerializeField] GameObject _grid;
     [SerializeField] Camera _camera;
@@ -23,15 +23,12 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject _mainPanel;
     [SerializeField] GameObject _pagesArea;
     [SerializeField] Material _wallMaterial;
-    [SerializeField] GameObject _language;
+    [SerializeField] DialogueRunner _dialogueRunner;
     [SerializeField] List<AudioClip> _moodMusicList;
     [SerializeField] List<YarnProject> _moodDialogueList;
     [SerializeField] GameObject _speechBubble;
     [SerializeField] TextMeshProUGUI _moneyText;
     [SerializeField] GameObject _instructions;
-    public GameObject humanModel;
-
-    DialogueRunner _dialogueRunner;
 
     private void Awake()
     {
@@ -40,64 +37,63 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
-        _dialogueRunner = _language.GetComponent<DialogueRunner>();
         _wallMaterial.color = GameManager.Instance.currentLoadedDouble.Color;
 
         if (SaveManager.Instance.PlayerData.language == Language.Spanish)
         {
-            _language.GetComponent<TextLineProvider>().textLanguageCode = "es-BO";
+            _dialogueRunner.GetComponent<TextLineProvider>().textLanguageCode = "es-BO";
         }
         else
         {
-            _language.GetComponent<TextLineProvider>().textLanguageCode = "en";
+            _dialogueRunner.GetComponent<TextLineProvider>().textLanguageCode = "en";
         }
 
         switch (GameManager.Instance.currentLoadedDouble.CurrentState)
         {
             case DoubleState.Happy:
                 AudioManager.Instance.PlayMusic(_moodMusicList[0]);
-                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[0]);
+                _dialogueRunner.SetProject(_moodDialogueList[0]);
                 break;
             case DoubleState.Buy:
                 AudioManager.Instance.PlayMusic(_moodMusicList[0]);
-                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[2]);
+                _dialogueRunner.SetProject(_moodDialogueList[2]);
                 break;
             case DoubleState.MakeFriend:
                 AudioManager.Instance.PlayMusic(_moodMusicList[0]);
-                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[6]);
+                _dialogueRunner.SetProject(_moodDialogueList[6]);
                 break;
             case DoubleState.Confession:
                 AudioManager.Instance.PlayMusic(_moodMusicList[1]);
-                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[1]);
+                _dialogueRunner.SetProject(_moodDialogueList[1]);
                 break;
             case DoubleState.Angry:
                 AudioManager.Instance.PlayMusic(_moodMusicList[2]);
-                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[7]);
+                _dialogueRunner.SetProject(_moodDialogueList[7]);
                 break;
             case DoubleState.Sick:
                 AudioManager.Instance.PlayMusic(_moodMusicList[0]);
-                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[4]);
+                _dialogueRunner.SetProject(_moodDialogueList[4]);
                 break;
             case DoubleState.Date:
                 AudioManager.Instance.PlayMusic(_moodMusicList[3]);
-                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[1]);
+                _dialogueRunner.SetProject(_moodDialogueList[1]);
                 break;
             case DoubleState.Hungry:
                 AchievementManager.instance.Unlock("Unlock_Supermarket");
                 AudioManager.Instance.PlayMusic(_moodMusicList[0]);
-                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[3]);
+                _dialogueRunner.SetProject(_moodDialogueList[3]);
                 break;
             case DoubleState.Sad:
                 AudioManager.Instance.PlayMusic(_moodMusicList[4]);
-                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[5]);
+                _dialogueRunner.SetProject(_moodDialogueList[5]);
                 break;
             case DoubleState.BreakUp:
                 AudioManager.Instance.PlayMusic(_moodMusicList[4]);
-                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[8]);
+                _dialogueRunner.SetProject(_moodDialogueList[8]);
                 break;
             default:
                 AudioManager.Instance.PlayMusic(_moodMusicList[0]);
-                _language.GetComponent<DialogueRunner>().SetProject(_moodDialogueList[0]);
+                _dialogueRunner.SetProject(_moodDialogueList[0]);
                 Debug.Log("Reached default");
                 break;
         }

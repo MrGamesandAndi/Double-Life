@@ -23922,7 +23922,7 @@ MonoBehaviour:
   _mainPanel: {fileID: 683606547}
   _pagesArea: {fileID: 1613143604}
   _wallMaterial: {fileID: 498625049587741787, guid: db81ac3b8f1fe7e4f9fcbaa5cbc2ab6a, type: 3}
-  _language: {fileID: 2753718018218882187}
+  _dialogueRunner: {fileID: 3579681405664836854}
   _moodMusicList:
   - {fileID: 8300000, guid: 54811022b74ceab42aff3d56a4f18619, type: 3}
   - {fileID: 8300000, guid: 1b35b140615a31d458f5dc23339740b6, type: 3}

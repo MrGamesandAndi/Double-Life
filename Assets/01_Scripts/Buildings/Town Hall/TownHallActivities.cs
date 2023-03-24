@@ -2,6 +2,7 @@ using SaveSystem;
 using SceneManagement;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TownHall
 {
@@ -9,6 +10,7 @@ namespace TownHall
     {
         [Header("City Name")]
         [SerializeField] TMP_InputField _inputField;
+        [SerializeField] Button _chanceCityNameButton;
 
         public void GoToCharacterCreator()
         {
@@ -17,7 +19,22 @@ namespace TownHall
 
         public void ChangeName()
         {
-            SaveManager.Instance.PlayerData.cityName = _inputField.text;
+            if (!string.IsNullOrEmpty(_inputField.text))
+            {
+                SaveManager.Instance.PlayerData.cityName = _inputField.text;
+            }
+        }
+
+        public void CheckForValidString()
+        {
+            if (string.IsNullOrEmpty(_inputField.text))
+            {
+                _chanceCityNameButton.interactable = false;
+            }
+            else
+            {
+                _chanceCityNameButton.interactable = true;
+            }
         }
     }
 }
