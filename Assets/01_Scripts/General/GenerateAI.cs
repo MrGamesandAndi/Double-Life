@@ -47,7 +47,7 @@ namespace General
         {
             for (int i = 0; i < PopulationManager.Instance.DoublesAI.Count; i++)
             {
-                if (PopulationManager.Instance.DoublesAI[i].characterId == character.Id)
+                if (PopulationManager.Instance.DoublesAI[i]._characterId == character.Id)
                 {
                     Destroy(PopulationManager.Instance.DoublesAI[i].gameObject);
                     PopulationManager.Instance.DoublesAI.RemoveAt(i);

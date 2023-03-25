@@ -1,8 +1,6 @@
 using General;
 using Relationships;
 using System;
-using System.Collections.Generic;
-using TraitSystem;
 using UnityEngine;
 
 namespace Needs
@@ -11,19 +9,18 @@ namespace Needs
     {
         [SerializeField] float _needUseAmount = 50f;
 
-        public int characterId;
+        public int _characterId;
         NeedsSystem _needsSystem;
 
-        float _furnitureMultiplier = 1f;
-        float _loveMultiplier = 1f;
-        float _dateMultiplier = 1f;
-        float _fightMultiplier = 1f;
-        float _hungerMultiplier = 1f;
-        float _friendMultiplier = 1f;
-        float _depressionMultiplier = 1f;
-        float _sicknessMultiplier = 1f;
-        float _breakUpMultiplier = 1f;
-        List<Trait> traits;
+        public float _furnitureMultiplier;
+        public float _loveMultiplier;
+        public float _dateMultiplier;
+        public float _fightMultiplier;
+        public float _hungerMultiplier;
+        public float _friendMultiplier;
+        public float _depressionMultiplier;
+        public float _sicknessMultiplier;
+        public float _breakUpMultiplier;
 
         private void Awake()
         {
@@ -32,19 +29,15 @@ namespace Needs
 
         public void LinkCharacterData(int id)
         {
-            characterId = id;
+            _characterId = id;
         }
 
         public void SetMultipliers()
         {
-            traits = new List<Trait>();
-            traits = BodyPartsCollection.Instance.ReturnTraitsFromCharacterData(PopulationManager.Instance.ReturnDouble(characterId).Traits);
-
             _hungerMultiplier = ReturnTypeMultiplier(NeedType.Hunger);
             _loveMultiplier = ReturnTypeMultiplier(NeedType.ConfessLove);
             _dateMultiplier = ReturnTypeMultiplier(NeedType.HaveDate);
             _fightMultiplier = ReturnTypeMultiplier(NeedType.HaveFight);
-            _hungerMultiplier = ReturnTypeMultiplier(NeedType.Hunger);
             _friendMultiplier = ReturnTypeMultiplier(NeedType.MakeFriend);
             _depressionMultiplier = ReturnTypeMultiplier(NeedType.HaveDepression);
             _sicknessMultiplier = ReturnTypeMultiplier(NeedType.Sickness);
@@ -53,15 +46,15 @@ namespace Needs
 
         private float ReturnTypeMultiplier(NeedType type)
         {
-            foreach (var trait in traits)
+            foreach (var trait in BodyPartsCollection.Instance.ReturnTraitsFromCharacterData(PopulationManager.Instance.ReturnDouble(_characterId).Traits))
             {
-                if(trait.type == type)
+                if (trait.type == type)
                 {
                     return trait._decayRateMultiplier;
                 }
             }
 
-            return 1;
+            return 1f;
         }
 
         private void Start()
@@ -99,9 +92,9 @@ namespace Needs
 
         private void BreakUp_OnCoreUse(object sender, EventArgs e)
         {
-            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(characterId))
+            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(_characterId))
             {
-                PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.BreakUp;
+                PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.BreakUp;
             }
             else
             {
@@ -111,7 +104,7 @@ namespace Needs
 
         private void OnNeedReset(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Happy;
+            PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Happy;
         }
 
         public void NeedCompleted(NeedType need)
@@ -148,7 +141,7 @@ namespace Needs
 
         private void Talk_OnCoreUse(object sender, EventArgs e)
         {
-            if (RelationshipSystem.Instance.CheckIfDoubleHasRelationships(PopulationManager.Instance.ReturnDouble(characterId)))
+            if (RelationshipSystem.Instance.CheckIfDoubleHasRelationships(PopulationManager.Instance.ReturnDouble(_characterId)))
             {
                 RelationshipSystem.Instance.TalkToRandomExistingFriend();
             }
@@ -163,11 +156,11 @@ namespace Needs
 
         private void Confess_OnCoreUse(object sender, EventArgs e)
         {
-            if (!RelationshipSystem.Instance.CheckIfLoveInterestExists(characterId))
+            if (!RelationshipSystem.Instance.CheckIfLoveInterestExists(_characterId))
             {
-                if (RelationshipSystem.Instance.CheckIfDoubleHasRelationships(PopulationManager.Instance.ReturnDouble(characterId)))
+                if (RelationshipSystem.Instance.CheckIfDoubleHasRelationships(PopulationManager.Instance.ReturnDouble(_characterId)))
                 {
-                    PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Confession;
+                    PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Confession;
                 }
                 else
                 {
@@ -182,9 +175,9 @@ namespace Needs
 
         private void Date_OnCoreUse(object sender, EventArgs e)
         {
-            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(characterId))
+            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(_characterId))
             {
-                PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Date;
+                PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Date;
             }
             else
             {
@@ -194,22 +187,22 @@ namespace Needs
 
         private void Fight_OnCoreUse(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Angry;
+            PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Angry;
         }
 
         private void Sadness_OnCoreUse(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Sad;
+            PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Sad;
         }
 
         private void Sick_OnCoreUse(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Sick;
+            PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Sick;
         }
 
         private void WantsInterior_OnCoreUse(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Buy;
+            PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Buy;
         }
 
         private void WantsFriend_OnCoreUse(object sender, EventArgs e)
@@ -218,7 +211,7 @@ namespace Needs
             {
                 if (GameManager.Instance.currentLoadedDouble.Relationships.Count <= PopulationManager.Instance.DoublesList.Count - 1)
                 {
-                    PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.MakeFriend;
+                    PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.MakeFriend;
                 }
                 else
                 {
@@ -234,7 +227,7 @@ namespace Needs
 
         private void Hunger_OnCoreUse(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(characterId).CurrentState = DoubleState.Hungry;
+            PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Hungry;
         }
     }
 }

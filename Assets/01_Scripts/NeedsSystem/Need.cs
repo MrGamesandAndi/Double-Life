@@ -8,14 +8,14 @@ namespace Needs
         public event EventHandler OnCoreUse;
         public event EventHandler OnNeedReset;
 
-        const float MAX = 100f;
+        const float MAX = 3f;
         float _ringAmount;
         float _totalRingAmount;
         float _coreAmount;
 
         public Need()
         {
-            _totalRingAmount = 50f;
+            _totalRingAmount = 3f;
             _ringAmount = _totalRingAmount;
             _coreAmount = MAX;
         }
@@ -25,7 +25,6 @@ namespace Needs
             if (_ringAmount >= useAmount)
             {
                 _ringAmount -= useAmount * Time.deltaTime * multiplier;
-                //Debug.Log("coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
             }
             else
             {
@@ -36,11 +35,9 @@ namespace Needs
                     OnCoreUse?.Invoke(this, EventArgs.Empty);
                     _ringAmount = 0f;
                     _coreAmount -= useAmount * Time.deltaTime * multiplier;
-                    //Debug.Log("coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
                 }
                 else
                 {
-                    //Debug.Log("CANNOT USE! " + "coreAmount:" + _coreAmount + "; ringAmount" + _ringAmount);
                     OnNeedReset?.Invoke(this, EventArgs.Empty);
                     ResetNeed();
                 }

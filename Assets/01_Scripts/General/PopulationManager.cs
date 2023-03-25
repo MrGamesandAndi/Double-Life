@@ -106,7 +106,7 @@ namespace General
         {
             foreach (var item in DoublesAI)
             {
-                if (item.characterId == id)
+                if (item._characterId == id)
                 {
                     return item;
                 }
