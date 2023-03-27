@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55abb5d45b58cb14f928e25972b735d5, type: 2}
-  m_sharedMaterial: {fileID: -5964386066701392715, guid: 55abb5d45b58cb14f928e25972b735d5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -164,7 +164,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3992745429595098191}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -201,8 +201,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hamburger
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55abb5d45b58cb14f928e25972b735d5, type: 2}
-  m_sharedMaterial: {fileID: -5964386066701392715, guid: 55abb5d45b58cb14f928e25972b735d5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 318.52103, y: 0, z: 287.8308, w: 0}
+  m_margin: {x: 318.52103, y: 0, z: 326.48352, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -299,8 +299,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3992745428864374065}
   - {fileID: 3992745429645096227}
+  - {fileID: 3992745428864374065}
   - {fileID: 3992745429910403337}
   - {fileID: 7984937669102410185}
   m_Father: {fileID: 0}
@@ -427,7 +427,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3992745429595098191}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -541,8 +541,8 @@ MonoBehaviour:
     bebida afrutada llena de sabor.Una bebida afrutada llena de sabor.Una bebida
     afrutada llena de sabor.Una bebida afrutada llena de sabor.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 190f4a38a8c79e747b93f0ed08a00eb6, type: 2}
-  m_sharedMaterial: {fileID: -5660903922824081707, guid: 190f4a38a8c79e747b93f0ed08a00eb6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

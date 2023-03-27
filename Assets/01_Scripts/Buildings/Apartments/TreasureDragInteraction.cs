@@ -74,6 +74,8 @@ namespace Apartments
                         PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.HaveFight);
                     }
                 }
+				
+				RoomManager.Instance.ShowTabs();
             }
         }
 
