@@ -8,14 +8,14 @@ namespace Needs
         public event EventHandler OnCoreUse;
         public event EventHandler OnNeedReset;
 
-        const float MAX = 3f;
+        const float MAX = 100f;
         float _ringAmount;
         float _totalRingAmount;
         float _coreAmount;
 
         public Need()
         {
-            _totalRingAmount = 3f;
+            _totalRingAmount = 100f;
             _ringAmount = _totalRingAmount;
             _coreAmount = MAX;
         }

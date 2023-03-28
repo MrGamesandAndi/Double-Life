@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d30a23755cc0d41a1c29be3665a993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _needUseAmount: 0.01
+  _needUseAmount: 1
   _characterId: 1
   _furnitureMultiplier: 1.25
   _loveMultiplier: 1.25

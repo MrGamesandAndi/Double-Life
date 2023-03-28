@@ -98,7 +98,7 @@ namespace Needs
             }
             else
             {
-                NeedCompleted(NeedType.BreakUp);
+                _needsSystem.GetNeed(NeedType.BreakUp).ResetNeed();
             }
         }
 
@@ -144,9 +144,12 @@ namespace Needs
             if (RelationshipSystem.Instance.CheckIfDoubleHasRelationships(PopulationManager.Instance.ReturnDouble(_characterId)))
             {
                 RelationshipSystem.Instance.TalkToRandomExistingFriend();
+                NeedCompleted(NeedType.TalkToFriend);
             }
-
-            NeedCompleted(NeedType.TalkToFriend);
+            else
+            {
+                _needsSystem.GetNeed(NeedType.TalkToFriend).ResetNeed();
+            }
         }
 
         public Need GetNeed(NeedType type)
@@ -164,12 +167,12 @@ namespace Needs
                 }
                 else
                 {
-                    NeedCompleted(NeedType.ConfessLove);
+                    _needsSystem.GetNeed(NeedType.ConfessLove).ResetNeed();
                 }
             }
             else
             {
-                NeedCompleted(NeedType.ConfessLove);
+                _needsSystem.GetNeed(NeedType.ConfessLove).ResetNeed();
             }
         }
 
@@ -181,7 +184,7 @@ namespace Needs
             }
             else
             {
-                NeedCompleted(NeedType.HaveDate);
+                _needsSystem.GetNeed(NeedType.HaveDate).ResetNeed();
             }
         }
 
@@ -215,12 +218,12 @@ namespace Needs
                 }
                 else
                 {
-                    NeedCompleted(NeedType.MakeFriend);
+                    _needsSystem.GetNeed(NeedType.TalkToFriend).ResetNeed();
                 }
             }
             else
             {
-                NeedCompleted(NeedType.MakeFriend);
+                _needsSystem.GetNeed(NeedType.TalkToFriend).ResetNeed();
             }
                 
         }
