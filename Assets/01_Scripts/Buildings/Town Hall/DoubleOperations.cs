@@ -1,5 +1,6 @@
 using General;
 using Localisation;
+using Population;
 using Relationships;
 using SaveSystem;
 using SceneManagement;
@@ -8,7 +9,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TownHall
+namespace Buildings.TownHall
 {
     public class DoubleOperations : MonoBehaviour
     {

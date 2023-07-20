@@ -1,7 +1,7 @@
+using Buildings.ShopSystem;
 using CharacterCreator;
 using Relationships;
 using SaveSystem;
-using ShopSystem;
 using System.Collections.Generic;
 using TraitSystem;
 using UnityEngine;

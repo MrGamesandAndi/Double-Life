@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using ShopSystem;
 using SaveSystem;
 using General;
 using Needs;
+using Buildings.Apartments.Rooms;
+using Buildings.ShopSystem;
+using Population;
 
 public class GridBuildingSystem3D : MonoBehaviour {
 

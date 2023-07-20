@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace ShopSystem
+namespace Buildings.ShopSystem
 {
     public class FurnitureShopUIItem : MonoBehaviour
     {

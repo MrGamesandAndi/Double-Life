@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Apartments
+namespace CameraSystem.RoomView
 {
     public class RoomCameraManager : MonoBehaviour
     {
@@ -8,7 +8,6 @@ namespace Apartments
         [SerializeField] Vector3 _frontViewPosition;
         [SerializeField] float _movementTime;
 
-        Vector3 _currentPosition;
         Vector3 _topRotation = new Vector3(90f, 0f, 0f);
 
         public void MoveToPreset(CameraPresets preset)

@@ -1,13 +1,10 @@
-using SaveSystem;
-using ShopSystem;
-using System.Collections;
-using System.Collections.Generic;
+using Buildings.ShopSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Apartments
+namespace Buildings.Apartments.Rooms
 {
     public class TreasureUIItem : MonoBehaviour
     {

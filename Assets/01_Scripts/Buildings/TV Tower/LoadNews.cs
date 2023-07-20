@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public class LoadNews : MonoBehaviour
+namespace Buildings.TVTower
 {
-    private void Start()
+    public class LoadNews : MonoBehaviour
     {
-        AchievementManager.instance.gameObject.GetComponent<AchievenmentListIngame>().OpenWindow();
+        private void Start()
+        {
+            AchievementManager.instance.gameObject.GetComponent<AchievenmentListIngame>().OpenWindow();
+        }
     }
 }

@@ -1,5 +1,6 @@
 using Localisation;
 using SaveSystem;
+using SceneManagement;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -32,12 +33,12 @@ namespace General
             if (SaveManager.Instance.PlayerData.isOnTutorial)
             {
                 tutorialDialogue.GetComponent<TextLineProvider>().textLanguageCode = "en";
-                GetComponent<SceneLoader>().sceneToLoad = SceneManagement.Scenes.Tutorial;
+                GetComponent<SceneLoader>().sceneToLoad = Scenes.Tutorial;
             }
             else
             {
                 tutorialDialogue.gameObject.SetActive(false);
-                GetComponent<SceneLoader>().sceneToLoad = SceneManagement.Scenes.City;
+                GetComponent<SceneLoader>().sceneToLoad = Scenes.City;
             }
         }
     }

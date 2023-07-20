@@ -1,10 +1,10 @@
-using ShopSystem;
+using Buildings.ShopSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Apartments
+namespace Buildings.Apartments.Rooms
 {
     public class FurnitureUIItem : MonoBehaviour
     {

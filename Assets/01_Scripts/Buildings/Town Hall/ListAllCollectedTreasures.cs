@@ -1,11 +1,11 @@
+using Buildings.ShopSystem;
 using General;
 using SaveSystem;
-using ShopSystem;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace TownHall
+namespace Buildings.TownHall
 {
     public class ListAllCollectedTreasures : MonoBehaviour
     {
@@ -31,11 +31,11 @@ namespace TownHall
 
             if(_treasuresList.Count != 0)
             {
-                RefreshUIFurniture();
+                RefreshUITreasures();
             }
         }
 
-        public void RefreshUIFurniture()
+        public void RefreshUITreasures()
         {
             List<Treasure> treasures = _treasuresList.OrderBy(o => o.treasureName.Value).ToList();
 

@@ -1,4 +1,5 @@
 using General;
+using Population;
 using Relationships;
 using System;
 using UnityEngine;
@@ -190,12 +191,26 @@ namespace Needs
 
         private void Fight_OnCoreUse(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Angry;
+            if (RelationshipSystem.Instance.CheckIfDoubleHasRelationships(PopulationManager.Instance.ReturnDouble(_characterId)))
+            {
+                PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Angry;
+            }
+            else
+            {
+                _needsSystem.GetNeed(NeedType.HaveFight).ResetNeed();
+            }
         }
 
         private void Sadness_OnCoreUse(object sender, EventArgs e)
         {
-            PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Sad;
+            if (RelationshipSystem.Instance.CheckIfLoveInterestExists(_characterId))
+            {
+                PopulationManager.Instance.ReturnDouble(_characterId).CurrentState = DoubleState.Sad;
+            }
+            else
+            {
+                _needsSystem.GetNeed(NeedType.HaveDepression).ResetNeed();
+            }
         }
 
         private void Sick_OnCoreUse(object sender, EventArgs e)

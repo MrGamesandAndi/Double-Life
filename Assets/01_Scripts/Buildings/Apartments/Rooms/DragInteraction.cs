@@ -1,16 +1,17 @@
+using AudioSystem;
+using Buildings.ShopSystem;
 using General;
+using LevelingSystem;
 using Needs;
-using SceneManagement;
-using ShopSystem;
+using Population;
 using UnityEngine;
 
-namespace Apartments
+namespace Buildings.Apartments.Rooms
 {
-    public class TreasureDragInteraction : MonoBehaviour
+    public class DragInteraction : MonoBehaviour
     {
         public GameObject _snapPoint;
-        public Scenes _sceneToLoad;
-        public int id;
+        public int expReward;
 
         Vector3 _snapPointPosition;
         Vector3 _screenPoint;
@@ -49,33 +50,22 @@ namespace Apartments
             {
                 gameObject.transform.position = _snapPointPosition;
                 alreadySticked = true;
+                ExperienceManager.Instance.LevelSystem.AddExperience(expReward);
+                GameManager.Instance.GainFunds(Random.Range(50, 101));
+                AudioManager.Instance.PlaySfx(_foodSound);
+                Instantiate(_foodParticles, _snapPoint.transform, false);
+                Destroy(gameObject);
 
-                if (id == 1 || id == 9)
+                if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Hungry)
                 {
-                    ScenesManager.Instance.LoadScene(_sceneToLoad, Scenes.Apartment_Room);
+                    //RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
+                    Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Uncommon);
+                    GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
+                    PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.Hunger);
                 }
-                else
-                {
-                    Destroy(gameObject);
 
-                    if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Sick && id == 6)
-                    {
-                        RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
-                        Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Rare);
-                        GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
-                        PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.Sickness);
-                    }
-
-                    if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Angry && id == 7)
-                    {
-                        RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
-                        Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Rare);
-                        GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
-                        PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.HaveFight);
-                    }
-                }
-				
-				RoomManager.Instance.ShowTabs();
+                RoomManager.Instance.UpdateMoneyText();
+                RoomManager.Instance.ShowTabs();
             }
         }
 

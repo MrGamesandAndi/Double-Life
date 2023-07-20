@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ShopSystem
+namespace Buildings.ShopSystem
 {
     public class PawnShopUI : MonoBehaviour
     {
@@ -46,7 +46,7 @@ namespace ShopSystem
 
             if (_selectedItem != null && BodyPartsCollection.Instance.ReturnPlayerTreasure(_selectedItem.id).amount > 0)
             {
-                _sellButton.GetComponent<Button>().onClick.AddListener(OnClickedPurchase);
+                _sellButton.GetComponent<Button>().onClick.AddListener(OnClickedSold);
             }
 
             foreach (var kvp in _treasureItemToUIMap)
@@ -73,7 +73,7 @@ namespace ShopSystem
             RefreshUICommon();
         }
 
-        public void OnClickedPurchase()
+        public void OnClickedSold()
         {
             GameManager.Instance.GainFunds(_selectedItem.value);
             GameManager.Instance.SpendTreasure(_selectedItem.id, 1);

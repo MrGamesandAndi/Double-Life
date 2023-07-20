@@ -1,4 +1,4 @@
-﻿using ShopSystem;
+﻿using Buildings.ShopSystem;
 using System.Collections.Generic;
 using UnityEngine;
 

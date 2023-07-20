@@ -9,7 +9,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TownHall
+namespace Buildings.TownHall
 {
     public class Settings : MonoBehaviour
     {

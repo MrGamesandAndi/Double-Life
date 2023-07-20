@@ -1,4 +1,4 @@
-using General;
+using Population;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,17 +7,17 @@ namespace SaveSystem
     public class SaveManager : MonoBehaviour
     {
         public static SaveManager Instance { get; private set; } = null;
-        public List<PurchasedFoods> FoodData { get => _foodData; set => _foodData = value; }
-        public List<PurchasedFurniture> FurnitureData { get => _furnitureData; set => _furnitureData = value; }
+        public List<PurchasedItem> FoodData { get => _foodData; set => _foodData = value; }
+        public List<PurchasedItem> FurnitureData { get => _furnitureData; set => _furnitureData = value; }
 
         public PlayerData PlayerData { get => _playerData; set => _playerData = value; }
         public List<CharacterData> DoublesData { get => _doublesData; set => _doublesData = value; }
 
         [Header("Food Data")]
-        [SerializeField] List<PurchasedFoods> _foodData; 
+        [SerializeField] List<PurchasedItem> _foodData; 
 
         [Header("Furniture Data")]
-        [SerializeField] List<PurchasedFurniture> _furnitureData;
+        [SerializeField] List<PurchasedItem> _furnitureData;
 
         [Header("Player Data")]
         [SerializeField] PlayerData _playerData;
@@ -47,12 +47,12 @@ namespace SaveSystem
 
         public void LoadFoodData()
         {
-            FoodData = FileHandler.ReadListFromJSON<PurchasedFoods>("Food_Data");
+            FoodData = FileHandler.ReadListFromJSON<PurchasedItem>("Food_Data");
 
             if (FoodData == null)
             {
                 DeleteFoodData();
-                FoodData = FileHandler.ReadListFromJSON<PurchasedFoods>("Food_Data");
+                FoodData = FileHandler.ReadListFromJSON<PurchasedItem>("Food_Data");
             }
         }
 
@@ -80,12 +80,12 @@ namespace SaveSystem
 
         public void LoadFurnitureData()
         {
-            FurnitureData = FileHandler.ReadListFromJSON<PurchasedFurniture>("Furniture_Data");
+            FurnitureData = FileHandler.ReadListFromJSON<PurchasedItem>("Furniture_Data");
 
             if (FurnitureData == null)
             {
                 DeleteFurnitureData();
-                FurnitureData = FileHandler.ReadListFromJSON<PurchasedFurniture>("Furniture_Data");
+                FurnitureData = FileHandler.ReadListFromJSON<PurchasedItem>("Furniture_Data");
             }
         }
 
@@ -136,13 +136,13 @@ namespace SaveSystem
 
         public void DeleteFoodData()
         {
-            FoodData = new List<PurchasedFoods>();
+            FoodData = new List<PurchasedItem>();
             SaveFoodData();
         }
 
         public void DeleteFurnitureData()
         {
-            FurnitureData = new List<PurchasedFurniture>();
+            FurnitureData = new List<PurchasedItem>();
             SaveFurnitureData();
         }
     }

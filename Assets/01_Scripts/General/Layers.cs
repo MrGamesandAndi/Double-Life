@@ -1,4 +1,7 @@
-public class Layers
+namespace General
 {
-    public static string Ground = "Ground";
+    public class Layers
+    {
+        public static string Ground = "Ground";
+    }
 }

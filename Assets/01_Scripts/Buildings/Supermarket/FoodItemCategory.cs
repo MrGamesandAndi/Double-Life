@@ -1,6 +1,4 @@
-using UnityEngine;
-
-namespace ShopSystem
+namespace Buildings.ShopSystem
 {
     public enum FoodItemCategory
     {

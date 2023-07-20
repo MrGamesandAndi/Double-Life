@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace SaveSystem
 {
     public enum SaveType

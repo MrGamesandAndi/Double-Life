@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace General
+namespace Buildings.Apartments.Rooms
 {
     public class ReturnObjectToSpawn : MonoBehaviour
     {

@@ -1,11 +1,10 @@
 using DialogueSystem;
-using General;
+using Population;
 using SaveSystem;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 
-namespace Apartments
+namespace Buildings.Apartments
 {
     public class ApartmentManager : MonoBehaviour
     {

@@ -1,6 +1,7 @@
+using General;
 using UnityEngine;
 
-namespace CameraSystem
+namespace CameraSystem.CityView
 {
     public class CityCameraController : MonoBehaviour
     {

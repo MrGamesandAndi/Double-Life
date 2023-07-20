@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TownHall
+namespace Buildings.TownHall
 {
     public class TownHallActivities : MonoBehaviour
     {

@@ -1,6 +1,4 @@
-﻿using ShopSystem;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Buildings.ShopSystem;
 using UnityEngine;
 
 public class BuildingGhost : MonoBehaviour {

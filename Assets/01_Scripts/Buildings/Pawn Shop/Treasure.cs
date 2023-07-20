@@ -2,7 +2,7 @@ using Localisation;
 using SceneManagement;
 using UnityEngine;
 
-namespace ShopSystem
+namespace Buildings.ShopSystem
 {
     [CreateAssetMenu(menuName = "Shop/PawnStore/Treasure", fileName = "TreasureItem_")]
     public class Treasure : ScriptableObject

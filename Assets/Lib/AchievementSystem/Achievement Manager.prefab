@@ -1032,8 +1032,8 @@ MonoBehaviour:
   AutoSave: 0
   SpoilerAchievementMessage:
     key: News_Spoiler
-  AchievedSound: {fileID: 8300000, guid: 3400fb2a60564af4db6cc1c28c188006, type: 3}
-  ProgressMadeSound: {fileID: 8300000, guid: 9492b32862561624aa75d621f48074c5, type: 3}
+  AchievedSound: {fileID: 0}
+  ProgressMadeSound: {fileID: 0}
   States:
   - Progress: 1
     LastProgressUpdate: 0
@@ -1041,15 +1041,15 @@ MonoBehaviour:
   - Progress: 0
     LastProgressUpdate: 0
     Achieved: 0
-  - Progress: 1
+  - Progress: 5
     LastProgressUpdate: 0
-    Achieved: 0
+    Achieved: 1
   - Progress: 0
     LastProgressUpdate: 0
     Achieved: 0
-  - Progress: 1
+  - Progress: 7
     LastProgressUpdate: 0
-    Achieved: 0
+    Achieved: 1
   - Progress: 0
     LastProgressUpdate: 0
     Achieved: 0

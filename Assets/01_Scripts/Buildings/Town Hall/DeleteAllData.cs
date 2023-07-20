@@ -4,27 +4,31 @@ using SaveSystem;
 using UnityEditor;
 using UnityEngine;
 
-public class DeleteAllData : MonoBehaviour
+namespace Buildings.TownHall
 {
-    [SerializeField] LocalisedString _question;
-    public void DeleteData()
+    public class DeleteAllData : MonoBehaviour
     {
-        ModalWindow.Instance.ShowQuestion( _question.Value, () => { StartDeleteProcess(); }, () => { ModalWindow.Instance.Hide(); });
-    }
+        [SerializeField] LocalisedString _question;
+        public void DeleteData()
+        {
+            ModalWindow.Instance.ShowQuestion(_question.Value, () => { StartDeleteProcess(); }, () => { ModalWindow.Instance.Hide(); });
+        }
 
-    private void StartDeleteProcess()
-    {
-        PlayerPrefs.DeleteAll();
-        SaveManager.Instance.DeleteAllCharacterData();
-        SaveManager.Instance.DeletePlayerData();
-        SaveManager.Instance.FoodData.Clear();
-        SaveManager.Instance.FurnitureData.Clear();
-        SaveManager.Instance.SaveFoodData();
-        SaveManager.Instance.SaveFurnitureData();
-        AchievementManager.instance.ResetAchievementState();
-        Application.Quit();
+        private void StartDeleteProcess()
+        {
+            PlayerPrefs.DeleteAll();
+            SaveManager.Instance.DeleteAllCharacterData();
+            SaveManager.Instance.DeletePlayerData();
+            SaveManager.Instance.FoodData.Clear();
+            SaveManager.Instance.FurnitureData.Clear();
+            SaveManager.Instance.SaveFoodData();
+            SaveManager.Instance.SaveFurnitureData();
+            AchievementManager.instance.ResetAchievementState();
 #if UNITY_EDITOR
-        EditorApplication.ExitPlaymode();
+            EditorApplication.ExitPlaymode();
+#else
+            Application.Quit();
 #endif
+        }
     }
 }

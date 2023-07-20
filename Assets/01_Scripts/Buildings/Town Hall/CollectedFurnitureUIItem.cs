@@ -1,9 +1,9 @@
-using ShopSystem;
+using Buildings.ShopSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TownHall
+namespace Buildings.TownHall
 {
     public class CollectedFurnitureUIItem : MonoBehaviour
     {

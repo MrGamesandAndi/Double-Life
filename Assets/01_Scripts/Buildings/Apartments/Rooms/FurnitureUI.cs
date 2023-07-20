@@ -1,11 +1,11 @@
+using Buildings.ShopSystem;
 using SaveSystem;
-using ShopSystem;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Apartments
+namespace Buildings.Apartments.Rooms
 {
     public class FurnitureUI : MonoBehaviour
     {
@@ -51,7 +51,7 @@ namespace Apartments
                 {
                     if (SaveManager.Instance.FurnitureData[i].amount > 0)
                     {
-                        if (furniture.furnitureName.key == SaveManager.Instance.FurnitureData[i].furnitureName.key)
+                        if (furniture.furnitureName.key == SaveManager.Instance.FurnitureData[i].itemName.key)
                         {
                             var itemGO = Instantiate(_itemUIPrefab, _itemUIRoot);
                             var itemUI = itemGO.GetComponent<FurnitureUIItem>();
@@ -72,7 +72,7 @@ namespace Apartments
 
             for (int i = 0; i < SaveManager.Instance.FurnitureData.Count; i++)
             {
-                if (SaveManager.Instance.FurnitureData[i].furnitureName.key == _selectedItem.furnitureName.key)
+                if (SaveManager.Instance.FurnitureData[i].itemName.key == _selectedItem.furnitureName.key)
                 {
                     SaveManager.Instance.FurnitureData[i].amount--;
                     RoomManager.Instance.SelectedFurniture = _selectedItem;

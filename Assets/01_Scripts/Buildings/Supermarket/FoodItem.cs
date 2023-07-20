@@ -1,7 +1,7 @@
 using Localisation;
 using UnityEngine;
 
-namespace ShopSystem
+namespace Buildings.ShopSystem
 {
     [CreateAssetMenu(menuName = "Shop/Supermarket/Food", fileName = "FoodItem_")]
     public class FoodItem : ScriptableObject

@@ -1,4 +1,4 @@
-using Apartments;
+using Buildings.Apartments;
 using General;
 using System.Collections.Generic;
 using UnityEngine;

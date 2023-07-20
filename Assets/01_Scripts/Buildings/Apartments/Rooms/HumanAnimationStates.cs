@@ -1,4 +1,4 @@
-namespace General
+namespace Buildings.Apartments.Rooms
 {
     public enum HumanAnimationStates
     {

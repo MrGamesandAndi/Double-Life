@@ -1,4 +1,4 @@
-namespace Apartments
+namespace CameraSystem.RoomView
 {
     public enum CameraPresets
     {

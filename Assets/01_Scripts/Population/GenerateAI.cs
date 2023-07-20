@@ -2,7 +2,7 @@ using Needs;
 using SaveSystem;
 using UnityEngine;
 
-namespace General
+namespace Population
 {
     public class GenerateAI : MonoBehaviour
     {

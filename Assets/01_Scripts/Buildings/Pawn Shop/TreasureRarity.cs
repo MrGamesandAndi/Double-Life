@@ -1,4 +1,4 @@
-namespace ShopSystem
+namespace Buildings.ShopSystem
 {
     public enum TreasureRarity
     {

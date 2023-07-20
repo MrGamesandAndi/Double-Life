@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using System;
 using System.Linq;
 using Localisation;
 using AudioSystem;
@@ -61,7 +60,7 @@ public class AchievementManager : MonoBehaviour
 
     private void PlaySound (AudioClip Sound)
     {
-        AudioManager.Instance.PlaySfx(Sound);
+        //AudioManager.Instance.PlaySfx(Sound);
     }
     # region Miscellaneous
     /// <summary>

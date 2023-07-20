@@ -3,7 +3,7 @@ using SaveSystem;
 using SceneManagement;
 using UnityEngine;
 
-namespace Apartments
+namespace Buildings.Apartments
 {
     public class WindowManager : MonoBehaviour
     {

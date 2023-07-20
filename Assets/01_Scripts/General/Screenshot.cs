@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using CharacterCreator;
 
-namespace CharacterCreator
+namespace General
 {
     public class Screenshot : MonoBehaviour
     {

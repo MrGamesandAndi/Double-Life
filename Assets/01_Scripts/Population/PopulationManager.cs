@@ -1,3 +1,4 @@
+using General;
 using Needs;
 using SaveSystem;
 using System.Collections.Generic;
@@ -5,7 +6,7 @@ using System.Linq;
 using UnityEngine;
 using static SaveSystem.CharacterData;
 
-namespace General
+namespace Population
 {
     public class PopulationManager : MonoBehaviour
     {

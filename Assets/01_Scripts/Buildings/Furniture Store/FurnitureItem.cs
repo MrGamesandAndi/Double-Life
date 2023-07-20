@@ -2,7 +2,7 @@ using Localisation;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ShopSystem
+namespace Buildings.ShopSystem
 {
     [CreateAssetMenu(menuName = "Shop/FurnitureStore/Furniture", fileName = "FurnitureItem_")]
     public class FurnitureItem : ScriptableObject

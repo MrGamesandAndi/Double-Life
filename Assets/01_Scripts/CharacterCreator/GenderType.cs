@@ -1,4 +1,4 @@
-namespace General
+namespace CharacterCreator
 {
     public enum GenderType
     {

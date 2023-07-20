@@ -1,11 +1,11 @@
+using Buildings.ShopSystem;
 using SaveSystem;
-using ShopSystem;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Apartments
+namespace Buildings.Apartments.Rooms
 {
     public class FoodUI : MonoBehaviour
     {
@@ -54,7 +54,7 @@ namespace Apartments
                 {
                     if(SaveManager.Instance.FoodData[i].amount > 0)
                     {
-                        if (food.foodName.key == SaveManager.Instance.FoodData[i].foodName.key)
+                        if (food.foodName.key == SaveManager.Instance.FoodData[i].itemName.key)
                         {
                             var itemGO = Instantiate(_itemUIPrefab, _itemUIRoot);
                             var itemUI = itemGO.GetComponent<FoodUIItem>();
@@ -78,7 +78,7 @@ namespace Apartments
 
             for (int i = 0; i < SaveManager.Instance.FoodData.Count; i++)
             {
-                if (SaveManager.Instance.FoodData[i].foodName.key == _selectedItem.foodName.key)
+                if (SaveManager.Instance.FoodData[i].itemName.key == _selectedItem.foodName.key)
                 {
                     SaveManager.Instance.FoodData[i].amount--;
                     break;

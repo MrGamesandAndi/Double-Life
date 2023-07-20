@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace TownHall
+namespace Buildings.TownHall
 {
     public class DoubleUIItem : MonoBehaviour
     {

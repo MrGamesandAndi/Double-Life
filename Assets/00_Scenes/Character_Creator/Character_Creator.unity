@@ -24759,6 +24759,7 @@ MonoBehaviour:
   _itemUIRoot: {fileID: 1203690645}
   _itemUIPrefab: {fileID: 366090654960749369, guid: bc86ebc824707c74e89df3a98f905c4f, type: 3}
   _availableBodyParts:
+  - {fileID: 11400000, guid: d89556e40ea3a8742a9103d19a970e72, type: 2}
   - {fileID: 11400000, guid: 257ededcf889fe7458574b2dacc90f62, type: 2}
   - {fileID: 11400000, guid: 3d4cfc89a07534c41921d82a35f188ba, type: 2}
   - {fileID: 11400000, guid: ef04d921d2fcfb146903d62f6b02287a, type: 2}
@@ -24766,7 +24767,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 64343ac50afa9cb46b2ae10fe99a5eff, type: 2}
   - {fileID: 11400000, guid: 6e2262162dda65548b665f371f35eb80, type: 2}
   - {fileID: 11400000, guid: ba695317e7bfbc0449857e636b360ea9, type: 2}
-  - {fileID: 11400000, guid: d89556e40ea3a8742a9103d19a970e72, type: 2}
 --- !u!1 &1834251430
 GameObject:
   m_ObjectHideFlags: 0

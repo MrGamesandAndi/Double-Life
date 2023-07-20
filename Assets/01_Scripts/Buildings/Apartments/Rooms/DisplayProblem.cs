@@ -1,6 +1,7 @@
+using General;
 using UnityEngine;
 
-namespace General
+namespace Buildings.Apartments.Rooms
 {
     public class DisplayProblem : MonoBehaviour
     {
@@ -50,7 +51,7 @@ namespace General
                     break;
                 default:
                     break;
-            }          
+            }
         }
     }
 }
