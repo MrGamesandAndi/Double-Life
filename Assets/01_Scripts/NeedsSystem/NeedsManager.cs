@@ -8,7 +8,7 @@ namespace Needs
 {
     public class NeedsManager : MonoBehaviour
     {
-        [SerializeField] float _needUseAmount = 50f;
+        [SerializeField] float _needUseAmount = int.MaxValue;
 
         public int _characterId;
         NeedsSystem _needsSystem;
@@ -22,6 +22,8 @@ namespace Needs
         public float _depressionMultiplier;
         public float _sicknessMultiplier;
         public float _breakUpMultiplier;
+
+        public NeedsSystem NeedsSystem { get => _needsSystem; set => _needsSystem = value; }
 
         private void Awake()
         {
@@ -55,7 +57,7 @@ namespace Needs
                 }
             }
 
-            return 1f;
+            return UnityEngine.Random.Range(0.5f, 1f);
         }
 
         private void Start()

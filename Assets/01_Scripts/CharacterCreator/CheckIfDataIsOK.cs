@@ -1,5 +1,6 @@
 using General;
 using Relationships;
+using SaveSystem;
 using SceneManagement;
 using UnityEngine;
 
@@ -28,8 +29,10 @@ namespace CharacterCreator
             }
 
             HumanController.Instance.SaveCharacterData();
+            SaveManager.Instance.SaveAllData();
             AddExtraRelationship();
             GetComponent<SceneLoader>().LoadScene();
+            GameManager.Instance.ResetCurrentLoadedDouble();
         }
 
         private void AddExtraRelationship()

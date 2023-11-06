@@ -8,16 +8,19 @@ namespace Needs
         public event EventHandler OnCoreUse;
         public event EventHandler OnNeedReset;
 
-        const float MAX = 100f;
+        const float MAX = 1000f;
         float _ringAmount;
         float _totalRingAmount;
         float _coreAmount;
 
+        public float RingAmount { get => _ringAmount; set => _ringAmount = value; }
+        public float CoreAmount { get => _coreAmount; set => _coreAmount = value; }
+
         public Need()
         {
-            _totalRingAmount = 100f;
+            _totalRingAmount = 1000f;
             _ringAmount = _totalRingAmount;
-            _coreAmount = MAX;
+            _coreAmount = UnityEngine.Random.Range(200, 501);
         }
 
         public void UseNeed(float useAmount, float multiplier)
@@ -52,7 +55,7 @@ namespace Needs
         public void ResetNeed()
         {
             _ringAmount = _totalRingAmount;
-            _coreAmount = MAX;
+            _coreAmount = UnityEngine.Random.Range(200, 501);
         }
     }
 }

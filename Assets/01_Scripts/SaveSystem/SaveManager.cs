@@ -11,7 +11,7 @@ namespace SaveSystem
         public List<PurchasedItem> FurnitureData { get => _furnitureData; set => _furnitureData = value; }
 
         public PlayerData PlayerData { get => _playerData; set => _playerData = value; }
-        public List<CharacterData> DoublesData { get => _doublesData; set => _doublesData = value; }
+        //public List<CharacterData> DoublesData { get => _doublesData; set => _doublesData = value; }
 
         [Header("Food Data")]
         [SerializeField] List<PurchasedItem> _foodData; 
@@ -96,7 +96,7 @@ namespace SaveSystem
 
         public void LoadCharacterData()
         {
-            DoublesData = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
+            PopulationManager.Instance.DoublesList = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
         }
 
         public void SaveAllData()
@@ -120,9 +120,9 @@ namespace SaveSystem
 
         public void DeleteAllCharacterData()
         {
-            //DoublesData = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
+            //PopulationManager.Instance.DoublesList = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
 
-            foreach (var character in DoublesData)
+            foreach (var character in FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data))
             {
                 FileHandler.DeleteFileFromFolder(character.Name + character.LastName, SaveType.Character_Data);
                 //PopulationManager.Instance.DoublesList = FileHandler.ReturnAllFilesInFolder<CharacterData>(SaveType.Character_Data);
@@ -132,6 +132,7 @@ namespace SaveSystem
         public void DeletePlayerData()
         {
             FileHandler.DeleteFileFromFolder("Player_Data", SaveType.Player_Data);
+            AchievementManager.instance.ResetAchievementState();
         }
 
         public void DeleteFoodData()

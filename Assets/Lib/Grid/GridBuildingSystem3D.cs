@@ -119,7 +119,7 @@ public class GridBuildingSystem3D : MonoBehaviour {
 
                 if(GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Buy)
                 {
-                    RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
+                    //RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
                     Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Rare);
                     GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
                     PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.BuyFurniture);
@@ -128,27 +128,6 @@ public class GridBuildingSystem3D : MonoBehaviour {
         }
 
         RefreshSelectedObjectType();
-
-
-        if (Input.GetMouseButtonDown(1)) {
-            Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
-            if (grid.GetGridObject(mousePosition) != null) {
-                // Valid Grid Position
-                PlacedObject_Done placedObject = grid.GetGridObject(mousePosition).GetPlacedObject();
-                if (placedObject != null)
-                {
-                    // Demolish
-                    Save(placedObject, Vector2Int.zero);
-                    placedObject.DestroySelf();
-                    List<Vector2Int> gridPositionList = placedObject.GetGridPositionList();
-
-                    foreach (Vector2Int gridPosition in gridPositionList)
-                    {
-                        grid.GetGridObject(gridPosition.x, gridPosition.y).ClearPlacedObject();
-                    }
-                }
-            }
-        }
     }
 
     private void RefreshSelectedObjectType() {
