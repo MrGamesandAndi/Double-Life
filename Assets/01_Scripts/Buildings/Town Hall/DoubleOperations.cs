@@ -74,7 +74,7 @@ namespace Buildings.TownHall
         public void OnClickedEdit()
         {
             PlayerPrefs.SetInt("CC_State", 1);
-            _selectedDouble = GameManager.Instance.currentLoadedDouble;
+            GameManager.Instance.currentLoadedDouble = _selectedDouble;
             ScenesManager.Instance.LoadScene(Scenes.Character_Creator, Scenes.Town_Hall);
         }
 

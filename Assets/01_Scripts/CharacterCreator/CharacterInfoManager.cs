@@ -41,15 +41,16 @@ namespace CharacterCreator
                     GetLastNameValue();
                     GetNicknameValue();
                     GetRelationshipValue();
-                    GetZodiacValue();
                     GetSexPreferenceValue();
                     GetColorValue();
+                    SetColorValue();
                     _nameInputField.interactable = false;
                     _relationshipInputField.interactable = false;
                     _lastNameInputField.interactable = false;
                     _zodiacInputField.interactable = false;
                     _genderImage.interactable = false;
                     _traitsPanel.SetActive(false);
+                    GetZodiacValue();
                     PlayerPrefs.SetInt("CC_State", 0);
                     break;
                 case 2:

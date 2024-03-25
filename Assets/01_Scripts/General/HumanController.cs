@@ -40,6 +40,7 @@ public class HumanController : MonoBehaviour
     {
         if (characterData == null)
         {
+            Debug.LogError("CharacterData is null");
             return;
         }
 
@@ -314,6 +315,7 @@ public class HumanController : MonoBehaviour
         AchievementManager.instance.AddAchievementProgress("Unlock_TownHall", 1);
         AchievementManager.instance.AddAchievementProgress("Unlock_Park", 1);
         AchievementManager.instance.AddAchievementProgress("Unlock_TV", 1);
+        SaveManager.Instance.SaveAllCharacterData();
     }
 
     public void PlayAnimation(string animationName)

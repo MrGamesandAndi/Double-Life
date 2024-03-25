@@ -32,7 +32,6 @@ namespace CharacterCreator
             SaveManager.Instance.SaveAllData();
             AddExtraRelationship();
             GetComponent<SceneLoader>().LoadScene();
-            GameManager.Instance.ResetCurrentLoadedDouble();
         }
 
         private void AddExtraRelationship()
