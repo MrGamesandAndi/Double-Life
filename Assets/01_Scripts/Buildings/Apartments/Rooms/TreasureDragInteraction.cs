@@ -61,7 +61,6 @@ namespace Buildings.Apartments.Rooms
 
                     if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Sick && id == 6)
                     {
-                        RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
                         Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Rare);
                         GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
                         PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.Sickness);
@@ -69,7 +68,6 @@ namespace Buildings.Apartments.Rooms
 
                     if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Angry && id == 7)
                     {
-                        RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
                         Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Rare);
                         GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
                         PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.HaveFight);

@@ -19,7 +19,6 @@ public class FriendshipDisplayer : MonoBehaviour
     [SerializeField] GameObject _leftFriendsContainer;
     [SerializeField] GameObject _rightFriendsContainer;
 
-    Vector3 offScreenLeftPosition;
     Vector3 offScreenRightPosition;
     Vector3 centerPosition;
     RectTransform rt;
@@ -28,9 +27,8 @@ public class FriendshipDisplayer : MonoBehaviour
     {
         rt = GetComponent<RectTransform>();
 
-        centerPosition = new Vector3(0, 0, 0);
-        offScreenRightPosition = new Vector3(Screen.width, 0, 0);
-
+        centerPosition = new Vector3(0f, 0f, 0f);
+        offScreenRightPosition = new Vector3(1916, 0f, 0f);
         rt.localPosition = offScreenRightPosition;
     }
 
@@ -58,6 +56,7 @@ public class FriendshipDisplayer : MonoBehaviour
 
     public void Show()
     {
+        Debug.Log(Screen.width);
         LeanTween.cancel(gameObject);
         rt.localPosition = offScreenRightPosition;
         LeanTween.move(rt, centerPosition, 0.5f).setEase(LeanTweenType.easeInOutExpo);
@@ -65,7 +64,9 @@ public class FriendshipDisplayer : MonoBehaviour
 
     public void Hide()
     {
+        Debug.Log(Screen.width);
         LeanTween.cancel(gameObject);
+        rt.localPosition = centerPosition;
         LeanTween.move(rt, offScreenRightPosition, 0.5f).setEase(LeanTweenType.easeInOutExpo);
     }
 }

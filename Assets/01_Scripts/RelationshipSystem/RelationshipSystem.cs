@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TraitSystem;
 using UnityEngine;
-using Yarn.Unity;
 using static SaveSystem.CharacterData;
 
 namespace Relationships
@@ -27,7 +26,6 @@ namespace Relationships
             Instance = this;
         }
 
-        [YarnCommand("give_new_friend")]
         public void StartNewFriendWithRandom()
         {
             CharacterData newFriend = PopulationManager.Instance.GetRandomDouble();
@@ -68,7 +66,6 @@ namespace Relationships
             PopulationManager.Instance.ReturnDouble(targetID).Relationships.Add(new RelationshipData(initiatorID, amount, isLove));
         }
 
-        [YarnCommand("break_up")]
         public void BreakUp()
         {
             SetLoveLevel(GameManager.Instance.currentLoadedDouble.Id, GetLoveInterestId(), false);
@@ -163,7 +160,6 @@ namespace Relationships
             }
         }
 
-        [YarnCommand("go_to_date")]
         public void GoToDate()
         {
             int randomChance = Random.Range(0, 11);
@@ -181,13 +177,11 @@ namespace Relationships
             ResetNeed((int)NeedType.HaveDate);
         }
 
-        [YarnCommand("reset_need")]
         public void ResetNeed(int needId)
         {
             PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted((NeedType)needId);
         }
 
-        [YarnCommand("confess_love")]
         public void TryConfessLove()
         {
             List<CharacterData> result = new List<CharacterData>();

@@ -3,6 +3,7 @@ using Buildings.ShopSystem;
 using Population;
 using SaveSystem;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace General
@@ -10,9 +11,11 @@ namespace General
     public class GameManager : MonoBehaviour, IPurchaser
     {
         public static GameManager Instance { get; private set; } = null;
+        public List<DialogueTrigger> Problems { get => _problems; set => _problems = value; }
 
         [SerializeField] int _targetFrameRate = 60;
         [SerializeField] AudioClip _buySFX;
+        [SerializeField] List<DialogueTrigger> _problems;
         public CharacterData currentLoadedDouble;
 
         private void Awake()

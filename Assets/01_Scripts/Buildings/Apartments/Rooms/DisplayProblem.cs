@@ -1,52 +1,61 @@
 using General;
+using Relationships;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Buildings.Apartments.Rooms
 {
     public class DisplayProblem : MonoBehaviour
     {
+        [SerializeField] List<DialogueTrigger> _problems;
+
+        private void Start()
+        {
+            _problems = GameManager.Instance.Problems;
+        }
+
         private void OnMouseDown()
         {
             switch (GameManager.Instance.currentLoadedDouble.CurrentState)
             {
                 case DoubleState.Happy:
-                    RoomManager.Instance.DialogueRunner.StartDialogue($"HappySpeech{Random.Range(1, 10)}");
+                    _problems[5].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
                 case DoubleState.Buy:
-                    RoomManager.Instance.DialogueRunner.StartDialogue($"Furniture1");
+                    _problems[4].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
                 case DoubleState.MakeFriend:
-                    RoomManager.Instance.DialogueRunner.StartDialogue($"Friend1");
+                    _problems[3].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
                 case DoubleState.Confession:
-                    RoomManager.Instance.DialogueRunner.StartDialogue($"Love2");
+                    _problems[0].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
                 case DoubleState.Angry:
-                    RoomManager.Instance.DialogueRunner.StartDialogue($"Fight1");
+                    _problems[2].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
                 case DoubleState.Sick:
-                    RoomManager.Instance.DialogueRunner.StartDialogue($"Sickness{Random.Range(1, 3)}");
+                    _problems[9].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
                 case DoubleState.Date:
-                    RoomManager.Instance.DialogueRunner.StartDialogue($"Love1");
+                    _problems[1].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
                 case DoubleState.Hungry:
-                    RoomManager.Instance.DialogueRunner.StartDialogue($"Hunger{Random.Range(1, 5)}");
+                    _problems[6].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
                 case DoubleState.Sad:
-                    RoomManager.Instance.DialogueRunner.StartDialogue($"Sad{Random.Range(2, 4)}");
+                    _problems[7].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
                 case DoubleState.BreakUp:
-                    RoomManager.Instance.DialogueRunner.StartDialogue($"RelFailed2");
+                    _problems[7].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
                 default:
