@@ -1,3 +1,4 @@
+using AudioSystem;
 using General;
 using Localisation;
 using UnityEditor;
@@ -10,33 +11,29 @@ namespace SaveSystem
         [SerializeField] LocalisedString _savePrompt;
         [SerializeField] LocalisedString _saveContinuePrompt;
 
-        public void StartPrompt()
+        public void StartSavePrompt()
         {
             ModalWindow.Instance.ShowQuestion(_savePrompt.Value, () => 
-            { 
-                SaveManager.Instance.SaveAllData();
-                ModalWindow.Instance.ShowQuestion(_saveContinuePrompt.Value, () =>
+                { 
+                    SaveManager.Instance.SaveAllData();
+                    StartQuitPrompt();
+                },() =>
                 {
-                    ModalWindow.Instance.Hide();
-                }, () =>
-                {
-                    Application.Quit();
-#if UNITY_EDITOR
-                    EditorApplication.ExitPlaymode();
-#endif
-                });
-            }, () => 
+                    StartQuitPrompt();
+                }
+            );
+        }
+        public void StartQuitPrompt()
+        {
+            ModalWindow.Instance.ShowQuestion(_saveContinuePrompt.Value, () =>
             {
-                ModalWindow.Instance.ShowQuestion(_saveContinuePrompt.Value, () =>
-                {
-                    ModalWindow.Instance.Hide();
-                }, () => 
-                {
-                    Application.Quit();
+                ModalWindow.Instance.Hide();
+            }, () =>
+            {
+                Application.Quit();
 #if UNITY_EDITOR
-                    EditorApplication.ExitPlaymode();
+                EditorApplication.ExitPlaymode();
 #endif
-                });
             });
         }
     }

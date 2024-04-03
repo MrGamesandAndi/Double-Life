@@ -1,43 +1,26 @@
-using Buildings.ShopSystem;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Buildings.Apartments.Rooms
 {
     public class FurnitureUIItem : MonoBehaviour
     {
-        [SerializeField] TextMeshProUGUI _itemName;
-        [SerializeField] TextMeshProUGUI _itemDescription;
-        [SerializeField] TextMeshProUGUI _itemQuantity;
-        [SerializeField] Image _icon;
-        [SerializeField] Color _defaultColor;
-        [SerializeField] Color _selectedColor;
-        [SerializeField] Image _backgroundPanel;
+        [SerializeField] Image _image;
+        [SerializeField] TextMeshProUGUI _quantity;
 
-        private FurnitureItem _furnitureItem;
-        private UnityAction<FurnitureItem> OnSelectedFn;
+        GameObject _prefab;
+        int _id;
 
-        public void Bind(FurnitureItem item, int amount, UnityAction<FurnitureItem> onSelectedFn)
+        public Image Image { get => _image; set => _image = value; }
+        public TextMeshProUGUI Quantity { get => _quantity; set => _quantity = value; }
+        public GameObject Prefab { get => _prefab; set => _prefab = value; }
+        public int Id { get => _id; set => _id = value; }
+
+        public void OnClick()
         {
-            _furnitureItem = item;
-            _itemName.text = _furnitureItem.furnitureName.Value;
-            _itemDescription.text = _furnitureItem.description.Value;
-            _itemQuantity.text = amount.ToString();
-            _icon.sprite = _furnitureItem.icon;
-            OnSelectedFn = onSelectedFn;
-            SetIsSelected(false);
-        }
-
-        public void SetIsSelected(bool isSelected)
-        {
-            _backgroundPanel.color = isSelected ? _selectedColor : _defaultColor;
-        }
-
-        public void OnClicked()
-        {
-            OnSelectedFn.Invoke(_furnitureItem);
+            PlacementSystem placementSystem = FindObjectOfType<PlacementSystem>();
+            placementSystem.StartPlacement(Id);
         }
     }
 }

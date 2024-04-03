@@ -15,7 +15,6 @@ namespace General
         [SerializeField] Vector3 _from;
         [SerializeField] Vector3 _to;
         [SerializeField] bool _showOnEnable;
-        [SerializeField] bool _workOnDisable;
 
         private LTDescr _tweenObject;
 

@@ -15,7 +15,6 @@ public class DebugNeedsPanel : MonoBehaviour
     [SerializeField] List<GameObject> _needHaveFight;
     [SerializeField] List<GameObject> _needHaveDate;
     [SerializeField] List<GameObject> _needConfessLove;
-    [SerializeField] List<GameObject> _needTalkToFriend;
 
     NeedsManager needManager;
 
@@ -49,8 +48,10 @@ public class DebugNeedsPanel : MonoBehaviour
 
         _needConfessLove[0].GetComponent<TextMeshProUGUI>().text = needManager.GetNeed(NeedType.ConfessLove).RingAmount.ToString();
         _needConfessLove[1].GetComponent<TextMeshProUGUI>().text = needManager.GetNeed(NeedType.ConfessLove).CoreAmount.ToString();
+    }
 
-        _needTalkToFriend[0].GetComponent<TextMeshProUGUI>().text = needManager.GetNeed(NeedType.TalkToFriend).RingAmount.ToString();
-        _needTalkToFriend[1].GetComponent<TextMeshProUGUI>().text = needManager.GetNeed(NeedType.TalkToFriend).CoreAmount.ToString();
+    public void ActivateNeed(int need)
+    {
+        PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).ActivateNeed((DoubleState)need);
     }
 }

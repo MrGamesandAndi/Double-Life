@@ -52,6 +52,12 @@ namespace Needs
             _ringAmount = 0;
         }
 
+        public void ManualNeedActivation()
+        {
+            _ringAmount = 0f;
+            _coreAmount = UnityEngine.Random.Range(200, 501);
+        }
+
         public void ResetNeed()
         {
             _ringAmount = _totalRingAmount;

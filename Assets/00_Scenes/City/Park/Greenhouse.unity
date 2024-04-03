@@ -1125,6 +1125,7 @@ GameObject:
   - component: {fileID: 740907002}
   - component: {fileID: 740907001}
   - component: {fileID: 740907000}
+  - component: {fileID: 740907003}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -1258,6 +1259,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740906998}
   m_CullTransparentMesh: 1
+--- !u!114 &740907003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740906998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &841142740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,6 +1370,7 @@ GameObject:
   - component: {fileID: 913016786}
   - component: {fileID: 913016785}
   - component: {fileID: 913016788}
+  - component: {fileID: 913016789}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1488,6 +1506,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousScene: 9
   sceneToLoad: 3
+--- !u!114 &913016789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913016783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &1049278892
 GameObject:
   m_ObjectHideFlags: 0

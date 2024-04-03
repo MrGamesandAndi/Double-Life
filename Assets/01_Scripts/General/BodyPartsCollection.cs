@@ -17,6 +17,9 @@ namespace General
             Instance = this;
         }
 
+        [Header("Food")]
+        public List<FoodItem> food;
+
         [Header("Furniture")]
         public List<FurnitureItem> furniture;
 

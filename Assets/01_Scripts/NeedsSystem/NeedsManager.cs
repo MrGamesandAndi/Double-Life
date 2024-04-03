@@ -129,6 +129,13 @@ namespace Needs
             NeedCompleted(NeedType.TalkToFriend);
         }
 
+        public void ActivateNeed(DoubleState need)
+        {
+            ResetAllNeeds();
+            _needUseAmount = 0f;
+           GameManager.Instance.currentLoadedDouble.CurrentState = need;
+        }
+
         private void Update()
         {
             _needsSystem.GetNeed(NeedType.Hunger).UseNeed(_needUseAmount, _hungerMultiplier);

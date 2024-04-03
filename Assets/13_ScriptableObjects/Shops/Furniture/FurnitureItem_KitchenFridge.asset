@@ -18,7 +18,6 @@ MonoBehaviour:
     key: Furniture_Fridge_Description
   icon: {fileID: 21300000, guid: 64f7ac0c4a08f76448bfad93361fb406, type: 3}
   cost: 25000
-  prefab: {fileID: 3205710848153139817, guid: 0bd6155be3371644dbd4eb14a2d2e0fd, type: 3}
-  width: 1
-  height: 1
+  prefab: {fileID: 1622254223430105443, guid: 90ac44cec95bac94c92a6c2a5b4b673c, type: 3}
+  size: {x: 2, y: 2}
   id: 7

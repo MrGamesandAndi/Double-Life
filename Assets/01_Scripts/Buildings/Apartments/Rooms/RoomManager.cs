@@ -4,6 +4,8 @@ using CameraSystem.RoomView;
 using General;
 using Localisation;
 using SaveSystem;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -14,17 +16,20 @@ namespace Buildings.Apartments.Rooms
 {
     public class RoomManager : MonoBehaviour
     {
+
+        [SerializeField] AudioClip _coinSFX;
+
         public static RoomManager Instance { get; private set; }
         public FurnitureItem SelectedFurniture { get => _selectedFurniture; set => _selectedFurniture = value; }
         public DialogueRunner DialogueRunner { get => _dialogueRunner; set => _dialogueRunner = value; }
 
         FurnitureItem _selectedFurniture = null;
 
-        [SerializeField] GameObject _grid;
         [SerializeField] Camera _camera;
         [SerializeField] GameObject _tabArea;
         [SerializeField] GameObject _mainPanel;
         [SerializeField] GameObject _pagesArea;
+        [SerializeField] GameObject _buildArea;
         [SerializeField] Material _wallMaterial;
         [SerializeField] DialogueRunner _dialogueRunner;
         [SerializeField] List<AudioClip> _moodMusicList;
@@ -32,6 +37,7 @@ namespace Buildings.Apartments.Rooms
         [SerializeField] GameObject _speechBubble;
         [SerializeField] TextMeshProUGUI _moneyText;
         [SerializeField] GameObject _instructions;
+        [SerializeField] GameObject DEBUG_needPanel;
 
         private void Awake()
         {
@@ -101,25 +107,45 @@ namespace Buildings.Apartments.Rooms
                     break;
             }
 
-            UpdateMoneyText();
-
+            _moneyText.text = $"$ {(GameManager.Instance.GetCurrentFunds() / 100f):0.00}";
+            GameManager.Instance.OnMoneyChange += UpdateMoneyText;
         }
 
-        public void UpdateMoneyText()
+        private void OnDestroy()
         {
-            _moneyText.text = $"$ {(GameManager.Instance.GetCurrentFunds() / 100f):0.00}";
+            GameManager.Instance.OnMoneyChange -= UpdateMoneyText;
+        }
+
+        public void UpdateMoneyText(int oldValue, int newValue)
+        {
+            StartCoroutine(CountTo(oldValue,newValue));
+        }
+
+        private IEnumerator CountTo(int oldValue, int newValue)
+        {
+            float countDuration = 1f;
+            var rate = Mathf.Abs(newValue - oldValue) / countDuration;
+
+            while (oldValue != newValue)
+            {
+                AudioManager.Instance.PlaySfx(_coinSFX);
+                oldValue = (int)Mathf.MoveTowards(oldValue, newValue, rate * Time.deltaTime);
+                _moneyText.text = $"$ {(oldValue / 100f):0.00}";
+                yield return null;
+            }
         }
 
         public void EnableGrid()
         {
-            _grid.SetActive(true);
+            HideTabs();
             ChangeCameraAngle(CameraPresets.Top);
         }
 
         public void DisableGrid()
         {
             ChangeCameraAngle(CameraPresets.Front);
-            _grid.SetActive(false);
+            _buildArea.SetActive(false);
+            ShowTabs();
         }
 
         public void ChangeCameraAngle(CameraPresets preset)
@@ -157,6 +183,11 @@ namespace Buildings.Apartments.Rooms
         public void HideInstructions()
         {
             _instructions.SetActive(false);
+        }
+
+        public void DEBUG_ShowNeeds(bool state)
+        {
+            DEBUG_needPanel.SetActive(state);
         }
     }
 }

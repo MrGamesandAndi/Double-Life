@@ -110,7 +110,7 @@ namespace SaveSystem
 
         public void SaveAllCharacterData()
         {
-            DeleteAllCharacterData();
+            //DeleteAllCharacterData();
 
             foreach (var character in PopulationManager.Instance.DoublesList)
             {

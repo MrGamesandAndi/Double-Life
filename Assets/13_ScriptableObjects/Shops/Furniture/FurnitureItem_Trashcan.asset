@@ -18,7 +18,6 @@ MonoBehaviour:
     key: Furniture_Trashcan_Description
   icon: {fileID: 21300000, guid: 6b6f9ee1117e46d4b8528d7a92092316, type: 3}
   cost: 2500
-  prefab: {fileID: 3205710848153139817, guid: 197298964fc12db4f9536843bf412e6c, type: 3}
-  width: 1
-  height: 1
+  prefab: {fileID: 1622254223430105443, guid: 7f9c184c1d778f341bb7bdd2f5911a92, type: 3}
+  size: {x: 1, y: 1}
   id: 17

@@ -31,14 +31,14 @@ namespace SaveSystem
 
         [SerializeField] List<int> _traits;
         [SerializeField] DoubleState _currentState;
-        [SerializeField] List<Vector3> _purchasedFurniture;
+        [SerializeField] List<FurnitureData> _purchasedFurniture;
         [SerializeField] List<RelationshipData> _relationships;
 
         public CharacterData()
         {
         }
 
-        public CharacterData(string name, string lastName, string nickname, string relationshipCode, Color color, int zodiacCode, string sexPreferenceCode, Color skintone, string hairKey, Color hairColor, string eyebrowKey, Color eyebrowColor, string eyeKey, Color eyeColor, string mouthKey, List<int> traits, int gender, DoubleState currentState, int level, int experience, int id, List<Vector3> purchasedFurniture, List<RelationshipData> relationships)
+        public CharacterData(string name, string lastName, string nickname, string relationshipCode, Color color, int zodiacCode, string sexPreferenceCode, Color skintone, string hairKey, Color hairColor, string eyebrowKey, Color eyebrowColor, string eyeKey, Color eyeColor, string mouthKey, List<int> traits, int gender, DoubleState currentState, int level, int experience, int id, List<FurnitureData> purchasedFurniture, List<RelationshipData> relationships)
         {
             Name = name;
             LastName = lastName;
@@ -86,8 +86,21 @@ namespace SaveSystem
         public int Level { get => _level; set => _level = value; }
         public int Experience { get => _experience; set => _experience = value; }
         public int Id { get => _id; set => _id = value; }
-        public List<Vector3> PurchasedFurniture { get => _purchasedFurniture; set => _purchasedFurniture = value; }
+        public List<FurnitureData> PurchasedFurniture { get => _purchasedFurniture; set => _purchasedFurniture = value; }
         public List<RelationshipData> Relationships { get => _relationships; set => _relationships = value; }
+
+        [Serializable]
+        public class FurnitureData
+        {
+            public int id;
+            public Vector3 position;
+
+            public FurnitureData(int id, Vector3 position)
+            {
+                this.id = id;
+                this.position = position;
+            }
+        }
 
         [Serializable]
         public class RelationshipData

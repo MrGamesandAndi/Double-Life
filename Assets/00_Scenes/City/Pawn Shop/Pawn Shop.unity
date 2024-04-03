@@ -589,6 +589,7 @@ GameObject:
   - component: {fileID: 701594961}
   - component: {fileID: 701594960}
   - component: {fileID: 701594959}
+  - component: {fileID: 701594962}
   m_Layer: 5
   m_Name: Sell Button
   m_TagString: Untagged
@@ -710,6 +711,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701594957}
   m_CullTransparentMesh: 1
+--- !u!114 &701594962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701594957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &922123439
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +740,7 @@ GameObject:
   - component: {fileID: 922123442}
   - component: {fileID: 922123441}
   - component: {fileID: 922123444}
+  - component: {fileID: 922123445}
   m_Layer: 5
   m_Name: Return Button
   m_TagString: Untagged
@@ -858,6 +876,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousScene: 7
   sceneToLoad: 3
+--- !u!114 &922123445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922123439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &1111770214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,18 +2047,6 @@ MonoBehaviour:
   _availableFundsText: {fileID: 1881900824}
   _itemUIRoot: {fileID: 1903306167}
   _itemUIPrefab: {fileID: 7712846313677520931, guid: 954714e6c50f8d5478cdac1c23a9121b, type: 3}
-  _availableItems:
-  - {fileID: 11400000, guid: 08b121bc6dccc8348a71d54dfef02f91, type: 2}
-  - {fileID: 11400000, guid: c1ef7795c09378947a3e9c2eaf4afffe, type: 2}
-  - {fileID: 11400000, guid: 4941d3af436693c4584d3966ed087043, type: 2}
-  - {fileID: 11400000, guid: 06842b907fa57ed4a999813760a94eef, type: 2}
-  - {fileID: 11400000, guid: 9b0503bac2324ff49a028617cbc51eb4, type: 2}
-  - {fileID: 11400000, guid: 83dbee2e00369af4d825e94fb9d5ae34, type: 2}
-  - {fileID: 11400000, guid: f5716c42675dc4b4f8aee2229e0bae8c, type: 2}
-  - {fileID: 11400000, guid: cd062af8c9fd65f4ab9f58873c427e77, type: 2}
-  - {fileID: 11400000, guid: e64711808b830224baa4e6cdeebdde24, type: 2}
-  - {fileID: 11400000, guid: 59d22b2ecb540534bb9e0b06d7ebc68a, type: 2}
-  - {fileID: 11400000, guid: 27788085aeef08a47ba8f0c385971107, type: 2}
   _sellButton: {fileID: 701594959}
 --- !u!4 &1609799541553387333
 Transform:

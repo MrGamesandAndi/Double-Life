@@ -434,6 +434,7 @@ GameObject:
   - component: {fileID: 8332648}
   - component: {fileID: 8332647}
   - component: {fileID: 8332650}
+  - component: {fileID: 8332651}
   m_Layer: 5
   m_Name: Delete Save Data Button
   m_TagString: Untagged
@@ -570,6 +571,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _question:
     key: Delete_Warning2
+--- !u!114 &8332651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &8380272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,6 +1424,7 @@ GameObject:
   - component: {fileID: 139411075}
   - component: {fileID: 139411074}
   - component: {fileID: 139411073}
+  - component: {fileID: 139411076}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -1528,6 +1546,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139411071}
   m_CullTransparentMesh: 1
+--- !u!114 &139411076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139411071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &148461001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,6 +1979,7 @@ GameObject:
   - component: {fileID: 289058953}
   - component: {fileID: 289058952}
   - component: {fileID: 289058951}
+  - component: {fileID: 289058954}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -2066,6 +2101,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289058949}
   m_CullTransparentMesh: 1
+--- !u!114 &289058954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289058949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &337903150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,6 +2194,7 @@ GameObject:
   - component: {fileID: 346765435}
   - component: {fileID: 346765434}
   - component: {fileID: 346765437}
+  - component: {fileID: 346765438}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -2278,6 +2330,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousScene: 8
   sceneToLoad: 3
+--- !u!114 &346765438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346765432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &365426448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,6 +2433,7 @@ GameObject:
   - component: {fileID: 377612294}
   - component: {fileID: 377612293}
   - component: {fileID: 377612292}
+  - component: {fileID: 377612295}
   m_Layer: 5
   m_Name: Double List Button
   m_TagString: Untagged
@@ -2487,6 +2556,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377612290}
   m_CullTransparentMesh: 1
+--- !u!114 &377612295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377612290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &410568891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,6 +2733,7 @@ GameObject:
   - component: {fileID: 411361026}
   - component: {fileID: 411361025}
   - component: {fileID: 411361024}
+  - component: {fileID: 411361027}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -2769,6 +2855,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411361022}
   m_CullTransparentMesh: 1
+--- !u!114 &411361027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411361022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &426996447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3287,6 +3389,7 @@ GameObject:
   - component: {fileID: 489061057}
   - component: {fileID: 489061056}
   - component: {fileID: 489061055}
+  - component: {fileID: 489061058}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -3408,6 +3511,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489061053}
   m_CullTransparentMesh: 1
+--- !u!114 &489061058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489061053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &513783711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,6 +3970,7 @@ GameObject:
   - component: {fileID: 561797883}
   - component: {fileID: 561797882}
   - component: {fileID: 561797881}
+  - component: {fileID: 561797884}
   m_Layer: 5
   m_Name: Delete Button
   m_TagString: Untagged
@@ -3960,6 +4080,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561797879}
   m_CullTransparentMesh: 1
+--- !u!114 &561797884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561797879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &668421168
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,6 +5126,7 @@ GameObject:
   - component: {fileID: 845608574}
   - component: {fileID: 845608573}
   - component: {fileID: 845608572}
+  - component: {fileID: 845608571}
   m_Layer: 5
   m_Name: Credits Button
   m_TagString: Untagged
@@ -5017,6 +5154,22 @@ RectTransform:
   m_AnchoredPosition: {x: -419, y: 0}
   m_SizeDelta: {x: 200, y: 250}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &845608571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845608569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!114 &845608572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5686,6 +5839,7 @@ GameObject:
   - component: {fileID: 943143887}
   - component: {fileID: 943143886}
   - component: {fileID: 943143885}
+  - component: {fileID: 943143888}
   m_Layer: 5
   m_Name: Settings Button
   m_TagString: Untagged
@@ -5808,6 +5962,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943143883}
   m_CullTransparentMesh: 1
+--- !u!114 &943143888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943143883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &995953887
 GameObject:
   m_ObjectHideFlags: 0
@@ -5989,6 +6159,7 @@ GameObject:
   - component: {fileID: 1022235036}
   - component: {fileID: 1022235035}
   - component: {fileID: 1022235034}
+  - component: {fileID: 1022235037}
   m_Layer: 5
   m_Name: Edit Button
   m_TagString: Untagged
@@ -6098,6 +6269,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022235032}
   m_CullTransparentMesh: 1
+--- !u!114 &1022235037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022235032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &1035401827
 GameObject:
   m_ObjectHideFlags: 0
@@ -7109,7 +7296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1215521440
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7705,6 +7892,7 @@ GameObject:
   - component: {fileID: 1303383567}
   - component: {fileID: 1303383566}
   - component: {fileID: 1303383565}
+  - component: {fileID: 1303383568}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -7808,7 +7996,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dfe0f8b3b8f11c54d94569c6e1326583, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7826,6 +8014,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303383563}
   m_CullTransparentMesh: 1
+--- !u!114 &1303383568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303383563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &1338401076
 GameObject:
   m_ObjectHideFlags: 0
@@ -8476,6 +8680,7 @@ GameObject:
   - component: {fileID: 1564882213}
   - component: {fileID: 1564882212}
   - component: {fileID: 1564882211}
+  - component: {fileID: 1564882214}
   m_Layer: 5
   m_Name: City Name Button
   m_TagString: Untagged
@@ -8598,6 +8803,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564882209}
   m_CullTransparentMesh: 1
+--- !u!114 &1564882214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564882209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &1577245899
 GameObject:
   m_ObjectHideFlags: 0
@@ -10192,6 +10413,7 @@ GameObject:
   - component: {fileID: 1821110589}
   - component: {fileID: 1821110588}
   - component: {fileID: 1821110587}
+  - component: {fileID: 1821110590}
   m_Layer: 5
   m_Name: 'Collection Button '
   m_TagString: Untagged
@@ -10314,6 +10536,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821110585}
   m_CullTransparentMesh: 1
+--- !u!114 &1821110590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821110585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &1849791609
 GameObject:
   m_ObjectHideFlags: 0
@@ -10326,6 +10564,7 @@ GameObject:
   - component: {fileID: 1849791613}
   - component: {fileID: 1849791612}
   - component: {fileID: 1849791611}
+  - component: {fileID: 1849791614}
   m_Layer: 5
   m_Name: Change Button
   m_TagString: Untagged
@@ -10459,6 +10698,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849791609}
   m_CullTransparentMesh: 1
+--- !u!114 &1849791614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849791609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &1856827138
 GameObject:
   m_ObjectHideFlags: 0
@@ -10698,6 +10953,7 @@ GameObject:
   - component: {fileID: 1948479103}
   - component: {fileID: 1948479102}
   - component: {fileID: 1948479101}
+  - component: {fileID: 1948479104}
   m_Layer: 5
   m_Name: New Double Button
   m_TagString: Untagged
@@ -10820,6 +11076,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948479099}
   m_CullTransparentMesh: 1
+--- !u!114 &1948479104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948479099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &1963969511
 GameObject:
   m_ObjectHideFlags: 0

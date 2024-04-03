@@ -64,7 +64,7 @@ namespace Population
                  characterData.Level,
                  characterData.Experience,
                  characterData.Id,
-                 new List<Vector3>(),
+                 new List<FurnitureData>(),
                  new List<RelationshipData>()
                  ));
         }

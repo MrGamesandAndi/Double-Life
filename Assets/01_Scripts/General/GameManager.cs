@@ -1,6 +1,8 @@
+using AudioSystem;
 using Buildings.ShopSystem;
 using Population;
 using SaveSystem;
+using System;
 using UnityEngine;
 
 namespace General
@@ -10,6 +12,7 @@ namespace General
         public static GameManager Instance { get; private set; } = null;
 
         [SerializeField] int _targetFrameRate = 60;
+        [SerializeField] AudioClip _buySFX;
         public CharacterData currentLoadedDouble;
 
         private void Awake()
@@ -22,6 +25,16 @@ namespace General
 
             Instance = this;
             DontDestroyOnLoad(gameObject);
+        }
+
+        public event Action<int,int> OnMoneyChange;
+
+        public void MoneyChangeTrigger(int oldValue, int newValue)
+        {
+            if (OnMoneyChange != null)
+            {
+                OnMoneyChange(oldValue, newValue);
+            }
         }
 
         private void Start()
@@ -50,6 +63,7 @@ namespace General
                 {
                     if (SaveManager.Instance.FoodData[i].itemName.key == food.foodName.key)
                     {
+                        AudioManager.Instance.PlaySfx(_buySFX);
                         SaveManager.Instance.FoodData[i].amount++;
                         hasFind = true;
                         break;
@@ -85,6 +99,7 @@ namespace General
                 {
                     if (SaveManager.Instance.FurnitureData[i].itemName.key == furniture.furnitureName.key)
                     {
+                        AudioManager.Instance.PlaySfx(_buySFX);
                         SaveManager.Instance.FurnitureData[i].amount++;
                         hasFind = true;
                         break;
@@ -108,8 +123,10 @@ namespace General
 
         public void GainFunds(int amount)
         {
+            int oldValue = (int)GetCurrentFunds();
             SaveManager.Instance.PlayerData.currency += amount;
             AchievementManager.instance.AddAchievementProgress("Unlock_Furniture", amount);
+            MoneyChangeTrigger(oldValue, (int)GetCurrentFunds());
         }
 
         public void SpendTreasure(int id, int amount)
@@ -118,6 +135,7 @@ namespace General
             {
                 if (SaveManager.Instance.PlayerData.obtainedTreasures[i].id == id)
                 {
+                    AudioManager.Instance.PlaySfx(_buySFX);
                     SaveManager.Instance.PlayerData.obtainedTreasures[i].amount -= amount;
                     break;
                 }

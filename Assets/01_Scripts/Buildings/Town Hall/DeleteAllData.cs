@@ -11,7 +11,8 @@ namespace Buildings.TownHall
         [SerializeField] LocalisedString _question;
         public void DeleteData()
         {
-            ModalWindow.Instance.ShowQuestion(_question.Value, () => { StartDeleteProcess(); }, () => { ModalWindow.Instance.Hide(); });
+            //ModalWindow.Instance.ShowQuestion(_question.Value, () => { StartDeleteProcess(); }, () => { ModalWindow.Instance.Hide(); });
+			StartDeleteProcess();
         }
 
         private void StartDeleteProcess()

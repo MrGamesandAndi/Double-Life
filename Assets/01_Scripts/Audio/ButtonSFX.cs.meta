@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1db2cfbe8d9d9424696459eeae6c3b6d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  - _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  - _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  - _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

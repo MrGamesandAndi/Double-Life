@@ -1,7 +1,6 @@
 using AudioSystem;
 using Buildings.ShopSystem;
 using General;
-using LevelingSystem;
 using Needs;
 using Population;
 using UnityEngine;
@@ -50,7 +49,7 @@ namespace Buildings.Apartments.Rooms
             {
                 gameObject.transform.position = _snapPointPosition;
                 alreadySticked = true;
-                ExperienceManager.Instance.LevelSystem.AddExperience(expReward);
+                Entity.Instance.IncreaseExp(expReward);
                 GameManager.Instance.GainFunds(Random.Range(50, 101));
                 AudioManager.Instance.PlaySfx(_foodSound);
                 Instantiate(_foodParticles, _snapPoint.transform, false);
@@ -64,7 +63,6 @@ namespace Buildings.Apartments.Rooms
                     PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.Hunger);
                 }
 
-                RoomManager.Instance.UpdateMoneyText();
                 RoomManager.Instance.ShowTabs();
             }
         }

@@ -28,6 +28,7 @@ namespace General
         public void ShowQuestion(string question, Action yesAction, Action noAction)
         {
             gameObject.SetActive(true);
+            GetComponent<UITweener>().Show();
             _textMeshPro.text = "";
             _textMeshPro.text = question;
             _confirmationButton.onClick.AddListener(()=> {
@@ -40,6 +41,7 @@ namespace General
 
         public void Hide()
         {
+            GetComponent<UITweener>().Disable();
             gameObject.SetActive(false);
         }
     }

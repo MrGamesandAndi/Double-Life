@@ -33,6 +33,8 @@ namespace WeatherSystem
         [SerializeField] Transform _solarSystem;
         [SerializeField] UniversalAdditionalLightData _sunLightData;
         [SerializeField] UniversalAdditionalLightData _moonLightData;
+        [SerializeField] Material _daySkybox;
+        [SerializeField] Material _nightSkybox;
 
         [Header("Debug Only")]
         public bool performTransition;
@@ -166,10 +168,12 @@ namespace WeatherSystem
 
             if (IsDay)
             {
+                RenderSettings.skybox = _daySkybox;
                 solarAngle = 180f * Mathf.InverseLerp(_sunriseTime, _sunsetTime, CurrentTimeInHours);
             }
             else
             {
+                RenderSettings.skybox = _nightSkybox;
                 float hoursIntoNight = 0f;
 
                 if (CurrentTimeInHours > _sunsetTime)

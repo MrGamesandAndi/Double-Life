@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: 118930772}
   - component: {fileID: 118930771}
   - component: {fileID: 118930770}
+  - component: {fileID: 118930773}
   m_Layer: 5
   m_Name: Purchase Button
   m_TagString: Untagged
@@ -532,6 +533,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118930768}
   m_CullTransparentMesh: 1
+--- !u!114 &118930773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118930768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &120849368
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +710,7 @@ GameObject:
   - component: {fileID: 127465540}
   - component: {fileID: 127465539}
   - component: {fileID: 127465542}
+  - component: {fileID: 127465543}
   m_Layer: 5
   m_Name: Return Button
   m_TagString: Untagged
@@ -828,6 +846,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousScene: 5
   sceneToLoad: 3
+--- !u!114 &127465543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127465537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &136915909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,6 +1306,7 @@ GameObject:
   - component: {fileID: 295317948}
   - component: {fileID: 295317950}
   - component: {fileID: 295317949}
+  - component: {fileID: 295317951}
   m_Layer: 5
   m_Name: Drinks Tab
   m_TagString: Untagged
@@ -1328,6 +1363,22 @@ MonoBehaviour:
   onTabDeselected:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &295317951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295317947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &316192047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2054,6 +2105,7 @@ GameObject:
   - component: {fileID: 822762121}
   - component: {fileID: 822762123}
   - component: {fileID: 822762122}
+  - component: {fileID: 822762124}
   m_Layer: 5
   m_Name: Desserts Tab
   m_TagString: Untagged
@@ -2110,6 +2162,22 @@ MonoBehaviour:
   onTabDeselected:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &822762124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822762120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &867348995
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,6 +3373,7 @@ GameObject:
   - component: {fileID: 1470289728}
   - component: {fileID: 1470289730}
   - component: {fileID: 1470289729}
+  - component: {fileID: 1470289731}
   m_Layer: 5
   m_Name: Side Dishes Tab
   m_TagString: Untagged
@@ -3361,6 +3430,22 @@ MonoBehaviour:
   onTabDeselected:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1470289731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470289727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &1494981201
 GameObject:
   m_ObjectHideFlags: 0
@@ -4764,6 +4849,7 @@ GameObject:
   - component: {fileID: 2132012972}
   - component: {fileID: 2132012970}
   - component: {fileID: 2132012971}
+  - component: {fileID: 2132012973}
   m_Layer: 5
   m_Name: Main Dishes Tab
   m_TagString: Untagged
@@ -4820,6 +4906,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2132012973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132012969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!4 &1609799539944684192
 Transform:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ namespace Buildings.ShopSystem
         [SerializeField] TextMeshProUGUI _availableFundsText;
         [SerializeField] Transform _itemUIRoot;
         [SerializeField] GameObject _itemUIPrefab;
-        [SerializeField] List<FurnitureItem> _availableItems;
         [SerializeField] Button _purchaseButton;
 
         private Dictionary<FurnitureItem, FurnitureShopUIItem> furnitureItemToUIMap;
@@ -51,7 +50,7 @@ namespace Buildings.ShopSystem
         public void RefreshUIProducts()
         {
             furnitureItemToUIMap = new Dictionary<FurnitureItem, FurnitureShopUIItem>();
-            List<FurnitureItem> orderedList = _availableItems.OrderBy(o => o.furnitureName.Value).ToList();
+            List<FurnitureItem> orderedList = BodyPartsCollection.Instance.furniture.OrderBy(o => o.furnitureName.Value).ToList();
 
             foreach (var item in orderedList)
             {

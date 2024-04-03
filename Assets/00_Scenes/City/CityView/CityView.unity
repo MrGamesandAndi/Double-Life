@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 7c86d4abbd33b564b9e773aceadb8572, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.2843698, g: 0.39543608, b: 0.34240314, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -896,6 +896,8 @@ GameObject:
   - component: {fileID: 624337970}
   - component: {fileID: 624337969}
   - component: {fileID: 624337972}
+  - component: {fileID: 624337973}
+  - component: {fileID: 624337974}
   m_Layer: 5
   m_Name: Save Button
   m_TagString: Untagged
@@ -969,7 +971,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 624337972}
         m_TargetAssemblyTypeName: SaveSystem.SaveButton, Assembly-CSharp
-        m_MethodName: StartPrompt
+        m_MethodName: StartSavePrompt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1033,6 +1035,45 @@ MonoBehaviour:
     key: Save_Warning
   _saveContinuePrompt:
     key: Save_Continue
+--- !u!114 &624337973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624337967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea47e74c3b130ef41a882f7079e4edfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToAnimate: {fileID: 3823904090770175411}
+  _animationType: 0
+  _easeType: 18
+  _duration: 0.5
+  _delay: 0.1
+  _loop: 0
+  _pingPong: 0
+  _startPositionOffset: 0
+  _from: {x: 0, y: -1100, z: 0}
+  _to: {x: 0, y: 0, z: 0}
+  _showOnEnable: 0
+--- !u!114 &624337974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624337967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &685253614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,6 +1728,7 @@ GameObject:
   - component: {fileID: 1359683680}
   - component: {fileID: 1359683679}
   - component: {fileID: 1359683678}
+  - component: {fileID: 1359683681}
   m_Layer: 5
   m_Name: Enter
   m_TagString: Untagged
@@ -1808,6 +1850,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359683676}
   m_CullTransparentMesh: 1
+--- !u!114 &1359683681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359683676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!1 &1382670299
 GameObject:
   m_ObjectHideFlags: 0
@@ -3678,6 +3736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3823904090707485807}
   - component: {fileID: 3823904090707485800}
+  - component: {fileID: 3823904090707485808}
   m_Layer: 5
   m_Name: Confirmation Button
   m_TagString: Untagged
@@ -3706,6 +3765,22 @@ RectTransform:
   m_AnchoredPosition: {x: -139.1, y: -136}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3823904090707485808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3823904090707485806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!224 &3823904090770175372
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3722,10 +3797,10 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: -1100}
+  m_SizeDelta: {x: 0, y: 1080}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &3823904090770175373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3776,6 +3851,7 @@ GameObject:
   - component: {fileID: 3823904090770175374}
   - component: {fileID: 3823904090770175373}
   - component: {fileID: 7142610444275079346}
+  - component: {fileID: 3823904090770175412}
   m_Layer: 5
   m_Name: Modal Window
   m_TagString: Untagged
@@ -3783,6 +3859,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3823904090770175412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3823904090770175411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea47e74c3b130ef41a882f7079e4edfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToAnimate: {fileID: 3823904090770175411}
+  _animationType: 0
+  _easeType: 18
+  _duration: 0.5
+  _delay: 0.1
+  _loop: 0
+  _pingPong: 0
+  _startPositionOffset: 0
+  _from: {x: 0, y: -1100, z: 0}
+  _to: {x: 0, y: 0, z: 0}
+  _showOnEnable: 0
 --- !u!1 &3823904090925407048
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,6 +4157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3823904091057855436}
   - component: {fileID: 3823904091057855437}
+  - component: {fileID: 3823904091057855476}
   m_Layer: 5
   m_Name: Cancel Button
   m_TagString: Untagged
@@ -4065,6 +4165,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3823904091057855476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3823904091057855475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2cfbe8d9d9424696459eeae6c3b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseEnterSFX: {fileID: 8300000, guid: 4e72a77acd28539468f73939db8ee89a, type: 3}
+  _mouseExitSFX: {fileID: 8300000, guid: bcaee97e10a12d345b1c78a14a8e6662, type: 3}
+  _mouseClickDownSFX: {fileID: 8300000, guid: 5a451725c3014cf459c4b12886ccb029, type: 3}
+  _mouseClickUpSFX: {fileID: 8300000, guid: 3fd7c1401d65b7447bcc0785713a78d9, type: 3}
 --- !u!114 &3823904091613377568
 MonoBehaviour:
   m_ObjectHideFlags: 0
