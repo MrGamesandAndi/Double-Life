@@ -2,6 +2,7 @@ using General;
 using SaveSystem;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
@@ -14,7 +15,8 @@ public class ObjectPlacer : MonoBehaviour
         GameObject newObject = Instantiate(prefab, transform);
         newObject.transform.position = position;
         _placedGameObjects.Add(newObject);
-        GameManager.Instance.currentLoadedDouble.PurchasedFurniture.Add(new CharacterData.FurnitureData(index, position));
+        GameManager.Instance.currentLoadedDouble.PurchasedFurniture.Add(new CharacterData.FurnitureData(BodyPartsCollection.Instance.furniture[index].id, position));
+        SaveManager.Instance.FurnitureData.First(data => data.itemName.ToString() == BodyPartsCollection.Instance.furniture[index].furnitureName.ToString()).amount--;
         return _placedGameObjects.Count - 1;
     }
 
@@ -29,10 +31,11 @@ public class ObjectPlacer : MonoBehaviour
         _placedGameObjects[gameObjectIndex] = null;
     }
 
-    internal void LoadObject(GameObject prefab, Vector3 position)
+    public int LoadObject(GameObject prefab, Vector3 position)
     {
         GameObject newObject = Instantiate(prefab, transform);
         newObject.transform.position = position;
         _placedGameObjects.Add(newObject);
+        return _placedGameObjects.Count - 1;
     }
 }

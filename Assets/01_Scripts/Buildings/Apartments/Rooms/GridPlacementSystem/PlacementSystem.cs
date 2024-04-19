@@ -2,8 +2,6 @@ using Buildings.ShopSystem;
 using General;
 using Needs;
 using Population;
-using SaveSystem;
-using System.Linq;
 using UnityEngine;
 
 public class PlacementSystem : MonoBehaviour
@@ -27,10 +25,11 @@ public class PlacementSystem : MonoBehaviour
         _floorData = new GridData();
         _furnitureData = new GridData();
 
-        for (int i = 0; i < GameManager.Instance.currentLoadedDouble.PurchasedFurniture.Count; i++)
+        foreach (var item in GameManager.Instance.currentLoadedDouble.PurchasedFurniture)
         {
-            _objectPlacer.LoadObject(BodyPartsCollection.Instance.furniture.First(data => data.id == GameManager.Instance.currentLoadedDouble.PurchasedFurniture[i].id + 1).prefab, GameManager.Instance.currentLoadedDouble.PurchasedFurniture[i].position);
-            StopPlacement();
+            _buildingState = new PlacementState(item.id, _grid, _floorData, _furnitureData, _objectPlacer);
+            _buildingState.OnLoad(item.id, _grid.WorldToCell(item.position));
+            _buildingState = null;
         }
     }   
 
@@ -96,11 +95,10 @@ public class PlacementSystem : MonoBehaviour
         _lastDetectedPosition = Vector3Int.zero;
         _buildingState = null;
 
-        if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Buy && _hasPlaced)
+        if (GameManager.Instance.currentLoadedDouble.CurrentState == NeedType.BuyFurniture && _hasPlaced)
         {
             Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Uncommon);
             GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
-            Debug.Log($"Gained 1 {gainedTreasure.name}");
             PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.BuyFurniture);
         }
 

@@ -306,12 +306,6 @@ public class HumanController : MonoBehaviour
 
     public void SaveCharacterData()
     {
-        if (!FileHandler.CheckIfCharacterFileExists(Name + LastName))
-        {
-            PopulationManager.Instance.AddDouble(characterData);
-            GenerateAI.Instance.AddIndividualAI(characterData);
-        }
-
         AchievementManager.instance.AddAchievementProgress("Unlock_TownHall", 1);
         AchievementManager.instance.AddAchievementProgress("Unlock_Park", 1);
         AchievementManager.instance.AddAchievementProgress("Unlock_TV", 1);

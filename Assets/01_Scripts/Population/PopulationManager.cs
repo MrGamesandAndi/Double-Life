@@ -1,6 +1,7 @@
 using General;
 using Needs;
 using SaveSystem;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -95,12 +96,30 @@ namespace Population
             return new CharacterData();
         }
 
-        public CharacterData GetRandomDouble()
+        public CharacterData GetRandomDouble(bool includeCurrentLoadedDouble)
         {
-            var randomDoubles = (from s in DoublesList
-                                where s.Id != GameManager.Instance.currentLoadedDouble.Id
-                                select s).ToList();
-            return randomDoubles[Random.Range(0, randomDoubles.Count)];
+            List<CharacterData> randomDoubles = new List<CharacterData>();
+
+            if (includeCurrentLoadedDouble)
+            {
+                randomDoubles = (from s in DoublesList
+                                     select s).ToList();
+            }
+            else
+            {
+                randomDoubles = (from s in DoublesList
+                                     where s.Id != GameManager.Instance.currentLoadedDouble.Id
+                                     select s).ToList();
+            }
+
+            if(randomDoubles.Count == 1)
+            {
+                return randomDoubles[0];
+            }
+            else
+            {
+                return randomDoubles[Random.Range(0, randomDoubles.Count)];
+            }
         }
 
         public NeedsManager GetAIByID(int id)
@@ -131,6 +150,36 @@ namespace Population
                 {
                     result.Add(ReturnDouble(item.targetId));
                 }
+            }
+
+            return result;
+        }
+
+        public int GetRandomFriendId(int id)
+        {
+            List<RelationshipData> relationships = new List<RelationshipData>();
+            relationships = ReturnDouble(id).Relationships;
+            return relationships[Random.Range(0, relationships.Count)].targetId;
+        }
+
+        public List<CharacterData> GetAllUnknownDoubles(List<RelationshipData> relationships)
+        {
+            List<CharacterData> result = new List<CharacterData>();
+
+            if (relationships.Count > 0)
+            {
+                foreach (var character in DoublesList)
+                {
+                    if (relationships.Any(relation => character.Id != relation.targetId && character.Id != GameManager.Instance.currentLoadedDouble.Id))
+                    {
+                        result.Add(character);
+                    }
+                }
+
+            }
+            else
+            {
+                result.Add(GetRandomDouble(false));
             }
 
             return result;

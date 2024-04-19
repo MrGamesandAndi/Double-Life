@@ -1,4 +1,5 @@
 using General;
+using Population;
 using Relationships;
 using SaveSystem;
 using SceneManagement;
@@ -28,6 +29,13 @@ namespace CharacterCreator
                 }
             }
 
+            if(PlayerPrefs.GetInt("CC_State") != 1)
+            {
+                PopulationManager.Instance.AddDouble(HumanController.Instance.characterData);
+                GenerateAI.Instance.AddIndividualAI(HumanController.Instance.characterData);
+            }
+
+            PlayerPrefs.SetInt("CC_State", 0);
             HumanController.Instance.SaveCharacterData();
             SaveManager.Instance.SaveAllData();
             AddExtraRelationship();

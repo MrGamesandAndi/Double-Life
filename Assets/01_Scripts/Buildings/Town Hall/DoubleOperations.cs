@@ -38,9 +38,16 @@ namespace Buildings.TownHall
             {
                 _editButton.interactable = true;
                 _editButton.GetComponent<Button>().onClick.AddListener(OnClickedEdit);
-                _deleteButton.interactable = true;
-                _deleteButton.GetComponent<Button>().onClick.AddListener(OnClickedDelete);
 
+                if(_selectedDouble.RelationshipCode != "cc_rel_7")
+                {
+                    _deleteButton.interactable = true;
+                    _deleteButton.GetComponent<Button>().onClick.AddListener(OnClickedDelete);
+                }
+                else
+                {
+                    _deleteButton.interactable = false;
+                }
             }
             else
             {
@@ -80,17 +87,11 @@ namespace Buildings.TownHall
 
         public void OnClickedDelete()
         {
-            if(_selectedDouble.RelationshipCode != "cc_rel_7")
-            {
-                ModalWindow.Instance.ShowQuestion(_deletePrompt.Value, () =>
-                {
-                    RelationshipSystem.Instance.DeleteRelationship(_selectedDouble.Id);
-                    GenerateAI.Instance.RemoveIndividualAI(_selectedDouble);
-                    PopulationManager.Instance.RemoveDouble(_selectedDouble.Id);
-                    RefreshUIDoubles();
-                    ScenesManager.Instance.LoadScene(Scenes.City, Scenes.Town_Hall);
-                }, () => { });
-            }
+            RelationshipSystem.Instance.DeleteRelationship(_selectedDouble.Id);
+			GenerateAI.Instance.RemoveIndividualAI(_selectedDouble);
+			PopulationManager.Instance.RemoveDouble(_selectedDouble.Id);
+			RefreshUIDoubles();
+			ScenesManager.Instance.LoadScene(Scenes.City, Scenes.Town_Hall);
         }
 
         private void OnItemSelected(CharacterData newlySelectedItem)

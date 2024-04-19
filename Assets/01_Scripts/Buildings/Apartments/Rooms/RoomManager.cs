@@ -2,9 +2,7 @@ using AudioSystem;
 using Buildings.ShopSystem;
 using CameraSystem.RoomView;
 using General;
-using Localisation;
-using SaveSystem;
-using System.Collections;
+using Needs;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -44,52 +42,46 @@ namespace Buildings.Apartments.Rooms
         {
             _wallMaterial.color = GameManager.Instance.currentLoadedDouble.Color;
 
-            if (SaveManager.Instance.PlayerData.language == Language.Spanish)
-            {
-                
-            }
-            else
-            {
-                
-            }
-
             switch (GameManager.Instance.currentLoadedDouble.CurrentState)
             {
-                case DoubleState.Happy:
-                    AudioManager.Instance.PlayMusic(_moodMusicList[0]);
-                    
-                    break;
-                case DoubleState.Buy:
+                case NeedType.Happy:
                     AudioManager.Instance.PlayMusic(_moodMusicList[0]);
                     break;
-                case DoubleState.MakeFriend:
+                case NeedType.BuyFurniture:
                     AudioManager.Instance.PlayMusic(_moodMusicList[0]);
                     break;
-                case DoubleState.Confession:
+                case NeedType.MakeFriend:
+                    AudioManager.Instance.PlayMusic(_moodMusicList[0]);
+                    break;
+                case NeedType.TalkToFriend:
+                    AudioManager.Instance.PlayMusic(_moodMusicList[0]);
+                    break;
+                case NeedType.ConfessLove:
                     AudioManager.Instance.PlayMusic(_moodMusicList[1]);
                     break;
-                case DoubleState.Angry:
+                case NeedType.HaveFight:
                     AudioManager.Instance.PlayMusic(_moodMusicList[2]);
                     break;
-                case DoubleState.Sick:
+                case NeedType.Sickness:
                     AudioManager.Instance.PlayMusic(_moodMusicList[0]);
                     break;
-                case DoubleState.Date:
+                case NeedType.HaveDate:
                     AudioManager.Instance.PlayMusic(_moodMusicList[3]);
                     break;
-                case DoubleState.Hungry:
+                case NeedType.Hunger:
                     AchievementManager.instance.Unlock("Unlock_Supermarket");
                     AudioManager.Instance.PlayMusic(_moodMusicList[0]);
                     break;
-                case DoubleState.Sad:
+                case NeedType.HaveDepression:
                     AudioManager.Instance.PlayMusic(_moodMusicList[4]);
                     break;
-                case DoubleState.BreakUp:
+                case NeedType.BreakUp:
                     AudioManager.Instance.PlayMusic(_moodMusicList[4]);
                     break;
                 default:
                     AudioManager.Instance.PlayMusic(_moodMusicList[0]);
                     Debug.Log("Reached default");
+                    ShowTabs();
                     break;
             }
 
@@ -104,21 +96,11 @@ namespace Buildings.Apartments.Rooms
 
         public void UpdateMoneyText(int oldValue, int newValue)
         {
-            StartCoroutine(CountTo(oldValue,newValue));
-        }
-
-        private IEnumerator CountTo(int oldValue, int newValue)
-        {
-            float countDuration = 1f;
-            var rate = Mathf.Abs(newValue - oldValue) / countDuration;
-
-            while (oldValue != newValue)
-            {
+            LeanTween.value(oldValue, newValue, 1f).setOnUpdate((float val) => 
+            { 
                 AudioManager.Instance.PlaySfx(_coinSFX);
-                oldValue = (int)Mathf.MoveTowards(oldValue, newValue, rate * Time.deltaTime);
-                _moneyText.text = $"$ {(oldValue / 100f):0.00}";
-                yield return null;
-            }
+                _moneyText.text = $"$ {(val / 100f):0.00}";
+            });
         }
 
         public void EnableGrid()

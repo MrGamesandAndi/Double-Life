@@ -1,4 +1,6 @@
 using General;
+using SaveSystem;
+using System.Linq;
 using UnityEngine;
 
 public class PlacementState : IBuildingState
@@ -33,9 +35,26 @@ public class PlacementState : IBuildingState
         }
     }
 
+    public PlacementState(int id, Grid grid, GridData floorData, GridData furnitureData, ObjectPlacer objectPlacer)
+    {
+        _id = id;
+        _grid = grid;
+        _floorData = floorData;
+        _furnitureData = furnitureData;
+        _objectPlacer = objectPlacer;
+        _selectedObjectIndex = BodyPartsCollection.Instance.furniture.FindIndex(data => data.id == id);
+    }
+
     public void EndState()
     {
         _previewSystem.StopShowingPreview();
+    }
+
+    public void OnLoad(int id, Vector3Int gridPosition)
+    {
+        int index = _objectPlacer.LoadObject(BodyPartsCollection.Instance.furniture.First(data => data.id == id).prefab, _grid.CellToWorld(gridPosition));
+        GridData selectedData = BodyPartsCollection.Instance.furniture[_selectedObjectIndex].id == 0 ? _floorData : _furnitureData;
+        selectedData.AddObjectAt(gridPosition, BodyPartsCollection.Instance.furniture[_selectedObjectIndex].size, BodyPartsCollection.Instance.furniture[_selectedObjectIndex].id, index);
     }
 
     public void OnAction(Vector3Int gridPosition)

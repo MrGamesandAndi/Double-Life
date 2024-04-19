@@ -20,7 +20,7 @@ namespace Needs
         {
             _totalRingAmount = 1000f;
             _ringAmount = _totalRingAmount;
-            _coreAmount = UnityEngine.Random.Range(200, 501);
+            _coreAmount = 500f;
         }
 
         public void UseNeed(float useAmount, float multiplier)
@@ -47,21 +47,16 @@ namespace Needs
             }
         }
 
-        public void SetNeed()
-        {
-            _ringAmount = 0;
-        }
-
-        public void ManualNeedActivation()
-        {
-            _ringAmount = 0f;
-            _coreAmount = UnityEngine.Random.Range(200, 501);
-        }
-
         public void ResetNeed()
         {
             _ringAmount = _totalRingAmount;
-            _coreAmount = UnityEngine.Random.Range(200, 501);
+            _coreAmount = 500f;
+        }
+
+        public void ManualActivation()
+        {
+            _ringAmount = 1f;
+            _coreAmount = 500f;
         }
     }
 }

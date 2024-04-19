@@ -20,7 +20,7 @@ namespace SaveSystem
         {
             cityName = "";
             currency = 5000f;
-            language = Language.English;
+            language = Language.Spanish;
             musicVolume = 1f;
             resolutionX = 1920;
             resolutionY = 1080;

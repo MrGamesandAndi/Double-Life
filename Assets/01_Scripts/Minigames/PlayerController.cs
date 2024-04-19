@@ -33,7 +33,7 @@ namespace ParkMinigame
 
             if (PopulationManager.Instance.DoublesList.Count > 1)
             {
-                _randomDouble = PopulationManager.Instance.GetRandomDouble();
+                _randomDouble = PopulationManager.Instance.GetRandomDouble(true);
             }
             else
             {

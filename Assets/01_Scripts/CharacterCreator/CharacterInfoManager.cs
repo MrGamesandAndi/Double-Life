@@ -51,14 +51,12 @@ namespace CharacterCreator
                     _genderImage.interactable = false;
                     _traitsPanel.SetActive(false);
                     GetZodiacValue();
-                    PlayerPrefs.SetInt("CC_State", 0);
                     break;
                 case 2:
                     HumanController.Instance.characterData.Id = SaveManager.Instance.PlayerData.lastUsedID;
                     _relationshipInputField.GetComponentInChildren<TextLocaliserUI>().UpdateText("cc_rel_7");
                     HumanController.Instance.RelationshipCode = "cc_rel_7";
                     _relationshipInputField.interactable = false;
-                    PlayerPrefs.SetInt("CC_State", 0);
                     break;
             }
 

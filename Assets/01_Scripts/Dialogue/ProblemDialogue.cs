@@ -1,5 +1,6 @@
 using Buildings.Apartments;
 using General;
+using Needs;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,53 +12,57 @@ namespace DialogueSystem
         [SerializeField] List<Sprite> _emotes;
         [SerializeField] SpriteRenderer _emoteWindow;
 
-        public void ChangeEmote(DoubleState type)
+        public void ChangeEmote(NeedType type)
         {
             switch (type)
             {
-                case DoubleState.Happy:
+                case NeedType.Happy:
                     _emoteWindow.sprite = _emotes[0];
-                    GetComponent<WindowManager>().state = DoubleState.Happy;
+                    GetComponent<WindowManager>().state = NeedType.Happy;
                     break;
-                case DoubleState.Buy:
+                case NeedType.BuyFurniture:
                     _emoteWindow.sprite = _emotes[4];
-                    GetComponent<WindowManager>().state = DoubleState.Buy;
+                    GetComponent<WindowManager>().state = NeedType.BuyFurniture;
                     break;
-                case DoubleState.MakeFriend:
+                case NeedType.MakeFriend:
                     _emoteWindow.sprite = _emotes[2];
-                    GetComponent<WindowManager>().state = DoubleState.MakeFriend;
+                    GetComponent<WindowManager>().state = NeedType.MakeFriend;
                     break;
-                case DoubleState.Confession:
+                case NeedType.TalkToFriend:
+                    _emoteWindow.sprite = _emotes[2];
+                    GetComponent<WindowManager>().state = NeedType.TalkToFriend;
+                    break;
+                case NeedType.ConfessLove:
                     _emoteWindow.sprite = _emotes[3];
-                    GetComponent<WindowManager>().state = DoubleState.Confession;
+                    GetComponent<WindowManager>().state = NeedType.ConfessLove;
                     break;
-                case DoubleState.Angry:
+                case NeedType.HaveFight:
                     _emoteWindow.sprite = _emotes[4];
-                    GetComponent<WindowManager>().state = DoubleState.Angry;
+                    GetComponent<WindowManager>().state = NeedType.HaveFight;
                     break;
-                case DoubleState.Sick:
+                case NeedType.Sickness:
                     _emoteWindow.sprite = _emotes[4];
-                    GetComponent<WindowManager>().state = DoubleState.Sick;
+                    GetComponent<WindowManager>().state = NeedType.Sickness;
                     break;
-                case DoubleState.Date:
+                case NeedType.HaveDate:
                     _emoteWindow.sprite = _emotes[3];
-                    GetComponent<WindowManager>().state = DoubleState.Date;
+                    GetComponent<WindowManager>().state = NeedType.HaveDate;
                     break;
-                case DoubleState.Hungry:
+                case NeedType.Hunger:
                     _emoteWindow.sprite = _emotes[4];
-                    GetComponent<WindowManager>().state = DoubleState.Hungry;
+                    GetComponent<WindowManager>().state = NeedType.Hunger;
                     break;
-                case DoubleState.Sad:
+                case NeedType.HaveDepression:
                     _emoteWindow.sprite = _emotes[5];
-                    GetComponent<WindowManager>().state = DoubleState.Sad;
+                    GetComponent<WindowManager>().state = NeedType.HaveDepression;
                     break;
-                case DoubleState.BreakUp:
+                case NeedType.BreakUp:
                     _emoteWindow.sprite = _emotes[5];
-                    GetComponent<WindowManager>().state = DoubleState.BreakUp;
+                    GetComponent<WindowManager>().state = NeedType.BreakUp;
                     break;
                 default:
                     _emoteWindow.sprite = _emotes[0];
-                    GetComponent<WindowManager>().state = DoubleState.Happy;
+                    GetComponent<WindowManager>().state = NeedType.Happy;
                     Debug.Log("Reached default");
                     break;
             }

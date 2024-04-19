@@ -1,4 +1,5 @@
 using General;
+using Needs;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +31,7 @@ namespace SaveSystem
         [SerializeField] string _mouthKey;
 
         [SerializeField] List<int> _traits;
-        [SerializeField] DoubleState _currentState;
+        [SerializeField] NeedType _currentState;
         [SerializeField] List<FurnitureData> _purchasedFurniture;
         [SerializeField] List<RelationshipData> _relationships;
 
@@ -38,7 +39,7 @@ namespace SaveSystem
         {
         }
 
-        public CharacterData(string name, string lastName, string nickname, string relationshipCode, Color color, int zodiacCode, string sexPreferenceCode, Color skintone, string hairKey, Color hairColor, string eyebrowKey, Color eyebrowColor, string eyeKey, Color eyeColor, string mouthKey, List<int> traits, int gender, DoubleState currentState, int level, int experience, int id, List<FurnitureData> purchasedFurniture, List<RelationshipData> relationships)
+        public CharacterData(string name, string lastName, string nickname, string relationshipCode, Color color, int zodiacCode, string sexPreferenceCode, Color skintone, string hairKey, Color hairColor, string eyebrowKey, Color eyebrowColor, string eyeKey, Color eyeColor, string mouthKey, List<int> traits, int gender, NeedType currentState, int level, int experience, int id, List<FurnitureData> purchasedFurniture, List<RelationshipData> relationships)
         {
             Name = name;
             LastName = lastName;
@@ -82,7 +83,7 @@ namespace SaveSystem
         public string MouthKey { get => _mouthKey; set => _mouthKey = value; }
         public List<int> Traits { get => _traits; set => _traits = value; }
         public int Gender { get => _gender; set => _gender = value; }
-        public DoubleState CurrentState { get => _currentState; set => _currentState = value; }
+        public NeedType CurrentState { get => _currentState; set => _currentState = value; }
         public int Level { get => _level; set => _level = value; }
         public int Experience { get => _experience; set => _experience = value; }
         public int Id { get => _id; set => _id = value; }
@@ -118,7 +119,7 @@ namespace SaveSystem
 
             public void SetNewRelationshipValues(int amount)
             {
-                relationshipLevel += amount;
+                relationshipLevel = Mathf.Clamp(relationshipLevel += amount, 0, 6);
             }
 
             public void SetLoveStatus(bool isLove)

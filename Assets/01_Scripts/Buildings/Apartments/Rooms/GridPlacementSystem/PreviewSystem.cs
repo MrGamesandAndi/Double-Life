@@ -27,10 +27,13 @@ public class PreviewSystem : MonoBehaviour
 
     private void PrepareCursor(Vector2Int size)
     {
-        if (size.x > 0 || size.y > 0)
+        if (_cellIndicator != null)
         {
-            _cellIndicator.transform.localScale = new Vector3(size.x, 1, size.y);
-            _cellIndicatorRenderer.material.mainTextureScale = size;
+            if (size.x > 0 || size.y > 0)
+            {
+                _cellIndicator.transform.localScale = new Vector3(size.x, 1, size.y);
+                _cellIndicatorRenderer.material.mainTextureScale = size;
+            }
         }
     }
 

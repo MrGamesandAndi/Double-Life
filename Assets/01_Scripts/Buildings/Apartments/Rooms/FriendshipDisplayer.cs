@@ -50,13 +50,38 @@ public class FriendshipDisplayer : MonoBehaviour
             string name = $"{PopulationManager.Instance.ReturnDouble(friend.targetId).Name} {PopulationManager.Instance.ReturnDouble(friend.targetId).LastName}";
             GameObject gameObject = Instantiate(_containerPrefab);
             gameObject.GetComponentInChildren<TextMeshProUGUI>().text = name;
+
+            switch (friend.relationshipLevel)
+            {
+                case 0:
+                    gameObject.GetComponentInChildren<TextMeshProUGUI>().color = new Color(0, 0, 0);
+                    break;
+                case 1:
+                    gameObject.GetComponentInChildren<TextMeshProUGUI>().color = new Color(255, 0, 0);
+                    break;
+                case 2:
+                    gameObject.GetComponentInChildren<TextMeshProUGUI>().color = new Color(255, 0, 0);
+                    break;
+                case 3:
+                    gameObject.GetComponentInChildren<TextMeshProUGUI>().color = new Color(255, 228, 0);
+                    break;
+                case 4:
+                    gameObject.GetComponentInChildren<TextMeshProUGUI>().color = new Color(255, 228, 0);
+                    break;
+                case 5:
+                    gameObject.GetComponentInChildren<TextMeshProUGUI>().color = new Color(0, 255, 0);
+                    break;
+                case 6:
+                    gameObject.GetComponentInChildren<TextMeshProUGUI>().color = new Color(0, 255, 0);
+                    break;
+            }
+
             gameObject.transform.parent = _leftFriendsContainer.transform;
         }
     }
 
     public void Show()
     {
-        Debug.Log(Screen.width);
         LeanTween.cancel(gameObject);
         rt.localPosition = offScreenRightPosition;
         LeanTween.move(rt, centerPosition, 0.5f).setEase(LeanTweenType.easeInOutExpo);
@@ -64,7 +89,6 @@ public class FriendshipDisplayer : MonoBehaviour
 
     public void Hide()
     {
-        Debug.Log(Screen.width);
         LeanTween.cancel(gameObject);
         rt.localPosition = centerPosition;
         LeanTween.move(rt, offScreenRightPosition, 0.5f).setEase(LeanTweenType.easeInOutExpo);

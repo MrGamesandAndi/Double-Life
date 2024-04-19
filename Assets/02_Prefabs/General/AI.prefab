@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _needUseAmount: 1
-  _characterId: 5
-  _furnitureMultiplier: 1.25
-  _loveMultiplier: 0.8517665
-  _dateMultiplier: 0.9
-  _fightMultiplier: 0.6839632
-  _hungerMultiplier: 0.9
-  _friendMultiplier: 0.53054285
+  _characterId: 3
+  _furnitureMultiplier: 0.76446533
+  _loveMultiplier: 1.25
+  _dateMultiplier: 0.699896
+  _fightMultiplier: 0.79497266
+  _hungerMultiplier: 0.92763186
+  _friendMultiplier: 0.9
   _depressionMultiplier: 0.9
-  _sicknessMultiplier: 0.8281855
-  _breakUpMultiplier: 0
+  _sicknessMultiplier: 0.9
+  _breakUpMultiplier: 0.9

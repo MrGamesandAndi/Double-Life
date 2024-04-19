@@ -128,6 +128,78 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2393834190751723207, guid: bc0db42e8bd38a64b80a29a921c3b9bb, type: 3}
   m_PrefabInstance: {fileID: 2393834190730830293}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &96551746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96551747}
+  - component: {fileID: 96551748}
+  m_Layer: 0
+  m_Name: Talk Problem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96551747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96551746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9095150010859830840}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &96551748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96551746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48395f6c9aad3b4ebc09e25788b08ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogueStrings:
+  - text:
+      key: Problem_Talk
+    isEnd: 0
+    isQuestion: 0
+    answerOption1:
+      key: 
+    answerOption2:
+      key: 
+    option1IndexJump: 0
+    option2IndexJump: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 168380705}
+          m_TargetAssemblyTypeName: Relationships.RelationshipSystem, Assembly-CSharp
+          m_MethodName: TalkToRandomExistingFriend
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &168380704
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +408,7 @@ MonoBehaviour:
   - {fileID: 4712610335191850183}
   - {fileID: 4712610336378904929}
   - {fileID: 4712610336504537619}
+  - {fileID: 96551748}
   - {fileID: 4712610335266940791}
   currentLoadedDouble:
     _id: 100
@@ -358,7 +431,7 @@ MonoBehaviour:
     _eyeColor: {r: 0, g: 0, b: 0, a: 255}
     _mouthKey: Mouth4
     _traits: 00000000000000000000000000000000
-    _currentState: 0
+    _currentState: 10
     _purchasedFurniture: []
     _relationships: []
 --- !u!1 &855057222
@@ -2046,7 +2119,7 @@ MonoBehaviour:
   _dialogueStrings:
   - text:
       key: Problem_Fight
-    isEnd: 1
+    isEnd: 0
     isQuestion: 0
     answerOption1:
       key: 
@@ -2059,7 +2132,19 @@ MonoBehaviour:
         m_Calls: []
     endDialogueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 168380705}
+          m_TargetAssemblyTypeName: Relationships.RelationshipSystem, Assembly-CSharp
+          m_MethodName: Fight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &4712610336003457422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2611,6 +2696,7 @@ Transform:
   - {fileID: 2123698163283011964}
   - {fileID: 2123698163410741774}
   - {fileID: 2123698162173177706}
+  - {fileID: 96551747}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

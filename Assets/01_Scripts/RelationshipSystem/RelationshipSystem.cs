@@ -28,15 +28,21 @@ namespace Relationships
 
         public void StartNewFriendWithRandom()
         {
-            CharacterData newFriend = PopulationManager.Instance.GetRandomDouble();
+            List<CharacterData> unknownDoubles = PopulationManager.Instance.GetAllUnknownDoubles(GameManager.Instance.currentLoadedDouble.Relationships);
+            CharacterData newFriend = unknownDoubles[Random.Range(0, unknownDoubles.Count)];
             AddNewRelationship(GameManager.Instance.currentLoadedDouble.Id, newFriend.Id, 4);
             ResetNeed((int)NeedType.MakeFriend);
             GainTreasure();
         }
 
+        public void Fight()
+        {
+            int friendId = PopulationManager.Instance.GetRandomFriendId(GameManager.Instance.currentLoadedDouble.Id);
+            SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, friendId, -1);
+        }
+
         public void GainTreasure()
         {
-            //RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
             Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.UltraRare);
             GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
         }
@@ -68,8 +74,10 @@ namespace Relationships
 
         public void BreakUp()
         {
+            SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GetLoveInterestId(), -999);
+            PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).ActivateNeed(NeedType.HaveDepression);
+            PopulationManager.Instance.GetAIByID(GetLoveInterestId()).ActivateNeed(NeedType.HaveDepression);
             SetLoveLevel(GameManager.Instance.currentLoadedDouble.Id, GetLoveInterestId(), false);
-            ResetNeed((int)NeedType.BreakUp);
         }
 
         private void SetRelationshipLevel(int initiatorID, int targetID, int amount)
@@ -133,16 +141,8 @@ namespace Relationships
             }
             else
             {
-                foreach (var item in character.Relationships)
-                {
-                    if (item.relationshipLevel != 0)
-                    {
-                        return true;
-                    }
-                }
+                return true;
             }
-
-            return false;
         }
 
         public void TalkToRandomExistingFriend()
@@ -152,12 +152,23 @@ namespace Relationships
 
             if(randomChance >= 5)
             {
-                SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GameManager.Instance.currentLoadedDouble.Relationships[index].targetId, 1);
+                if (GameManager.Instance.currentLoadedDouble.Relationships[index].relationshipLevel < 6)
+                {
+                    SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GameManager.Instance.currentLoadedDouble.Relationships[index].targetId, 1);
+                }
             }
             else
             {
-                SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GameManager.Instance.currentLoadedDouble.Relationships[index].targetId, -1);
+                if(GameManager.Instance.currentLoadedDouble.Relationships[index].relationshipLevel > 0)
+                {
+                    SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GameManager.Instance.currentLoadedDouble.Relationships[index].targetId, -1);
+                }
+
+                PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).ActivateNeed(NeedType.HaveFight);
+                PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Relationships[index].targetId).ActivateNeed(NeedType.HaveFight);
             }
+
+            ResetNeed((int)NeedType.TalkToFriend);
         }
 
         public void GoToDate()
@@ -166,12 +177,12 @@ namespace Relationships
 
             if (randomChance >= 5)
             {
-                SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GetLoveInterestId(), 1);
+                SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GetLoveInterestId(), 3);
                 GainTreasure();
             }
             else
             {
-                SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GetLoveInterestId(), -1);
+                SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, GetLoveInterestId(), -3);
             }
 
             ResetNeed((int)NeedType.HaveDate);
@@ -199,11 +210,13 @@ namespace Relationships
                 if (chance >= 5f)
                 {
                     SetLoveLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, true);
+                    SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, 2);
                     GainTreasure();
                 }
                 else
                 {
-                    PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).GetNeed(NeedType.HaveDepression).SetNeed();
+                    SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, -2);
+                    PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).ActivateNeed(NeedType.HaveDepression);
                 }
             }
 

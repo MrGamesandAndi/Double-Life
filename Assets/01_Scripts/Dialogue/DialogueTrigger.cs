@@ -1,5 +1,3 @@
-using Buildings.Apartments.Rooms;
-using General;
 using Localisation;
 using System;
 using System.Collections.Generic;
@@ -14,7 +12,6 @@ public class DialogueTrigger : MonoBehaviour
 
     public void InitiateDialogue()
     {
-        RoomManager.Instance.HideTabs();
         DialogueManager.Instance.DialogueStart(_dialogueStrings);
         _hasSpoken = true;
     }

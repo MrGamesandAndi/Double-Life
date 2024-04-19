@@ -1,6 +1,5 @@
 using Buildings.Apartments.Rooms;
 using Localisation;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Button _option1Button;
     [SerializeField] Button _option2Button;
     [SerializeField] float _typingSpeed = 0.05f;
+    [SerializeField] bool _hidesOnStart = true;
 
     List<DialogueString> _dialogueList;
     int _currentDialogueIndex = 0;
@@ -28,7 +28,10 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        _dialogueParent.SetActive(false);
+        if (_hidesOnStart)
+        {
+            _dialogueParent.SetActive(false);
+        }
     }
 
     public void DialogueStart(List<DialogueString> textToPrint)
@@ -68,7 +71,11 @@ public class DialogueManager : MonoBehaviour
 
     private void DialogueStop()
     {
-        RoomManager.Instance.ShowTabs();
+        if(RoomManager.Instance != null)
+        {
+            RoomManager.Instance.ShowTabs();
+        }
+
         StopAllCoroutines();
         _dialogueText.text = "";
         _dialogueParent.SetActive(false);

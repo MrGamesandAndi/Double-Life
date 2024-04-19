@@ -55,9 +55,8 @@ namespace Buildings.Apartments.Rooms
                 Instantiate(_foodParticles, _snapPoint.transform, false);
                 Destroy(gameObject);
 
-                if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Hungry)
+                if (GameManager.Instance.currentLoadedDouble.CurrentState == NeedType.Hunger)
                 {
-                    //RoomManager.Instance.DialogueRunner.StartDialogue("Thanks");
                     Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Uncommon);
                     GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
                     PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.Hunger);

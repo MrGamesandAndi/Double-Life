@@ -1,4 +1,4 @@
-using System;
+using General;
 using UnityEngine;
 
 public class RemovingState : IBuildingState
@@ -52,6 +52,7 @@ public class RemovingState : IBuildingState
                 return;
             }
 
+            GameManager.Instance.currentLoadedDouble.PurchasedFurniture.RemoveAt(_gameObjectIndex);
             selectedData.RemoveObjectAt(gridPosition);
             _objectPlacer.RemoveObject(_gameObjectIndex);
         }
@@ -69,5 +70,10 @@ public class RemovingState : IBuildingState
     {
         bool validity = CheckIfSelectionIsValid(gridPosition);
         _previewSystem.UpdatePosition(_grid.CellToWorld(gridPosition), validity);
+    }
+
+    public void OnLoad(int id, Vector3Int gridPosition)
+    {
+        return;
     }
 }

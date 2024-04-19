@@ -9,8 +9,15 @@ namespace General
     {
         [SerializeField] GameObject _cityNamePrompt;
         [SerializeField] TMP_InputField _cityNameInputField;
+        [SerializeField] DialogueTrigger _dialogueTrigger1;
+        [SerializeField] DialogueTrigger _dialogueTrigger2;
 
-        private void ShowCityNamePrompt()
+        private void Start()
+        {
+            _dialogueTrigger1.InitiateDialogue();
+        }
+
+        public void ShowCityNamePrompt()
         {
             _cityNamePrompt.SetActive(true);
         }
@@ -28,7 +35,7 @@ namespace General
             _cityNamePrompt.SetActive(false);
         }
 
-        private void OpenDoubleCreator()
+        public void OpenDoubleCreator()
         {
             PlayerPrefs.SetInt("CC_State", 2);
             ScenesManager.Instance.LoadScene(Scenes.Character_Creator, Scenes.Tutorial);

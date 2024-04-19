@@ -94,18 +94,11 @@ namespace Buildings.TownHall
         public void SetLanguage()
         {
             SaveManager.Instance.PlayerData.language = (Language)_languagesDropdown.value;
-            ModalWindow.Instance.ShowQuestion(_changeLanguagePrompt.Value, () => 
-            {
-                SaveManager.Instance.SaveAllData();
-                Application.Quit();
+            SaveManager.Instance.SaveAllData();
+            Application.Quit();
 #if UNITY_EDITOR
-                EditorApplication.ExitPlaymode();
+            EditorApplication.ExitPlaymode();
 #endif
-            }, () => 
-            {
-                _languagesDropdown.value = currentIndex;
-                ModalWindow.Instance.Hide();
-            });
         }
     }
 }

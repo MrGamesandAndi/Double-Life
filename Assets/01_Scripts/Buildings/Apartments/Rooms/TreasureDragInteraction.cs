@@ -59,14 +59,14 @@ namespace Buildings.Apartments.Rooms
                 {
                     Destroy(gameObject);
 
-                    if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Sick && id == 6)
+                    if (GameManager.Instance.currentLoadedDouble.CurrentState == NeedType.Sickness && id == 6)
                     {
                         Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Rare);
                         GameManager.Instance.GainTreasure(gainedTreasure.id, 1);
                         PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).NeedCompleted(NeedType.Sickness);
                     }
 
-                    if (GameManager.Instance.currentLoadedDouble.CurrentState == DoubleState.Angry && id == 7)
+                    if (GameManager.Instance.currentLoadedDouble.CurrentState == NeedType.HaveFight && id == 7)
                     {
                         Treasure gainedTreasure = BodyPartsCollection.Instance.ReturnRandomTreasure(TreasureRarity.Rare);
                         GameManager.Instance.GainTreasure(gainedTreasure.id, 1);

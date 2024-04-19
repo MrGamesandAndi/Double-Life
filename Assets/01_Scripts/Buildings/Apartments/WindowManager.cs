@@ -1,4 +1,5 @@
 using General;
+using Needs;
 using SaveSystem;
 using SceneManagement;
 using UnityEngine;
@@ -8,7 +9,7 @@ namespace Buildings.Apartments
     public class WindowManager : MonoBehaviour
     {
         public CharacterData _double;
-        public DoubleState state;
+        public NeedType state;
 
         private void OnMouseDown()
         {

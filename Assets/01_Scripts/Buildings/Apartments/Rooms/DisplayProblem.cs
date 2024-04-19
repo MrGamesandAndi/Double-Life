@@ -1,5 +1,5 @@
 using General;
-using Relationships;
+using Needs;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,46 +16,52 @@ namespace Buildings.Apartments.Rooms
 
         private void OnMouseDown()
         {
+            RoomManager.Instance.HideTabs();
+
             switch (GameManager.Instance.currentLoadedDouble.CurrentState)
             {
-                case DoubleState.Happy:
+                case NeedType.Happy:
                     _problems[5].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
-                case DoubleState.Buy:
+                case NeedType.BuyFurniture:
                     _problems[4].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
-                case DoubleState.MakeFriend:
+                case NeedType.MakeFriend:
                     _problems[3].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
-                case DoubleState.Confession:
+                case NeedType.TalkToFriend:
+                    _problems[10].InitiateDialogue();
+                    gameObject.SetActive(false);
+                    break;
+                case NeedType.ConfessLove:
                     _problems[0].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
-                case DoubleState.Angry:
+                case NeedType.HaveFight:
                     _problems[2].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
-                case DoubleState.Sick:
+                case NeedType.Sickness:
                     _problems[9].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
-                case DoubleState.Date:
+                case NeedType.HaveDate:
                     _problems[1].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
-                case DoubleState.Hungry:
+                case NeedType.Hunger:
                     _problems[6].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
-                case DoubleState.Sad:
+                case NeedType.HaveDepression:
                     _problems[7].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
-                case DoubleState.BreakUp:
-                    _problems[7].InitiateDialogue();
+                case NeedType.BreakUp:
+                    _problems[8].InitiateDialogue();
                     gameObject.SetActive(false);
                     break;
                 default:

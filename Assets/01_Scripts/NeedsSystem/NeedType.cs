@@ -11,6 +11,7 @@ namespace Needs
         HaveDepression = 6,
         Sickness = 7,
         TalkToFriend = 8,
-        BreakUp = 9
+        BreakUp = 9,
+        Happy = 10
     }
 }
