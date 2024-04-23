@@ -7000,6 +7000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputField: {fileID: 2030983394}
   _chanceCityNameButton: {fileID: 1849791611}
+  _createDoubleButton: {fileID: 1948479101}
 --- !u!1001 &1295664819
 PrefabInstance:
   m_ObjectHideFlags: 0

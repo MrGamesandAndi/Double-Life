@@ -49,6 +49,7 @@ public class FriendshipDisplayer : MonoBehaviour
         {
             string name = $"{PopulationManager.Instance.ReturnDouble(friend.targetId).Name} {PopulationManager.Instance.ReturnDouble(friend.targetId).LastName}";
             GameObject gameObject = Instantiate(_containerPrefab);
+            gameObject.transform.GetChild(0).gameObject.SetActive(friend.isLove);
             gameObject.GetComponentInChildren<TextMeshProUGUI>().text = name;
 
             switch (friend.relationshipLevel)

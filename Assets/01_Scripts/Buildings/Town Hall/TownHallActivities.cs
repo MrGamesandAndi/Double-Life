@@ -1,3 +1,4 @@
+using Population;
 using SaveSystem;
 using SceneManagement;
 using TMPro;
@@ -11,6 +12,12 @@ namespace Buildings.TownHall
         [Header("City Name")]
         [SerializeField] TMP_InputField _inputField;
         [SerializeField] Button _chanceCityNameButton;
+        [SerializeField] Button _createDoubleButton;
+
+        private void Start()
+        {
+            _createDoubleButton.interactable = PopulationManager.Instance.DoublesAI.Count < 28;
+        }
 
         public void GoToCharacterCreator()
         {

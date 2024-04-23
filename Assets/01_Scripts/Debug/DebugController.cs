@@ -41,7 +41,7 @@ public class DebugController : MonoBehaviour
 
         SET_MONEY = new DebugCommand<int>("set_money", "Sets the amount of money.", "set_money <money_amount>", (x) =>
         {
-            GameManager.Instance.GainFunds(x);
+            GameManager.Instance.GainFunds(x * 100);
         });
 
         HELP = new DebugCommand("help", "Shows a list of commands.", "help", () =>
