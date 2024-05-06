@@ -5,6 +5,7 @@ using Population;
 using SaveSystem;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using TraitSystem;
 using UnityEngine;
 using static SaveSystem.CharacterData;
@@ -30,9 +31,23 @@ namespace Relationships
         {
             List<CharacterData> unknownDoubles = PopulationManager.Instance.GetAllUnknownDoubles(GameManager.Instance.currentLoadedDouble.Relationships);
             CharacterData newFriend = unknownDoubles[Random.Range(0, unknownDoubles.Count)];
-            AddNewRelationship(GameManager.Instance.currentLoadedDouble.Id, newFriend.Id, 4);
+            int randomChance = CalculateBaseProbability() + CheckForTraitCompatibility(newFriend);
+            int randomThreshold = Random.Range(50, 91);
+
+            if (randomChance >= randomThreshold)
+            {
+                AddNewRelationship(GameManager.Instance.currentLoadedDouble.Id, newFriend.Id, 4);
+                GainTreasure();
+            }
+
             ResetNeed((int)NeedType.MakeFriend);
-            GainTreasure();
+        }
+
+        private int CalculateBaseProbability(int friendShipLevel = 4)
+        {
+            int baseProbability = Random.Range(10, 31);
+            baseProbability += (friendShipLevel * 10);
+            return baseProbability;
         }
 
         public void Fight()
@@ -148,9 +163,10 @@ namespace Relationships
         public void TalkToRandomExistingFriend()
         {
             int index = Random.Range(0, GameManager.Instance.currentLoadedDouble.Relationships.Count);
-            int randomChance = Random.Range(0, 11);
+            int randomChance = CalculateBaseProbability(GameManager.Instance.currentLoadedDouble.Relationships[index].relationshipLevel) + CheckForTraitCompatibility(PopulationManager.Instance.ReturnDouble(GameManager.Instance.currentLoadedDouble.Relationships[index].targetId));
+            int randomThreshold = Random.Range(50, 91);
 
-            if(randomChance >= 5)
+            if(randomChance >= randomThreshold)
             {
                 if (GameManager.Instance.currentLoadedDouble.Relationships[index].relationshipLevel < 6)
                 {
@@ -205,27 +221,52 @@ namespace Relationships
             if (result.Count > 0)
             {
                 CharacterData loveInterest = result[Random.Range(0, result.Count)];
-                float chance = CheckForTraitCompatibility(loveInterest) + CheckForZodiacCompatibility(loveInterest);
 
-                if (chance >= 5f)
+                if (CheckForSexualPreferenceCompatibility(loveInterest))
                 {
-                    SetLoveLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, true);
-                    SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, 2);
-                    GainTreasure();
-                }
-                else
-                {
-                    SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, -2);
-                    PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).ActivateNeed(NeedType.HaveDepression);
+                    int randomThreshold = Random.Range(50, 91);
+                    float randomChance = CalculateBaseProbability(loveInterest.Relationships.First(x => x.targetId == GameManager.Instance.currentLoadedDouble.Id).relationshipLevel) + CheckForTraitCompatibility(loveInterest) + CheckForZodiacCompatibility(loveInterest);
+
+                    if (randomChance >= randomThreshold)
+                    {
+                        SetLoveLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, true);
+                        SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, 2);
+                        GainTreasure();
+                    }
+                    else
+                    {
+                        SetRelationshipLevel(GameManager.Instance.currentLoadedDouble.Id, loveInterest.Id, -2);
+                        PopulationManager.Instance.GetAIByID(GameManager.Instance.currentLoadedDouble.Id).ActivateNeed(NeedType.HaveDepression);
+                    }
                 }
             }
 
             ResetNeed((int)NeedType.ConfessLove);
         }
 
-        private float CheckForTraitCompatibility(CharacterData loveInterest)
+        private bool CheckForSexualPreferenceCompatibility(CharacterData loveInterest)
         {
-            float score = 0f;
+            if(GameManager.Instance.currentLoadedDouble.RelationshipCode == "cc_sex_01")
+            {
+                if(loveInterest.Gender == 2)
+                {
+                    return false;
+                }
+            }
+            else if (GameManager.Instance.currentLoadedDouble.RelationshipCode == "cc_sex_02")
+            {
+                if (loveInterest.Gender == 1)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private int CheckForTraitCompatibility(CharacterData loveInterest)
+        {
+            int score = 0;
             List<Trait> currentTraits = BodyPartsCollection.Instance.ReturnTraitsFromCharacterData(GameManager.Instance.currentLoadedDouble.Traits);
             List<Trait> loveTraits = BodyPartsCollection.Instance.ReturnTraitsFromCharacterData(loveInterest.Traits);
 
@@ -235,13 +276,13 @@ namespace Relationships
                 {
                     if(currentTraits[i] == loveTraits[j])
                     {
-                        score += 2.5f;
+                        score += 10;
                         break;
                     }
 
                     if (currentTraits[i].opossiteTrait == loveTraits[j])
                     {
-                        score -= 2.5f;
+                        score -= 5;
                         break;
                     }
                 }
@@ -250,7 +291,7 @@ namespace Relationships
             return score;
         }
 
-        private float CheckForZodiacCompatibility(CharacterData loveInterest)
+        private int CheckForZodiacCompatibility(CharacterData loveInterest)
         {
             foreach (var zodiac in BodyPartsCollection.Instance.zodiac)
             {
@@ -258,12 +299,12 @@ namespace Relationships
                 {
                     if (loveInterest.ZodiacCode == compatibleSign.id)
                     {
-                        return 5f;
+                        return 10;
                     }
                 }
             }
 
-            return 0f;
+            return 0;
         }
     }
 }
